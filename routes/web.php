@@ -13,7 +13,7 @@ use App\Livewire\TeachersComponent;
 use App\Livewire\TopicsComponent;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'welcome');
+Route::view('/', 'welcome')->name('/');
 Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');

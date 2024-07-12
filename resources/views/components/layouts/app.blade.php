@@ -66,7 +66,6 @@
                         <div class="user-header">
                             <div class="user-text">
                                 <h6>User Name</h6>
-                                <p class="text-muted mb-0">Administrator</p>
                             </div>
                         </div>
                         <a class="dropdown-item" href="{{ route('profile') }}">My Profile</a>
