@@ -55,7 +55,7 @@
                                         <a href="teachers-grid.html" class="btn btn-outline-gray me-2"><i class="feather-grid"></i></a>
                                         <a href="#" class="btn btn-outline-primary me-2"><i class="fas fa-download"></i>
                                             Download</a>
-                                        <a href="add-teacher.html" class="btn btn-primary"><i class="fas fa-plus"></i></a>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addTeacherModal"><i class="fas fa-plus"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -139,7 +139,6 @@
                                             </td>
                                             <td>Male</td>
                                             <td>English</td>
-
                                             <td>Stream 1</td>
                                             <td class="text-end">
                                                 <div class="actions">
@@ -154,6 +153,93 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Teacher Modal -->
+    <div class="modal fade" id="addTeacherModal" tabindex="-1" aria-labelledby="addTeacherModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addTeacherModalLabel">Add New Teacher</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-12">
+                                <h5 class="form-title"><span>Basic Details</span></h5>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <div class="form-group local-forms">
+                                    <label>Teacher ID <span class="login-danger">*</span></label>
+                                    <input type="text" class="form-control" placeholder="Teacher ID" />
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <div class="form-group local-forms">
+                                    <label>Name <span class="login-danger">*</span></label>
+                                    <input type="text" class="form-control" placeholder="Enter Name" />
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <div class="form-group local-forms">
+                                    <label>Gender <span class="login-danger">*</span></label>
+                                    <select class="form-control select">
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                        <option>Others</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <div class="form-group local-forms calendar-icon">
+                                    <label>Date Of Birth <span class="login-danger">*</span></label>
+                                    <input class="form-control datetimepicker" type="text" placeholder="DD-MM-YYYY" />
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <div class="form-group local-forms">
+                                    <label>Religion <span class="login-danger">*</span></label>
+                                    <input type="text" class="form-control" placeholder="Enter Religion" />
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <div class="form-group local-forms">
+                                    <label>Joining Date <span class="login-danger">*</span></label>
+                                    <input class="form-control datetimepicker" type="text" placeholder="DD-MM-YYYY" />
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <h5 class="form-title"><span>Contact Details</span></h5>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <div class="form-group local-forms">
+                                    <label>Email ID <span class="login-danger">*</span></label>
+                                    <input type="text" class="form-control" placeholder="Enter Email ID" />
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <div class="form-group local-forms">
+                                    <label>Mobile Number <span class="login-danger">*</span></label>
+                                    <input type="text" class="form-control" placeholder="Enter Phone Number" />
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <div class="form-group local-forms">
+                                    <label>Subject</label>
+                                    <input type="text" class="form-control" placeholder="Enter Subject" />
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="student-submit">
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
