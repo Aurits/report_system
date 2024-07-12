@@ -13,19 +13,11 @@ use App\Livewire\TopicsComponent;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
-
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
-
 Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
 
-require __DIR__ . '/auth.php';
-
-
-Route::get('/admindashboard', AdminDashboardComponent::class)->name('admindashboard');
+Route::get('/dashboard', AdminDashboardComponent::class)->name('dashboard')->middleware(['auth', 'verified']);
 Route::get('/students', StudentsComponent::class)->name('students');
 Route::get('/teachers', TeachersComponent::class)->name('teachers');
 Route::get('/classes', ClassesComponent::class)->name('classes');
@@ -35,3 +27,17 @@ Route::get('/topics', TopicsComponent::class)->name('topics');
 Route::get('/exams', ExamsComponent::class)->name('exams');
 Route::get('/marks', MarksComponent::class)->name('marks');
 Route::get('/reports', ReportsComponent::class)->name('reports');
+
+
+require __DIR__ . '/auth.php';
+
+
+
+
+
+
+
+
+// Route::view('dashboard', 'dashboard')
+//     ->middleware(['auth', 'verified'])
+//     ->name('dashboard');
