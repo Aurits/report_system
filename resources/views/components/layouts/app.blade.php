@@ -111,16 +111,24 @@
                         <li>
                             <a href="{{ route('subjects') }}"><i class="fas fa-book-open"></i> <span>Subjects</span></a>
                         </li>
-                        <li>
-                            <a href="{{ route('topics') }}"><i class="fas fa-calendar-alt"></i> <span>Topics &
-                                    Activities</span></a>
+                        <li class="submenu">
+                            <a href="#"><i class="fas fa-chalkboard-teacher"></i>
+                                <span>Assessments</span> <span class="menu-arrow"></span></a>
+                            <ul>
+                                <li>
+                                    <a href="{{ route('topics') }}"><i class="fas fa-calendar-alt"></i> <span>Topics &
+                                            Activities</span></a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('exams') }}"><i class="fas fa-file-alt"></i>
+                                        <span>Exams</span></a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('marks') }}"><i class="fas fa-marker"></i> <span>Marks</span></a>
+                                </li>
+                            </ul>
                         </li>
-                        <li>
-                            <a href="{{ route('exams') }}"><i class="fas fa-file-alt"></i> <span>Exams</span></a>
-                        </li>
-                        <li>
-                            <a href="{{ route('marks') }}"><i class="fas fa-marker"></i> <span>Marks</span></a>
-                        </li>
+
                         <li>
                             <a href="{{ route('reports') }}"><i class="fas fa-chart-line"></i> <span>Reports</span></a>
                         </li>
@@ -139,22 +147,19 @@
 
     <script src="assets/js/jquery-3.6.0.min.js"></script>
     <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <sc ript src="assets/js/feather.min.js">
-        </script>
-        <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-        <script src="assets/plugins/apexchart/apexcharts.min.js"></script>
-        <script src="assets/plugins/apexchart/chart-data.js"></script>
-        <script src="assets/plugins/c3-chart/d3.v5.min.js"></script>
-        <script src="assets/plugins/c3-chart/c3.min.js"></script>
-        <script src="assets/plugins/c3-chart/chart-data.js"></script>
-        <script src="assets/plugins/countup/jquery.missofis-countdown.js"></script>
-        <script src="assets/js/script.js"></script>
+    <script src="assets/plugins/datatables/datatables.min.js"></script>
+    <script src="assets/js/feather.min.js"></script>
+
+    <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="assets/plugins/apexchart/apexcharts.min.js"></script>
+    <script src="assets/plugins/apexchart/chart-data.js"></script>
+    <script src="assets/plugins/c3-chart/d3.v5.min.js"></script>
+    <script src="assets/plugins/c3-chart/c3.min.js"></script>
+    <script src="assets/plugins/c3-chart/chart-data.js"></script>
+    <script src="assets/plugins/countup/jquery.missofis-countdown.js"></script>
 
 
-
-
-        <script src="assets/plugins/datatables/datatables.min.js"></script>
-
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
