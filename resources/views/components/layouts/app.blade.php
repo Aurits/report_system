@@ -111,16 +111,16 @@
                             <a href="subjects.html"><i class="fas fa-book-open"></i> <span>Subjects</span></a>
                         </li>
                         <li>
-                            <a href="marks.html"><i class="fas fa-marker"></i> <span>Marks</span></a>
+                            <a href="activities.html"><i class="fas fa-calendar-alt"></i> <span>Activities</span></a>
                         </li>
                         <li>
                             <a href="exams.html"><i class="fas fa-file-alt"></i> <span>Exams</span></a>
                         </li>
                         <li>
-                            <a href="reports.html"><i class="fas fa-chart-line"></i> <span>Reports</span></a>
+                            <a href="marks.html"><i class="fas fa-marker"></i> <span>Marks</span></a>
                         </li>
                         <li>
-                            <a href="activities.html"><i class="fas fa-calendar-alt"></i> <span>Activities</span></a>
+                            <a href="reports.html"><i class="fas fa-chart-line"></i> <span>Reports</span></a>
                         </li>
                         <li>
                             <a href="settings.html"><i class="fas fa-cogs"></i> <span>Settings</span></a>
@@ -147,6 +147,7 @@
         <script src="assets/plugins/c3-chart/c3.min.js"></script>
         <script src="assets/plugins/c3-chart/chart-data.js"></script>
         <script src="assets/plugins/countup/jquery.missofis-countdown.js"></script>
+
 
 
 

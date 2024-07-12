@@ -23,3 +23,6 @@ Route::get('/admindashboard', AdminDashboardComponent::class)->name('admindashbo
 Route::get('/students', StudentsComponent::class)->name('students');
 Route::get('/teachers', TeachersComponent::class)->name('teachers');
 Route::get('/classes', ClassesComponent::class)->name('classes');
+Route::get('/subjects', StudentsComponent::class)->name('students');
+Route::get('/teachers', TeachersComponent::class)->name('teachers');
+Route::get('/classes', ClassesComponent::class)->name('classes');
