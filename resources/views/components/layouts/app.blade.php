@@ -103,7 +103,8 @@
                                     Streams</span></a>
                         </li>
                         <li>
-                            <a href="{{ route('subjects') }}"><i class="fas fa-book-open"></i> <span>Subjects</span></a>
+                            <a href="{{ route('subjects') }}"><i class="fas fa-book-open"></i> <span>Subjects &
+                                    Topics</span></a>
                         </li>
                         <li class="submenu">
                             <a href="#"><i class="fas fa-chalkboard-teacher"></i>
@@ -122,7 +123,6 @@
                                 </li>
                             </ul>
                         </li>
-
                         <li>
                             <a href="{{ route('reports') }}"><i class="fas fa-chart-line"></i> <span>Reports</span></a>
                         </li>
@@ -130,12 +130,16 @@
                             <a href="{{ route('settings') }}"><i class="fas fa-cogs"></i> <span>Settings</span></a>
                         </li>
                         <li>
-                            <a href=""><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>
+                            <a href="{{ route('profile') }}"><i class="fas fa-user"></i> <span>Profile</span></a>
+                        </li>
+                        <li>
+                            <a href="{{ route('login') }}"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
+
         {{ $slot }}
     </div>
 
@@ -155,6 +159,9 @@
 
     <script src="assets/js/script.js"></script>
 </body>
+
+
+
 
 
 </html>
