@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/plugins/datatables/datatables.min.css" />
 </head>
 
 <body>
@@ -104,29 +105,30 @@
                                 <span>Students</span></a>
                         </li>
                         <li>
-                            <a href="classes-streams.html"><i class="fas fa-users"></i> <span>Classes &
+                            <a href="{{ route('classes') }}"><i class="fas fa-users"></i> <span>Classes &
                                     Streams</span></a>
                         </li>
                         <li>
-                            <a href="subjects.html"><i class="fas fa-book-open"></i> <span>Subjects</span></a>
+                            <a href="{{ route('subjects') }}"><i class="fas fa-book-open"></i> <span>Subjects</span></a>
                         </li>
                         <li>
-                            <a href="activities.html"><i class="fas fa-calendar-alt"></i> <span>Activities</span></a>
+                            <a href="{{ route('topics') }}"><i class="fas fa-calendar-alt"></i> <span>Topics &
+                                    Activities</span></a>
                         </li>
                         <li>
-                            <a href="exams.html"><i class="fas fa-file-alt"></i> <span>Exams</span></a>
+                            <a href="{{ route('exams') }}"><i class="fas fa-file-alt"></i> <span>Exams</span></a>
                         </li>
                         <li>
-                            <a href="marks.html"><i class="fas fa-marker"></i> <span>Marks</span></a>
+                            <a href="{{ route('marks') }}"><i class="fas fa-marker"></i> <span>Marks</span></a>
                         </li>
                         <li>
-                            <a href="reports.html"><i class="fas fa-chart-line"></i> <span>Reports</span></a>
+                            <a href="{{ route('reports') }}"><i class="fas fa-chart-line"></i> <span>Reports</span></a>
                         </li>
                         <li>
-                            <a href="settings.html"><i class="fas fa-cogs"></i> <span>Settings</span></a>
+                            <a href="{{ route('settings') }}"><i class="fas fa-cogs"></i> <span>Settings</span></a>
                         </li>
                         <li>
-                            <a href="logout.html"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>
+                            <a href=""><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>
                         </li>
                     </ul>
                 </div>
@@ -139,7 +141,6 @@
     <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <sc ript src="assets/js/feather.min.js">
         </script>
-
         <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
         <script src="assets/plugins/apexchart/apexcharts.min.js"></script>
         <script src="assets/plugins/apexchart/chart-data.js"></script>
@@ -147,16 +148,13 @@
         <script src="assets/plugins/c3-chart/c3.min.js"></script>
         <script src="assets/plugins/c3-chart/chart-data.js"></script>
         <script src="assets/plugins/countup/jquery.missofis-countdown.js"></script>
-
-
-
-
-
-
-
-
-
         <script src="assets/js/script.js"></script>
+
+
+
+
+        <script src="assets/plugins/datatables/datatables.min.js"></script>
+
 </body>
 
 </html>
