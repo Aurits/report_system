@@ -3,6 +3,7 @@
 use App\Livewire\AdminDashboardComponent;
 use App\Livewire\ClassesComponent;
 use App\Livewire\ExamsComponent;
+use App\Livewire\InboxComponent;
 use App\Livewire\MarksComponent;
 use App\Livewire\ReportsComponent;
 use App\Livewire\SettingsComponent;
@@ -27,12 +28,10 @@ Route::get('/topics', TopicsComponent::class)->name('topics');
 Route::get('/exams', ExamsComponent::class)->name('exams');
 Route::get('/marks', MarksComponent::class)->name('marks');
 Route::get('/reports', ReportsComponent::class)->name('reports');
+Route::get('/inbox', InboxComponent::class)->name('inbox');
 
 
 require __DIR__ . '/auth.php';
-
-
-
 
 
 
