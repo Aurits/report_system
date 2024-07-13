@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/plugins/datatables/datatables.min.css" />
+    <link rel="stylesheet" href="assets/plugins/simple-calendar/simple-calendar.css" />
     @livewireStyles()
 </head>
 
@@ -91,6 +92,10 @@
                             <a href="{{ route('dashboard') }}"><i class="feather-grid"></i>
                                 <span>Dashboard</span></a>
                         </li>
+                        <li class="active">
+                            <a href="{{ route('tdashboard') }}"><i class="feather-grid"></i>
+                                <span>Dashboard</span></a>
+                        </li>
                         <li class="">
                             <a href="{{ route('teachers') }}"><i class="feather-users"></i>
                                 <span>Teachers</span></a>
@@ -161,6 +166,7 @@
         });
     </script>
 
+    <livewire:scripts />
 
 
     <script src="assets/js/jquery-3.6.0.min.js"></script>
@@ -175,10 +181,19 @@
     <script src="assets/plugins/c3-chart/c3.min.js"></script>
     <script src="assets/plugins/c3-chart/chart-data.js"></script>
     <script src="assets/plugins/countup/jquery.missofis-countdown.js"></script>
+    <script src="assets/plugins/simple-calendar/jquery.simple-calendar.js"></script>
+    <script src="assets/js/calander.js"></script>
+
+    <script src="assets/js/circle-progress.min.js"></script>
+
 
 
     <script src="assets/js/script.js"></script>
 </body>
+
+
+
+
 
 
 
