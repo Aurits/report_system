@@ -25,4 +25,14 @@ class Student extends Model
     {
         return $this->hasMany(Report::class);
     }
+
+    public function stream()
+    {
+        return $this->belongsTo(Stream::class)->withDefault(); // Make stream relationship optional with withDefault()
+    }
+
+    public function house()
+    {
+        return $this->belongsTo(House::class)->withDefault(); // Make house relationship optional with withDefault()
+    }
 }
