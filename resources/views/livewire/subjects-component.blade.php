@@ -260,14 +260,19 @@
                                             <td>{{ $subject->name }}</td>
                                             <td class="text-end">
                                                 <div class="actions">
-                                                    <button class="btn btn-sm bg-success-light me-2" wire:click="viewSubject({{ $subject->id }})">
+                                                    <button class="btn btn-sm bg-success-light me-2" wire:click="viewSubject({{ $subject->id }})" data-bs-toggle="modal" data-bs-target="#viewSubjectModal">
                                                         <i class="feather-eye"></i>
                                                     </button>
-                                                    <button class="btn btn-sm bg-danger-light" wire:click="openEditSubjectModal({{ $subject->id }})">
+                                                    <button class="btn btn-sm bg-danger-light me-2" wire:click="openEditSubjectModal({{ $subject->id }})" data-bs-toggle="modal" data-bs-target="#editSubjectModal">
                                                         <i class="feather-edit"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm bg-danger-light" wire:click="deleteSubject({{ $subject->id }})">
+                                                        <i class="feather-trash"></i>
                                                     </button>
                                                 </div>
                                             </td>
+
+
                                         </tr>
                                         @endforeach
                                         @endif
@@ -319,11 +324,15 @@
                                             <td>{{ $topic->subject->name }}</td>
                                             <td class="text-end">
                                                 <div class="actions">
-                                                    <button class="btn btn-sm bg-success-light me-2" wire:click="viewTopic({{ $topic->id }})">
+                                                    <button class="btn btn-sm bg-success-light me-2" wire:click="viewTopic({{ $topic->id }})" data-bs-toggle="modal" data-bs-target="#viewTopicModal">
                                                         <i class="feather-eye"></i>
                                                     </button>
-                                                    <button class="btn btn-sm bg-danger-light" wire:click="openEditTopicModal({{ $topic->id }})">
+                                                    <button class="btn btn-sm bg-danger-light me-2" wire:click="openEditTopicModal({{ $topic->id }})" data-bs-toggle="modal" data-bs-target="#editTopicModal">
                                                         <i class="feather-edit"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm bg-danger-light" wire:click="deleteTopic({{ $topic->id }})">
+
+                                                        <i class="feather-trash"></i>
                                                     </button>
                                                 </div>
                                             </td>
@@ -353,6 +362,16 @@
 
         Livewire.on('close-modal', event => {
             Alpine.store('modalHandler').closeModal(event.modal);
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        Livewire.on('triggerDelete', (id, type) => {
+            if (confirm('Are you sure you want to delete this ' + type + '?')) {
+                Livewire.emit('deleteConfirmed', id, type);
+            }
         });
     });
 </script>

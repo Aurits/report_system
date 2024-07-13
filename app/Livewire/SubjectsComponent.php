@@ -100,4 +100,33 @@ class SubjectsComponent extends Component
         //reload page
         return redirect()->route('subjects');
     }
+
+    public function deleteConfirmed($id, $type)
+    {
+        if ($type === 'subject') {
+            $this->deleteSubject($id);
+        } elseif ($type === 'topic') {
+            $this->deleteTopic($id);
+        }
+    }
+
+    public function deleteSubject($id)
+    {
+        $subject = Subject::find($id);
+        if ($subject) {
+            $subject->delete();
+        }
+
+        session()->flash('message', 'Subject deleted successfully.');
+    }
+
+    public function deleteTopic($id)
+    {
+        $topic = Topic::find($id);
+        if ($topic) {
+            $topic->delete();
+        }
+
+        session()->flash('message', 'Topic deleted successfully.');
+    }
 }

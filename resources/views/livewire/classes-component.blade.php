@@ -385,6 +385,12 @@
 
             <div class="modal-body">
                 <form>
+
+
+
+
+
+
                     <div class="mb-3">
                         <label for="editHouseName" class="form-label">House Name</label>
                         <input type="text" wire:model.defer="houseName" class="form-control" id="editHouseName">
