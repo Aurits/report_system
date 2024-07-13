@@ -1,5 +1,181 @@
 <div>
     <div class="page-wrapper">
+
+        <!-- Add Topic Modal -->
+        <div class="modal fade" id="addTopicModal" tabindex="-1" role="dialog" aria-labelledby="addTopicModalLabel" aria-hidden="true" x-data>
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addTopicModalLabel">Add New Topic</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form wire:submit.prevent="storeTopic">
+                            <div class="form-group">
+                                <label for="addTopicName">Name</label>
+                                <input type="text" class="form-control" id="addTopicName" wire:model.defer="newTopic.name">
+                                @error('newTopic.name') <span class="text-danger">{{ $message }}</span> @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="addTopicSubject">Subject</label>
+                                <select class="form-control" id="addTopicSubject" wire:model.defer="newTopic.subject_id">
+                                    <option value="">Select Subject</option>
+                                    @foreach($subjects as $subject)
+                                    <option value="{{ $subject->id }}">{{ $subject->name }}</option>
+                                    @endforeach
+                                </select>
+                                @error('newTopic.subject_id') <span class="text-danger">{{ $message }}</span> @enderror
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Subject Modal -->
+        <div class="modal fade" id="addSubjectModal" tabindex="-1" role="dialog" aria-labelledby="addSubjectModalLabel" aria-hidden="true" x-data>
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addSubjectModalLabel">Add New Subject</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form wire:submit.prevent="storeSubject">
+                            <div class="form-group">
+                                <label for="addSubjectName">Name</label>
+                                <input type="text" class="form-control" id="addSubjectName" wire:model.defer="newSubject.name">
+                                @error('newSubject.name') <span class="text-danger">{{ $message }}</span> @enderror
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary" @click="$dispatch('close-modal', { modal: 'addSubjectModal' })">Save</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- View Subject Modal -->
+        <div class="modal fade" id="viewSubjectModal" tabindex="-1" role="dialog" aria-labelledby="viewSubjectModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="viewSubjectModalLabel">Subject Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="viewSubjectId">ID</label>
+                            <input type="text" class="form-control" id="viewSubjectId" wire:model="subjectDetails.id" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="viewSubjectName">Name</label>
+                            <input type="text" class="form-control" id="viewSubjectName" wire:model="subjectDetails.name" readonly>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Edit Subject Modal -->
+        <div class="modal fade" id="editSubjectModal" tabindex="-1" role="dialog" aria-labelledby="editSubjectModalLabel" aria-hidden="true" x-data>
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editSubjectModalLabel">Edit Subject</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form wire:submit.prevent="updateSubject">
+                            <div class="form-group">
+                                <label for="editSubjectName">Name</label>
+                                <input type="text" class="form-control" id="editSubjectName" wire:model.defer="subjectDetails.name">
+                                @error('subjectDetails.name') <span class="text-danger">{{ $message }}</span> @enderror
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- View Topic Modal -->
+        <div class="modal fade" id="viewTopicModal" tabindex="-1" role="dialog" aria-labelledby="viewTopicModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="viewTopicModalLabel">Topic Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="viewTopicId">ID</label>
+                            <input type="text" class="form-control" id="viewTopicId" wire:model="topicDetails.id" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="viewTopicName">Name</label>
+                            <input type="text" class="form-control" id="viewTopicName" wire:model="topicDetails.name" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="viewTopicSubject">Subject</label>
+                            <input type="text" class="form-control" id="viewTopicSubject" wire:model="topicDetails.subject.name" readonly>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Edit Topic Modal -->
+        <div class="modal fade" id="editTopicModal" tabindex="-1" role="dialog" aria-labelledby="editTopicModalLabel" aria-hidden="true" x-data>
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editTopicModalLabel">Edit Topic</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form wire:submit.prevent="updateTopic">
+                            <div class="form-group">
+                                <label for="editTopicName">Name</label>
+                                <input type="text" class="form-control" id="editTopicName" wire:model.defer="topicDetails.name">
+                                @error('topicDetails.name') <span class="text-danger">{{ $message }}</span> @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="editTopicSubject">Subject</label>
+                                <select class="form-control" id="editTopicSubject" wire:model.defer="topicDetails.subject_id">
+                                    <option value="">Select Subject</option>
+                                    @foreach($subjects as $subject)
+                                    <option value="{{ $subject->id }}">{{ $subject->name }}</option>
+                                    @endforeach
+                                </select>
+                                @error('topicDetails.subject_id') <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="content container-fluid">
             <!-- Page Header -->
             <div class="page-header">
@@ -151,6 +327,8 @@
                                                     </button>
                                                 </div>
                                             </td>
+
+
                                         </tr>
                                         @endforeach
                                         @endif
@@ -163,183 +341,7 @@
             </div>
         </div>
     </div>
-
-    <!-- Add Subject Modal -->
-    <div class="modal fade" id="addSubjectModal" tabindex="-1" role="dialog" aria-labelledby="addSubjectModalLabel" aria-hidden="true" x-data>
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addSubjectModalLabel">Add New Subject</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form wire:submit.prevent="storeSubject">
-                        <div class="form-group">
-                            <label for="addSubjectName">Name</label>
-                            <input type="text" class="form-control" id="addSubjectName" wire:model.defer="newSubject.name">
-                            @error('newSubject.name') <span class="text-danger">{{ $message }}</span> @enderror
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary" @click="$dispatch('close-modal', { modal: 'addSubjectModal' })">Save</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- View Subject Modal -->
-    <div class="modal fade" id="viewSubjectModal" tabindex="-1" role="dialog" aria-labelledby="viewSubjectModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="viewSubjectModalLabel">Subject Details</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="viewSubjectId">ID</label>
-                        <input type="text" class="form-control" id="viewSubjectId" wire:model="subjectDetails.id" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label for="viewSubjectName">Name</label>
-                        <input type="text" class="form-control" id="viewSubjectName" wire:model="subjectDetails.name" readonly>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Edit Subject Modal -->
-    <div class="modal fade" id="editSubjectModal" tabindex="-1" role="dialog" aria-labelledby="editSubjectModalLabel" aria-hidden="true" x-data>
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="editSubjectModalLabel">Edit Subject</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form wire:submit.prevent="updateSubject">
-                        <div class="form-group">
-                            <label for="editSubjectName">Name</label>
-                            <input type="text" class="form-control" id="editSubjectName" wire:model.defer="subjectDetails.name">
-                            @error('subjectDetails.name') <span class="text-danger">{{ $message }}</span> @enderror
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary" @click="$dispatch('close-modal', { modal: 'editSubjectModal' })">Save changes</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Add Topic Modal -->
-    <div class="modal fade" id="addTopicModal" tabindex="-1" role="dialog" aria-labelledby="addTopicModalLabel" aria-hidden="true" x-data>
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addTopicModalLabel">Add New Topic</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form wire:submit.prevent="storeTopic">
-                        <div class="form-group">
-                            <label for="addTopicName">Name</label>
-                            <input type="text" class="form-control" id="addTopicName" wire:model.defer="newTopic.name">
-                            @error('newTopic.name') <span class="text-danger">{{ $message }}</span> @enderror
-                        </div>
-                        <div class="form-group">
-                            <label for="addTopicSubject">Subject</label>
-                            <select class="form-control" id="addTopicSubject" wire:model.defer="newTopic.subject_id">
-                                <option value="">Select Subject</option>
-                                @foreach($subjects as $subject)
-                                <option value="{{ $subject->id }}">{{ $subject->name }}</option>
-                                @endforeach
-                            </select>
-                            @error('newTopic.subject_id') <span class="text-danger">{{ $message }}</span> @enderror
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Save</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- View Topic Modal -->
-    <div class="modal fade" id="viewTopicModal" tabindex="-1" role="dialog" aria-labelledby="viewTopicModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="viewTopicModalLabel">Topic Details</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="viewTopicId">ID</label>
-                        <input type="text" class="form-control" id="viewTopicId" wire:model="topicDetails.id" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label for="viewTopicName">Name</label>
-                        <input type="text" class="form-control" id="viewTopicName" wire:model="topicDetails.name" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label for="viewTopicSubject">Subject</label>
-                        <input type="text" class="form-control" id="viewTopicSubject" wire:model="topicDetails.subject.name" readonly>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Edit Topic Modal -->
-    <div class="modal fade" id="editTopicModal" tabindex="-1" role="dialog" aria-labelledby="editTopicModalLabel" aria-hidden="true" x-data>
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="editTopicModalLabel">Edit Topic</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form wire:submit.prevent="updateTopic">
-                        <div class="form-group">
-                            <label for="editTopicName">Name</label>
-                            <input type="text" class="form-control" id="editTopicName" wire:model.defer="topicDetails.name">
-                            @error('topicDetails.name') <span class="text-danger">{{ $message }}</span> @enderror
-                        </div>
-                        <div class="form-group">
-                            <label for="editTopicSubject">Subject</label>
-                            <select class="form-control" id="editTopicSubject" wire:model.defer="topicDetails.subject_id">
-                                <option value="">Select Subject</option>
-                                @foreach($subjects as $subject)
-                                <option value="{{ $subject->id }}">{{ $subject->name }}</option>
-                                @endforeach
-                            </select>
-                            @error('topicDetails.subject_id') <span class="text-danger">{{ $message }}</span> @enderror
-                        </div>
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Save changes</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
-
 <script>
     document.addEventListener('alpine:init', () => {
         Alpine.data('modalHandler', () => ({

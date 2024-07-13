@@ -39,6 +39,8 @@ class SubjectsComponent extends Component
         Subject::create(['name' => $this->newSubject['name']]);
         $this->reset('newSubject');
         $this->dispatch('close-modal', ['modal' => 'addSubjectModal']);
+        //reload page
+        return redirect()->route('subjects');
     }
 
     public function viewSubject($id)
@@ -57,14 +59,22 @@ class SubjectsComponent extends Component
         $subject = Subject::find($this->subjectDetails['id']);
         $subject->update(['name' => $this->subjectDetails['name']]);
         $this->dispatch('close-modal', ['modal' => 'editSubjectModal']);
+        //reload page
+        return redirect()->route('subjects');
     }
 
     public function storeTopic()
     {
-        $this->validateOnly(['newTopic.name', 'newTopic.subject_id']);
+        $this->validate([
+            'newTopic.name' => 'required|string|max:255',
+            'newTopic.subject_id' => 'required|exists:subjects,id',
+        ]);
+
         Topic::create($this->newTopic);
         $this->reset('newTopic');
         $this->dispatch('close-modal', ['modal' => 'addTopicModal']);
+        //reload page
+        return redirect()->route('subjects');
     }
 
     public function viewTopic($id)
@@ -79,9 +89,15 @@ class SubjectsComponent extends Component
 
     public function updateTopic()
     {
-        $this->validateOnly(['topicDetails.name', 'topicDetails.subject_id']);
+        $this->validate([
+            'topicDetails.name' => 'required|string|max:255',
+            'topicDetails.subject_id' => 'required|exists:subjects,id',
+        ]);
+
         $topic = Topic::find($this->topicDetails['id']);
         $topic->update(['name' => $this->topicDetails['name'], 'subject_id' => $this->topicDetails['subject_id']]);
         $this->dispatch('close-modal', ['modal' => 'editTopicModal']);
+        //reload page
+        return redirect()->route('subjects');
     }
 }
