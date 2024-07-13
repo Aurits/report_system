@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/plugins/datatables/datatables.min.css" />
+    @livewireStyles()
 </head>
 
 <body>
@@ -143,6 +144,23 @@
         {{ $slot }}
     </div>
 
+    @livewireScripts()
+
+    <script>
+        Livewire.on('openEditModal', () => {
+            const modal = new bootstrap.Modal(document.getElementById('addTeacherModal'));
+            modal.show();
+        });
+    </script>
+
+
+    <script>
+        Livewire.on('openViewModal', () => {
+            const modal = new bootstrap.Modal(document.getElementById('viewTeacherModal'));
+            modal.show();
+        });
+    </script>
+
     <script src="assets/js/jquery-3.6.0.min.js"></script>
     <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/plugins/datatables/datatables.min.js"></script>
@@ -159,6 +177,13 @@
 
     <script src="assets/js/script.js"></script>
 </body>
+
+
+
+
+
+
+
 
 
 
