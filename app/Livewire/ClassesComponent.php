@@ -80,7 +80,11 @@ class ClassesComponent extends Component
             'className' => 'required',
         ]);
 
+
+
         $class = ClassModel::findOrFail($this->classId);
+
+        // dd($this->className);
         $class->update([
             'name' => $this->className,
         ]);

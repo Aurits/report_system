@@ -333,7 +333,7 @@
                 <form>
                     <div class="mb-3">
                         <label for="editClassName" class="form-label">Class Name</label>
-                        <input type="text" wire:model.defer="editClassName" class="form-control" id="editClassName">
+                        <input type="text" wire:model.defer="className" class="form-control" id="editClassName">
                         @error('editClassName') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
                 </form>
@@ -358,7 +358,7 @@
                 <form>
                     <div class="mb-3">
                         <label for="editStreamName" class="form-label">Stream Name</label>
-                        <input type="text" wire:model.defer="editStreamName" class="form-control" id="editStreamName">
+                        <input type="text" wire:model.defer="streamName" class="form-control" id="editStreamName">
                         @error('editStreamName') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
                 </form>
@@ -390,9 +390,11 @@
 
 
 
+
+
                     <div class="mb-3">
                         <label for="editHouseName" class="form-label">House Name</label>
-                        <input type="text" wire:model.defer="editHouseName" class="form-control" id="editHouseName">
+                        <input type="text" wire:model.defer="houseName" class="form-control" id="editHouseName">
                         @error('editHouseName') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
                 </form>
