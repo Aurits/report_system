@@ -5,7 +5,6 @@ namespace App\Livewire;
 use Livewire\Component;
 use App\Models\Subject;
 use App\Models\Topic;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
 class SubjectsComponent extends Component
@@ -13,9 +12,9 @@ class SubjectsComponent extends Component
     public $subjects;
     public $topics;
     public $newSubject = ['name' => ''];
-    public $subjectDetails;
+    public $subjectDetails = ['id' => '', 'name' => ''];
     public $newTopic = ['name' => '', 'subject_id' => ''];
-    public $topicDetails;
+    public $topicDetails = ['id' => '', 'name' => '', 'subject' => ['name' => ''], 'subject_id' => ''];
 
     protected $rules = [
         'newSubject.name' => 'required|string|max:255',
@@ -38,19 +37,19 @@ class SubjectsComponent extends Component
         $this->validateOnly('newSubject.name');
         Subject::create(['name' => $this->newSubject['name']]);
         $this->reset('newSubject');
-        $this->dispatch('close-modal', ['modal' => 'addSubjectModal']);
-        //reload page
         return redirect()->route('subjects');
     }
 
     public function viewSubject($id)
     {
-        $this->subjectDetails = Subject::find($id);
+        $this->subjectDetails = Subject::find($id)->toArray();
+        $this->dispatch('openModal', ['id' => 'viewSubjectModal']);
     }
 
     public function openEditSubjectModal($id)
     {
-        $this->subjectDetails = Subject::find($id);
+        $this->subjectDetails = Subject::find($id)->toArray();
+        $this->dispatch('openModal', ['id' => 'editSubjectModal']);
     }
 
     public function updateSubject()
@@ -58,8 +57,6 @@ class SubjectsComponent extends Component
         $this->validateOnly('subjectDetails.name');
         $subject = Subject::find($this->subjectDetails['id']);
         $subject->update(['name' => $this->subjectDetails['name']]);
-        $this->dispatch('close-modal', ['modal' => 'editSubjectModal']);
-        //reload page
         return redirect()->route('subjects');
     }
 
@@ -72,19 +69,17 @@ class SubjectsComponent extends Component
 
         Topic::create($this->newTopic);
         $this->reset('newTopic');
-        $this->dispatch('close-modal', ['modal' => 'addTopicModal']);
-        //reload page
         return redirect()->route('subjects');
     }
 
     public function viewTopic($id)
     {
-        $this->topicDetails = Topic::with('subject')->find($id);
+        $this->topicDetails = Topic::with('subject')->find($id)->toArray();
     }
 
     public function openEditTopicModal($id)
     {
-        $this->topicDetails = Topic::find($id);
+        $this->topicDetails = Topic::find($id)->toArray();
     }
 
     public function updateTopic()
@@ -96,8 +91,6 @@ class SubjectsComponent extends Component
 
         $topic = Topic::find($this->topicDetails['id']);
         $topic->update(['name' => $this->topicDetails['name'], 'subject_id' => $this->topicDetails['subject_id']]);
-        $this->dispatch('close-modal', ['modal' => 'editTopicModal']);
-        //reload page
         return redirect()->route('subjects');
     }
 
@@ -117,7 +110,7 @@ class SubjectsComponent extends Component
             $subject->delete();
         }
 
-        session()->flash('message', 'Subject deleted successfully.');
+        Session::flash('message', 'Subject deleted successfully.');
     }
 
     public function deleteTopic($id)
@@ -127,6 +120,6 @@ class SubjectsComponent extends Component
             $topic->delete();
         }
 
-        session()->flash('message', 'Topic deleted successfully.');
+        Session::flash('message', 'Topic deleted successfully.');
     }
 }

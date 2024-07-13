@@ -13,12 +13,12 @@
                         <form wire:submit.prevent="storeTopic">
                             <div class="form-group">
                                 <label for="addTopicName">Name</label>
-                                <input type="text" class="form-control" id="addTopicName" wire:model.defer="newTopic.name">
+                                <input type="text" class="form-control" id="addTopicName" wire:model="newTopic.name">
                                 @error('newTopic.name') <span class="text-danger">{{ $message }}</span> @enderror
                             </div>
                             <div class="form-group">
                                 <label for="addTopicSubject">Subject</label>
-                                <select class="form-control" id="addTopicSubject" wire:model.defer="newTopic.subject_id">
+                                <select class="form-control" id="addTopicSubject" wire:model="newTopic.subject_id">
                                     <option value="">Select Subject</option>
                                     @foreach($subjects as $subject)
                                     <option value="{{ $subject->id }}">{{ $subject->name }}</option>
@@ -48,7 +48,7 @@
                         <form wire:submit.prevent="storeSubject">
                             <div class="form-group">
                                 <label for="addSubjectName">Name</label>
-                                <input type="text" class="form-control" id="addSubjectName" wire:model.defer="newSubject.name">
+                                <input type="text" class="form-control" id="addSubjectName" wire:model="newSubject.name">
                                 @error('newSubject.name') <span class="text-danger">{{ $message }}</span> @enderror
                             </div>
                             <div class="modal-footer">
@@ -70,14 +70,10 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <div class="form-group">
-                            <label for="viewSubjectId">ID</label>
-                            <input type="text" class="form-control" id="viewSubjectId" wire:model="subjectDetails.id" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="viewSubjectName">Name</label>
-                            <input type="text" class="form-control" id="viewSubjectName" wire:model="subjectDetails.name" readonly>
-                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item"><strong>ID:</strong> {{ $subjectDetails['id'] }}</li>
+                            <li class="list-group-item"><strong>Name:</strong> {{ $subjectDetails['name'] }}</li>
+                        </ul>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -87,7 +83,7 @@
         </div>
 
         <!-- Edit Subject Modal -->
-        <div class="modal fade" id="editSubjectModal" tabindex="-1" role="dialog" aria-labelledby="editSubjectModalLabel" aria-hidden="true" x-data>
+        <div class="modal fade" id="editSubjectModal" tabindex="-1" role="dialog" aria-labelledby="editSubjectModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -97,20 +93,20 @@
                     <div class="modal-body">
                         <form wire:submit.prevent="updateSubject">
                             <div class="form-group">
+
                                 <label for="editSubjectName">Name</label>
-                                <input type="text" class="form-control" id="editSubjectName" wire:model.defer="subjectDetails.name">
+                                <input type="text" class="form-control" id="editSubjectName" wire:model="subjectDetails.name">
                                 @error('subjectDetails.name') <span class="text-danger">{{ $message }}</span> @enderror
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                <button type="submit" class="btn btn-primary">Save</button>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-
 
         <!-- View Topic Modal -->
         <div class="modal fade" id="viewTopicModal" tabindex="-1" role="dialog" aria-labelledby="viewTopicModalLabel" aria-hidden="true">
@@ -121,18 +117,12 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <div class="form-group">
-                            <label for="viewTopicId">ID</label>
-                            <input type="text" class="form-control" id="viewTopicId" wire:model="topicDetails.id" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="viewTopicName">Name</label>
-                            <input type="text" class="form-control" id="viewTopicName" wire:model="topicDetails.name" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="viewTopicSubject">Subject</label>
-                            <input type="text" class="form-control" id="viewTopicSubject" wire:model="topicDetails.subject.name" readonly>
-                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item"><strong>ID:</strong> {{ $topicDetails['id'] }}</li>
+                            <li class="list-group-item"><strong>Name:</strong> {{ $topicDetails['name'] }}</li>
+
+                            </li>
+                        </ul>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -142,7 +132,7 @@
         </div>
 
         <!-- Edit Topic Modal -->
-        <div class="modal fade" id="editTopicModal" tabindex="-1" role="dialog" aria-labelledby="editTopicModalLabel" aria-hidden="true" x-data>
+        <div class="modal fade" id="editTopicModal" tabindex="-1" role="dialog" aria-labelledby="editTopicModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -153,13 +143,12 @@
                         <form wire:submit.prevent="updateTopic">
                             <div class="form-group">
                                 <label for="editTopicName">Name</label>
-                                <input type="text" class="form-control" id="editTopicName" wire:model.defer="topicDetails.name">
+                                <input type="text" class="form-control" id="editTopicName" wire:model="topicDetails.name">
                                 @error('topicDetails.name') <span class="text-danger">{{ $message }}</span> @enderror
                             </div>
                             <div class="form-group">
                                 <label for="editTopicSubject">Subject</label>
-                                <select class="form-control" id="editTopicSubject" wire:model.defer="topicDetails.subject_id">
-                                    <option value="">Select Subject</option>
+                                <select class="form-control" id="editTopicSubject" wire:model="topicDetails.subject_id">
                                     @foreach($subjects as $subject)
                                     <option value="{{ $subject->id }}">{{ $subject->name }}</option>
                                     @endforeach
@@ -169,7 +158,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                <button type="submit" class="btn btn-primary">Save</button>
                             </div>
                         </form>
                     </div>
@@ -260,9 +249,7 @@
                                             <td>{{ $subject->name }}</td>
                                             <td class="text-end">
                                                 <div class="actions">
-                                                    <button class="btn btn-sm bg-success-light me-2" wire:click="viewSubject({{ $subject->id }})" data-bs-toggle="modal" data-bs-target="#viewSubjectModal">
-                                                        <i class="feather-eye"></i>
-                                                    </button>
+
                                                     <button class="btn btn-sm bg-danger-light me-2" wire:click="openEditSubjectModal({{ $subject->id }})" data-bs-toggle="modal" data-bs-target="#editSubjectModal">
                                                         <i class="feather-edit"></i>
                                                     </button>
@@ -324,13 +311,15 @@
                                             <td>{{ $topic->subject->name }}</td>
                                             <td class="text-end">
                                                 <div class="actions">
-                                                    <button class="btn btn-sm bg-success-light me-2" wire:click="viewTopic({{ $topic->id }})" data-bs-toggle="modal" data-bs-target="#viewTopicModal">
-                                                        <i class="feather-eye"></i>
-                                                    </button>
+
                                                     <button class="btn btn-sm bg-danger-light me-2" wire:click="openEditTopicModal({{ $topic->id }})" data-bs-toggle="modal" data-bs-target="#editTopicModal">
                                                         <i class="feather-edit"></i>
+
                                                     </button>
                                                     <button class="btn btn-sm bg-danger-light" wire:click="deleteTopic({{ $topic->id }})">
+
+
+
 
                                                         <i class="feather-trash"></i>
                                                     </button>
@@ -341,37 +330,25 @@
                                         </tr>
                                         @endforeach
                                         @endif
+
                                     </tbody>
                                 </table>
                             </div>
                         </div>
+
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
 </div>
-<script>
-    document.addEventListener('alpine:init', () => {
-        Alpine.data('modalHandler', () => ({
-            closeModal(modal) {
-                var modalElement = new bootstrap.Modal(document.getElementById(modal));
-                modalElement.hide();
-            },
-        }));
-
-        Livewire.on('close-modal', event => {
-            Alpine.store('modalHandler').closeModal(event.modal);
-        });
-    });
-</script>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        Livewire.on('triggerDelete', (id, type) => {
-            if (confirm('Are you sure you want to delete this ' + type + '?')) {
-                Livewire.emit('deleteConfirmed', id, type);
-            }
+        window.livewire.on('openModal', event => {
+            var myModal = new bootstrap.Modal(document.getElementById(event.detail.id));
+            myModal.show();
         });
     });
 </script>

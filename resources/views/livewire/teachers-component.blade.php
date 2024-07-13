@@ -231,6 +231,7 @@
 
 
 
+
                                 </div>
                                 <div class="mb-3">
                                     <strong>Phone:</strong> {{$teacherToView['phone']}}
@@ -243,8 +244,5 @@
             </div>
         </div>
     </div>
-
-
-
 
 </div>
