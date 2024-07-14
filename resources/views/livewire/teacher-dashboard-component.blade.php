@@ -5,13 +5,75 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="page-sub-header">
-                            <h3 class="page-title">Welcome Jonathan!</h3>
+                            <h3 class="page-title">Welcome!</h3>
                             <ul class="breadcrumb">
                                 <li class="breadcrumb-item">
                                     <a href="index.html">Home</a>
                                 </li>
-                                <li class="breadcrumb-item active">Teacher</li>
+
                             </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-3 col-sm-6 col-12 d-flex">
+                    <div class="card bg-comman w-100">
+                        <div class="card-body">
+                            <div class="db-widgets d-flex justify-content-between align-items-center">
+                                <div class="db-info">
+                                    <h6>Students</h6>
+                                    <h3>50055</h3>
+                                </div>
+                                <div class="db-icon">
+                                    <img src="assets/img/icons/dash-icon-01.svg" alt="Dashboard Icon">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12 d-flex">
+                    <div class="card bg-comman w-100">
+                        <div class="card-body">
+                            <div class="db-widgets d-flex justify-content-between align-items-center">
+                                <div class="db-info">
+                                    <h6>Awards</h6>
+                                    <h3>50+</h3>
+                                </div>
+                                <div class="db-icon">
+                                    <img src="assets/img/icons/dash-icon-02.svg" alt="Dashboard Icon">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12 d-flex">
+                    <div class="card bg-comman w-100">
+                        <div class="card-body">
+                            <div class="db-widgets d-flex justify-content-between align-items-center">
+                                <div class="db-info">
+                                    <h6>Department</h6>
+                                    <h3>30+</h3>
+                                </div>
+                                <div class="db-icon">
+                                    <img src="assets/img/icons/dash-icon-03.svg" alt="Dashboard Icon">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12 d-flex">
+                    <div class="card bg-comman w-100">
+                        <div class="card-body">
+                            <div class="db-widgets d-flex justify-content-between align-items-center">
+                                <div class="db-info">
+                                    <h6>Revenue</h6>
+                                    <h3>$505</h3>
+                                </div>
+                                <div class="db-icon">
+                                    <img src="assets/img/icons/dash-icon-04.svg" alt="Dashboard Icon">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -84,126 +146,6 @@
                 <div class="col-12 col-lg-12 col-xl-8">
                     <div class="row">
                         <div class="col-12 col-lg-8 col-xl-8 d-flex">
-                            <div class="card flex-fill comman-shadow">
-                                <div class="card-header">
-                                    <div class="row align-items-center">
-                                        <div class="col-6">
-                                            <h5 class="card-title">Upcoming Lesson</h5>
-                                        </div>
-                                        <div class="col-6">
-                                            <span class="float-end view-link"><a href="#">View All Courses</a></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="pt-3 pb-3">
-                                    <div class="table-responsive lesson">
-                                        <table class="table table-center">
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div class="date">
-                                                            <b>Lessons 30</b>
-                                                            <p>3.1 Ipsuum dolor</p>
-                                                            <ul class="teacher-date-list">
-                                                                <li>
-                                                                    <i class="fas fa-calendar-alt me-2"></i>Sep 5, 2022
-                                                                </li>
-                                                                <li>|</li>
-                                                                <li>
-                                                                    <i class="fas fa-clock me-2"></i>09:00 -
-                                                                    10:00 am
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="lesson-confirm">
-                                                            <a href="#">Confirmed</a>
-                                                        </div>
-                                                        <button type="submit" class="btn btn-info">
-                                                            Reschedule
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="date">
-                                                            <b>Lessons 30</b>
-                                                            <p>3.1 Ipsuum dolor</p>
-                                                            <ul class="teacher-date-list">
-                                                                <li>
-                                                                    <i class="fas fa-calendar-alt me-2"></i>Sep 5, 2022
-                                                                </li>
-                                                                <li>|</li>
-                                                                <li>
-                                                                    <i class="fas fa-clock me-2"></i>09:00 -
-                                                                    10:00 am
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="lesson-confirm">
-                                                            <a href="#">Confirmed</a>
-                                                        </div>
-                                                        <button type="submit" class="btn btn-info">
-                                                            Reschedule
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-4 col-xl-4 d-flex">
-                            <div class="card flex-fill comman-shadow">
-                                <div class="card-header">
-                                    <div class="row align-items-center">
-                                        <div class="col-12">
-                                            <h5 class="card-title">Semester Progress</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="dash-widget">
-                                    <div class="circle-bar circle-bar1">
-                                        <div class="circle-graph1" data-percent="50">
-                                            <div class="progress-less">
-                                                <b>55/60</b>
-                                                <p>Lesson Progressed</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 col-lg-12 col-xl-12 d-flex">
-                            <div class="card flex-fill comman-shadow">
-                                <div class="card-header">
-                                    <div class="row align-items-center">
-                                        <div class="col-6">
-                                            <h5 class="card-title">Teaching Activity</h5>
-                                        </div>
-                                        <div class="col-6">
-                                            <ul class="chart-list-out">
-                                                <li><span class="circle-blue"></span>Teacher</li>
-                                                <li><span class="circle-green"></span>Students</li>
-                                                <li class="star-menus">
-                                                    <a href="javascript:;"><i class="fas fa-ellipsis-v"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div id="school-area"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-12 col-xl-12 d-flex">
                             <div class="card flex-fill comman-shadow">
                                 <div class="card-header d-flex align-items-center">
                                     <h5 class="card-title">Teaching History</h5>
@@ -286,114 +228,175 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-12 col-xl-4 d-flex">
-                    <div class="card flex-fill comman-shadow">
-                        <div class="card-body">
-                            <div id="calendar-doctor" class="calendar-container"></div>
-                            <div class="calendar-info calendar-info1">
-                                <div class="up-come-header">
-                                    <h2>Upcoming Events</h2>
-                                    <span><a href="javascript:;"><i class="feather-plus"></i></a></span>
-                                </div>
-                                <div class="upcome-event-date">
-                                    <h3>10 Jan</h3>
-                                    <span><i class="fas fa-ellipsis-h"></i></span>
-                                </div>
-                                <div class="calendar-details">
-                                    <p>08:00 am</p>
-                                    <div class="calendar-box normal-bg">
-                                        <div class="calandar-event-name">
-                                            <h4>Botony</h4>
-                                            <h5>Lorem ipsum sit amet</h5>
+                        <div class="col-12 col-lg-4 col-xl-4 d-flex">
+                            <div class="card flex-fill comman-shadow">
+                                <div class="card-header">
+                                    <div class="row align-items-center">
+                                        <div class="col-12">
+                                            <h5 class="card-title">Semester Progress</h5>
                                         </div>
-                                        <span>08:00 - 09:00 am</span>
                                     </div>
                                 </div>
-                                <div class="calendar-details">
-                                    <p>09:00 am</p>
-                                    <div class="calendar-box normal-bg">
-                                        <div class="calandar-event-name">
-                                            <h4>Botony</h4>
-                                            <h5>Lorem ipsum sit amet</h5>
+                                <div class="dash-widget">
+                                    <div class="circle-bar circle-bar1">
+                                        <div class="circle-graph1" data-percent="50">
+                                            <div class="progress-less">
+                                                <b>55/60</b>
+                                                <p>Lesson Progressed</p>
+                                            </div>
                                         </div>
-                                        <span>09:00 - 10:00 am</span>
-                                    </div>
-                                </div>
-                                <div class="calendar-details">
-                                    <p>10:00 am</p>
-                                    <div class="calendar-box normal-bg">
-                                        <div class="calandar-event-name">
-                                            <h4>Botony</h4>
-                                            <h5>Lorem ipsum sit amet</h5>
-                                        </div>
-                                        <span>10:00 - 11:00 am</span>
-                                    </div>
-                                </div>
-                                <div class="upcome-event-date">
-                                    <h3>10 Jan</h3>
-                                    <span><i class="fas fa-ellipsis-h"></i></span>
-                                </div>
-                                <div class="calendar-details">
-                                    <p>08:00 am</p>
-                                    <div class="calendar-box normal-bg">
-                                        <div class="calandar-event-name">
-                                            <h4>English</h4>
-                                            <h5>Lorem ipsum sit amet</h5>
-                                        </div>
-                                        <span>08:00 - 09:00 am</span>
-                                    </div>
-                                </div>
-                                <div class="calendar-details">
-                                    <p>09:00 am</p>
-                                    <div class="calendar-box normal-bg">
-                                        <div class="calandar-event-name">
-                                            <h4>Mathematics</h4>
-                                            <h5>Lorem ipsum sit amet</h5>
-                                        </div>
-                                        <span>09:00 - 10:00 am</span>
-                                    </div>
-                                </div>
-                                <div class="calendar-details">
-                                    <p>10:00 am</p>
-                                    <div class="calendar-box normal-bg">
-                                        <div class="calandar-event-name">
-                                            <h4>History</h4>
-                                            <h5>Lorem ipsum sit amet</h5>
-                                        </div>
-                                        <span>10:00 - 11:00 am</span>
-                                    </div>
-                                </div>
-                                <div class="calendar-details">
-                                    <p>11:00 am</p>
-                                    <div class="calendar-box break-bg">
-                                        <div class="calandar-event-name">
-                                            <h4>Break</h4>
-                                            <h5>Lorem ipsum sit amet</h5>
-                                        </div>
-                                        <span>11:00 - 12:00 am</span>
-                                    </div>
-                                </div>
-                                <div class="calendar-details">
-                                    <p>11:30 am</p>
-                                    <div class="calendar-box normal-bg">
-                                        <div class="calandar-event-name">
-                                            <h4>History</h4>
-                                            <h5>Lorem ipsum sit amet</h5>
-                                        </div>
-                                        <span>11:30 - 12:00 am</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                </div>
+                <div class="col-12 col-lg-12 col-xl-4 d-flex">
+                    <div class="card flex-fill comman-shadow">
+                        <div class="card-body">
+                            <div id="calendar-doctor" class="calendar-container"></div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="row">
+                <div class="col-xl-6 d-flex">
 
-        <footer>
-            <p>Copyright © 2022 Dreamguys.</p>
-        </footer>
+                    <div class="card flex-fill student-space comman-shadow">
+                        <div class="card-header d-flex align-items-center">
+                            <h5 class="card-title">Star Students</h5>
+                            <ul class="chart-list-out student-ellips">
+                                <li class="star-menus"><a href="javascript:;"><i class="fas fa-ellipsis-v"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table star-student table-hover table-center table-borderless table-striped">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th class="text-center">Marks</th>
+                                            <th class="text-center">Percentage</th>
+                                            <th class="text-end">Year</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-nowrap">
+                                                <div>PRE2209</div>
+                                            </td>
+                                            <td class="text-nowrap">
+                                                <a href="profile.html">
+                                                    <img class="rounded-circle" src="assets/img/profiles/avatar-02.jpg" width="25" alt="Star Students">
+                                                    John Smith
+                                                </a>
+                                            </td>
+                                            <td class="text-center">1185</td>
+                                            <td class="text-center">98%</td>
+                                            <td class="text-end">
+                                                <div>2019</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-nowrap">
+                                                <div>PRE1245</div>
+                                            </td>
+                                            <td class="text-nowrap">
+                                                <a href="profile.html">
+                                                    <img class="rounded-circle" src="assets/img/profiles/avatar-01.jpg" width="25" alt="Star Students">
+                                                    Jolie Hoskins
+                                                </a>
+                                            </td>
+                                            <td class="text-center">1195</td>
+                                            <td class="text-center">99.5%</td>
+                                            <td class="text-end">
+                                                <div>2018</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-nowrap">
+                                                <div>PRE1625</div>
+                                            </td>
+                                            <td class="text-nowrap">
+                                                <a href="profile.html">
+                                                    <img class="rounded-circle" src="assets/img/profiles/avatar-03.jpg" width="25" alt="Star Students">
+                                                    Pennington Joy
+                                                </a>
+                                            </td>
+                                            <td class="text-center">1196</td>
+                                            <td class="text-center">99.6%</td>
+                                            <td class="text-end">
+                                                <div>2017</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-nowrap">
+                                                <div>PRE2516</div>
+                                            </td>
+                                            <td class="text-nowrap">
+                                                <a href="profile.html">
+                                                    <img class="rounded-circle" src="assets/img/profiles/avatar-04.jpg" width="25" alt="Star Students">
+                                                    Millie Marsden
+                                                </a>
+                                            </td>
+                                            <td class="text-center">1187</td>
+                                            <td class="text-center">98.2%</td>
+                                            <td class="text-end">
+                                                <div>2016</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-nowrap">
+                                                <div>PRE2209</div>
+                                            </td>
+                                            <td class="text-nowrap">
+                                                <a href="profile.html">
+                                                    <img class="rounded-circle" src="assets/img/profiles/avatar-05.jpg" width="25" alt="Star Students">
+                                                    John Smith
+                                                </a>
+                                            </td>
+                                            <td class="text-center">1185</td>
+                                            <td class="text-center">98%</td>
+                                            <td class="text-end">
+                                                <div>2015</div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-12 col-lg-6">
+
+                    <div class="card card-chart">
+                        <div class="card-header">
+                            <div class="row align-items-center">
+                                <div class="col-6">
+                                    <h5 class="card-title">Number of Students</h5>
+                                </div>
+                                <div class="col-6">
+                                    <ul class="chart-list-out">
+                                        <li><span class="circle-blue"></span>Girls</li>
+                                        <li><span class="circle-green"></span>Boys</li>
+                                        <li class="star-menus"><a href="javascript:;"><i class="fas fa-ellipsis-v"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div id="bar"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
     </div>
 </div>
