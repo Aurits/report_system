@@ -112,6 +112,10 @@
                             <a href="javascript:void(0);"><i class="fas fa-chalkboard-teacher"></i>
                                 <span>Assessments</span> <span class="menu-arrow"></span></a>
                             <ul>
+
+                                <li class="{{ Request::is('marks') ? 'active' : '' }}">
+                                    <a href="{{ route('marks') }}"><i class="fas fa-marker"></i> <span>Marks</span></a>
+                                </li>
                                 <li class="{{ Request::is('topics') ? 'active' : '' }}">
                                     <a href="{{ route('topics') }}"><i class="fas fa-calendar-alt"></i> <span>Topics &
                                             Activities</span></a>
@@ -119,9 +123,6 @@
                                 <li class="{{ Request::is('exams') ? 'active' : '' }}">
                                     <a href="{{ route('exams') }}"><i class="fas fa-file-alt"></i>
                                         <span>Exams</span></a>
-                                </li>
-                                <li class="{{ Request::is('marks') ? 'active' : '' }}">
-                                    <a href="{{ route('marks') }}"><i class="fas fa-marker"></i> <span>Marks</span></a>
                                 </li>
                             </ul>
                         </li>
