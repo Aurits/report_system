@@ -38,7 +38,7 @@ class EnrollmentsComponent extends Component
     {
         $this->validate([
             'studentsSelected' => 'required|array',
-            'students.*' => 'exists:students,id',
+            // 'students.*' => 'exists:students,id',
             'classId' => 'required|exists:class_models,id',
             'academicYearId' => 'required|exists:academic_years,id',
             'streamId' => 'nullable|exists:streams,id',
@@ -57,6 +57,6 @@ class EnrollmentsComponent extends Component
 
         Session::flash('message', 'Students enrolled successfully.');
 
-        $this->reset(['students', 'classId', 'academicYearId', 'streamId', 'houseId']);
+        $this->reset(['studentsSelected', 'classId', 'academicYearId', 'streamId', 'houseId']);
     }
 }
