@@ -12,12 +12,12 @@
                     <div class="modal-body">
                         <form wire:submit.prevent="updateTopic">
                             <div class="form-group local-forms">
-                                <label for="editTopicName">Name</label>
+                                <label for="editTopicName">Name <span class="login-danger">*</span></label>
                                 <input type="text" class="form-control" id="editTopicName" wire:model="topicDetails.name">
                                 @error('topicDetails.name') <span class="text-danger">{{ $message }}</span> @enderror
                             </div>
                             <div class="form-group local-forms">
-                                <label for="editTopicSubject">Subject</label>
+                                <label for="editTopicSubject">Subject <span class="login-danger">*</span></label>
                                 <select class="form-control" id="editTopicSubject" wire:model="topicDetails.subject_id">
                                     @foreach($subjects as $subject)
                                     <option value="{{ $subject->id }}">{{ $subject->name }}</option>
@@ -47,7 +47,7 @@
                         <form wire:submit.prevent="updateSubject">
                             <div class="form-group local-forms">
 
-                                <label for="editSubjectName">Name</label>
+                                <label for="editSubjectName">Name <span class="login-danger">*</span></label>
                                 <input type="text" class="form-control" id="editSubjectName" wire:model="subjectDetails.name">
                                 @error('subjectDetails.name') <span class="text-danger">{{ $message }}</span> @enderror
                             </div>
@@ -72,12 +72,12 @@
                     <div class="modal-body">
                         <form wire:submit.prevent="storeTopic">
                             <div class="form-group local-forms">
-                                <label for="addTopicName">Name</label>
+                                <label for="addTopicName">Name <span class="login-danger">*</span></label>
                                 <input type="text" class="form-control" id="addTopicName" wire:model="newTopic.name">
                                 @error('newTopic.name') <span class="text-danger">{{ $message }}</span> @enderror
                             </div>
-                            <div class="form-group">
-                                <label for="addTopicSubject">Subject</label>
+                            <div class="form-group local-forms">
+                                <label for="addTopicSubject">Subject <span class="login-danger">*</span></label>
                                 <select class="form-control" id="addTopicSubject" wire:model="newTopic.subject_id">
                                     <option value="">Select Subject</option>
                                     @foreach($subjects as $subject)
@@ -107,7 +107,7 @@
                     <div class="modal-body">
                         <form wire:submit.prevent="storeSubject">
                             <div class="form-group local-forms">
-                                <label for="addSubjectName">Name</label>
+                                <label for="addSubjectName">Name <span class="login-danger">*</span></label>
                                 <input type="text" class="form-control" id="addSubjectName" wire:model="newSubject.name">
                                 @error('newSubject.name') <span class="text-danger">{{ $message }}</span> @enderror
                             </div>
@@ -324,6 +324,8 @@
                                         </tr>
                                         @endforeach
                                         @endif
+
+
 
                                     </tbody>
                                 </table>

@@ -129,8 +129,8 @@
                 </div>
                 <div class="modal-body">
                     <form>
-                        <div class="mb-3">
-                            <label for="termName" class="form-label">Term Name</label>
+                        <div class="mb-3 local-forms">
+                            <label for="termName" class="form-label">Term Name <span class="login-danger">*</span></label>
                             <input type="text" wire:model.defer="termName" class="form-control" id="termName">
                             @error('termName') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
@@ -154,8 +154,8 @@
                 </div>
                 <div class="modal-body">
                     <form>
-                        <div class="mb-3">
-                            <label for="academicYearName" class="form-label">Academic Year</label>
+                        <div class="mb-3 local-forms">
+                            <label for="academicYearName" class="form-label">Academic Year <span class="login-danger">*</span></label>
                             <input type="text" wire:model.defer="academicYearName" class="form-control" id="academicYearName">
                             @error('academicYearName') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
@@ -225,8 +225,8 @@
                 </div>
                 <div class="modal-body">
                     <form>
-                        <div class="mb-3">
-                            <label for="editTermName" class="form-label">Term Name</label>
+                        <div class="mb-3 local-forms">
+                            <label for="editTermName" class="form-label">Term Name <span class="login-danger">*</span></label>
                             <input type="text" wire:model.defer="termName" class="form-control" id="editTermName">
                             @error('termName') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
@@ -247,11 +247,12 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="editAcademicYearModalLabel">Edit Academic Year</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
                 </div>
                 <div class="modal-body">
                     <form>
-                        <div class="mb-3">
-                            <label for="editAcademicYearName" class="form-label">Academic Year</label>
+                        <div class="mb-3 local-forms">
+                            <label for="editAcademicYearName" class="form-label">Academic Year <span class="login-danger">*</span></label>
                             <input type="text" wire:model.defer="academicYearName" class="form-control" id="editAcademicYearName">
                             @error('academicYearName') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>

@@ -178,8 +178,8 @@
             </div>
             <div class="modal-body">
                 <form>
-                    <div class="mb-3">
-                        <label for="className" class="form-label">Class Name</label>
+                    <div class="mb-3 local-forms">
+                        <label for="className" class="form-label">Class Name <span class="login-danger">*</span></label>
                         <input type="text" wire:model.defer="className" class="form-control" id="className">
                         @error('className') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
@@ -203,8 +203,8 @@
             </div>
             <div class="modal-body">
                 <form>
-                    <div class="mb-3">
-                        <label for="streamName" class="form-label">Stream Name</label>
+                    <div class="mb-3 local-forms">
+                        <label for="streamName" class="form-label">Stream Nam <span class="login-danger">*</span></label>
                         <input type="text" wire:model.defer="streamName" class="form-control" id="streamName">
                         @error('streamName') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
@@ -228,8 +228,8 @@
             </div>
             <div class="modal-body">
                 <form>
-                    <div class="mb-3">
-                        <label for="houseName" class="form-label">House Name</label>
+                    <div class="mb-3 local-forms">
+                        <label for="houseName" class="form-label">House Name <span class="login-danger">*</span></label>
                         <input type="text" wire:model.defer="houseName" class="form-control" id="houseName">
                         @error('houseName') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
@@ -323,8 +323,8 @@
             </div>
             <div class="modal-body">
                 <form>
-                    <div class="mb-3">
-                        <label for="editClassName" class="form-label">Class Name</label>
+                    <div class="mb-3 local-forms">
+                        <label for="editClassName" class="form-label">Class Name <span class="login-danger">*</span></label>
                         <input type="text" wire:model.defer="className" class="form-control" id="editClassName">
                         @error('editClassName') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
@@ -348,8 +348,8 @@
             </div>
             <div class="modal-body">
                 <form>
-                    <div class="mb-3">
-                        <label for="editStreamName" class="form-label">Stream Name</label>
+                    <div class="mb-3 local-forms">
+                        <label for="editStreamName" class="form-label">Stream Name <span class="login-danger">*</span></label>
                         <input type="text" wire:model.defer="streamName" class="form-control" id="editStreamName">
                         @error('editStreamName') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
@@ -371,20 +371,13 @@
                 <h5 class="modal-title" id="editHouseModalLabel">Edit House</h5>
 
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-
-
             </div>
+
 
             <div class="modal-body">
                 <form>
-
-
-
-
-
-
-                    <div class="mb-3">
-                        <label for="editHouseName" class="form-label">House Name</label>
+                    <div class="mb-3 local-forms">
+                        <label for="editHouseName" class="form-label">House Name <span class="login-danger">*</span></label>
                         <input type="text" wire:model.defer="houseName" class="form-control" id="editHouseName">
                         @error('editHouseName') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>

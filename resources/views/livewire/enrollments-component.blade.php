@@ -54,8 +54,8 @@
                         </div>
                         <div class="card-body">
                             <form wire:submit.prevent="enrollStudents">
-                                <div class="form-group">
-                                    <label>Select Class</label>
+                                <div class="form-group local-forms">
+                                    <label>Select Class <span class="login-danger">*</span></label>
                                     <select wire:model="classId" class="form-control">
                                         <option value="">-- Select Class --</option>
                                         @foreach($classes as $class)
@@ -65,8 +65,8 @@
                                     @error('classId') <span class="text-danger">{{ $message }}</span> @enderror
                                 </div>
 
-                                <div class="form-group">
-                                    <label>Select Academic Year</label>
+                                <div class="form-group local-forms">
+                                    <label>Select Academic Year <span class="login-danger">*</span></label>
                                     <select wire:model="academicYearId" class="form-control">
                                         <option value="">-- Select Academic Year --</option>
                                         @foreach($academicYears as $year)
@@ -76,8 +76,8 @@
                                     @error('academicYearId') <span class="text-danger">{{ $message }}</span> @enderror
                                 </div>
 
-                                <div class="form-group">
-                                    <label>Select Stream (optional)</label>
+                                <div class="form-group local-forms">
+                                    <label>Select Stream (optional) <span class="login-danger">*</span></label>
                                     <select wire:model="streamId" class="form-control">
                                         <option value="">-- Select Stream --</option>
                                         @foreach($streams as $stream)
@@ -87,8 +87,8 @@
                                     @error('streamId') <span class="text-danger">{{ $message }}</span> @enderror
                                 </div>
 
-                                <div class="form-group">
-                                    <label>Select House (optional)</label>
+                                <div class="form-group local-forms">
+                                    <label>Select House (optional) <span class="login-danger">*</span></label>
                                     <select wire:model="houseId" class="form-control">
                                         <option value="">-- Select House --</option>
                                         @foreach($houses as $house)
@@ -104,6 +104,8 @@
                     </div>
                 </div>
             </div>
+
+
         </div>
     </div>
 </div>
