@@ -88,57 +88,53 @@
                         <li class="menu-title">
                             <span>Main Menu</span>
                         </li>
-                        <li class="active">
-                            <a href="{{ route('dashboard') }}"><i class="feather-grid"></i>
-                                <span>Dashboard</span></a>
-                        </li>
-                        <li class="active">
+                        <li class="{{ Request::is('tdashboard') ? 'active' : '' }}">
                             <a href="{{ route('tdashboard') }}"><i class="feather-grid"></i>
                                 <span>Dashboard</span></a>
                         </li>
-                        <li class="">
+                        <li class="{{ Request::is('teachers') ? 'active' : '' }}">
                             <a href="{{ route('teachers') }}"><i class="feather-users"></i>
                                 <span>Teachers</span></a>
                         </li>
-                        <li>
+                        <li class="{{ Request::is('students') ? 'active' : '' }}">
                             <a href="{{ route('students') }}"><i class="fas fa-graduation-cap"></i>
                                 <span>Students</span></a>
                         </li>
-                        <li>
+                        <li class="{{ Request::is('classes') ? 'active' : '' }}">
                             <a href="{{ route('classes') }}"><i class="fas fa-users"></i> <span>Classes &
                                     Streams</span></a>
                         </li>
-                        <li>
+                        <li class="{{ Request::is('subjects') ? 'active' : '' }}">
                             <a href="{{ route('subjects') }}"><i class="fas fa-book-open"></i> <span>Subjects &
                                     Topics</span></a>
                         </li>
-                        <li class="submenu">
-                            <a href="#"><i class="fas fa-chalkboard-teacher"></i>
+                        <li class="submenu" >
+                            <a href="javascript:void(0);"><i class="fas fa-chalkboard-teacher"></i>
                                 <span>Assessments</span> <span class="menu-arrow"></span></a>
                             <ul>
-                                <li>
+                                <li class="{{ Request::is('topics') ? 'active' : '' }}">
                                     <a href="{{ route('topics') }}"><i class="fas fa-calendar-alt"></i> <span>Topics &
                                             Activities</span></a>
                                 </li>
-                                <li>
+                                <li class="{{ Request::is('exams') ? 'active' : '' }}">
                                     <a href="{{ route('exams') }}"><i class="fas fa-file-alt"></i>
                                         <span>Exams</span></a>
                                 </li>
-                                <li>
+                                <li class="{{ Request::is('marks') ? 'active' : '' }}">
                                     <a href="{{ route('marks') }}"><i class="fas fa-marker"></i> <span>Marks</span></a>
                                 </li>
                             </ul>
                         </li>
-                        <li>
+                        <li class="{{ Request::is('reports') ? 'active' : '' }}">
                             <a href="{{ route('reports') }}"><i class="fas fa-chart-line"></i> <span>Reports</span></a>
                         </li>
-                        <li>
+                        <li class="{{ Request::is('settings') ? 'active' : '' }}">
                             <a href="{{ route('settings') }}"><i class="fas fa-cogs"></i> <span>Settings</span></a>
                         </li>
-                        <li>
+                        <li class="{{ Request::is('profile') ? 'active' : '' }}">
                             <a href="{{ route('profile') }}"><i class="fas fa-user"></i> <span>Profile</span></a>
                         </li>
-                        <li>
+                        <li class="{{ Request::is('login') ? 'active' : '' }}">
                             <a href="{{ route('login') }}"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>
                         </li>
                     </ul>
