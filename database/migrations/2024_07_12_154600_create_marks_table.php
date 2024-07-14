@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('marks', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('student_id')->constrained()->onDelete('cascade');
-            $table->foreignId('subject_id')->constrained()->onDelete('cascade');
+            $table->foreignId('enrollment_id')->constrained()->onDelete('cascade'); // Reference to enrollments
             $table->foreignId('exam_id')->nullable()->constrained()->onDelete('cascade');
             $table->foreignId('activity_id')->nullable()->constrained()->onDelete('cascade');
             $table->integer('marks_obtained');

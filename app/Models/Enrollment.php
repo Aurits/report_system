@@ -9,11 +9,29 @@ class Enrollment extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['student_id', 'class_id', 'academic_year_id', 'stream_id', 'house_id'];
+    protected $fillable = [
+        'student_id',
+        'academic_year_id',
+        'term_id',
+        'class_id',
+        'stream_id',
+        'subject_id',
+        'house_id',
+    ];
 
     public function student()
     {
-        return $this->belongsTo(Student::class, 'student_id');
+        return $this->belongsTo(Student::class);
+    }
+
+    public function academicYear()
+    {
+        return $this->belongsTo(AcademicYear::class);
+    }
+
+    public function term()
+    {
+        return $this->belongsTo(Term::class);
     }
 
     public function classModel()
@@ -21,18 +39,22 @@ class Enrollment extends Model
         return $this->belongsTo(ClassModel::class, 'class_id');
     }
 
-    public function academicYear()
-    {
-        return $this->belongsTo(AcademicYear::class, 'academic_year_id');
-    }
-
     public function stream()
     {
-        return $this->belongsTo(Stream::class, 'stream_id');
+        return $this->belongsTo(Stream::class);
+    }
+    public function subject()
+    {
+        return $this->belongsTo(Subject::class);
     }
 
     public function house()
     {
-        return $this->belongsTo(House::class, 'house_id');
+        return $this->belongsTo(House::class);
+    }
+
+    public function marks()
+    {
+        return $this->hasMany(Mark::class);
     }
 }

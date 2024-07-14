@@ -9,16 +9,18 @@ class Mark extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['student_id', 'subject_id', 'exam_id', 'activity_id', 'marks_obtained', 'term_id', 'assessment_type'];
+    protected $fillable = [
+        'enrollment_id',
+        'exam_id',
+        'activity_id',
+        'marks_obtained',
+        'term_id',
+        'assessment_type',
+    ];
 
-    public function student()
+    public function enrollment()
     {
-        return $this->belongsTo(Student::class);
-    }
-
-    public function subject()
-    {
-        return $this->belongsTo(Subject::class);
+        return $this->belongsTo(Enrollment::class);
     }
 
     public function exam()
