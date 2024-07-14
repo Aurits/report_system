@@ -82,9 +82,9 @@
                                             <td>{{ $student->phone }}</td>
                                             <td class="text-end">
                                                 <div class="actions">
-                                                    <button class="btn btn-sm bg-success-light me-2" data-bs-toggle="modal" data-bs-target="#viewStudentModal" wire:click="view({{ $student->id }})"><i class="feather-eye"></i></button>
-                                                    <button class="btn btn-sm bg-success-light me-2" data-bs-toggle="modal" data-bs-target="#editStudentModal" wire:click="edit({{ $student->id }})"><i class="feather-edit"></i></button>
-                                                    <button class="btn btn-sm bg-danger-light" wire:click="delete({{ $student->id }})"><i class="feather-trash"></i></button>
+                                                    <button class="btn btn-sm bg-success-light me-2" data-bs-toggle="modal" data-bs-target="#viewStudentModal" wire:click="view({{ $student->id }})"><i class="feather-eye"></i> View</button>
+                                                    <button class="btn btn-sm bg-success-light me-2" data-bs-toggle="modal" data-bs-target="#editStudentModal" wire:click="edit({{ $student->id }})"><i class="feather-edit"></i> Edit</button>
+                                                    <button class="btn btn-sm bg-danger-light" wire:click="delete({{ $student->id }})"><i class="feather-trash"></i> Delete</button>
                                                 </div>
                                             </td>
                                         </tr>

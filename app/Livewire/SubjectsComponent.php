@@ -75,11 +75,13 @@ class SubjectsComponent extends Component
     public function viewTopic($id)
     {
         $this->topicDetails = Topic::with('subject')->find($id)->toArray();
+        $this->dispatch('openModal', ['id' => 'viewTopicModal']);
     }
 
     public function openEditTopicModal($id)
     {
         $this->topicDetails = Topic::find($id)->toArray();
+        $this->dispatch('openModal', ['id' => 'editTopicModal']);
     }
 
     public function updateTopic()

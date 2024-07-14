@@ -76,9 +76,10 @@
                                             <td>{{ $teacher->phone }}</td>
                                             <td class="text-end">
                                                 <div class="actions">
-                                                    <button wire:click="view({{ $teacher->id }})" class="btn btn-sm bg-success-light me-2"><i class="feather-eye"></i></button>
-                                                    <button wire:click="edit({{ $teacher->id }})" class="btn btn-sm bg-danger-light me-2"><i class="feather-edit"></i></button>
-                                                    <button wire:click="delete({{ $teacher->id }})" class="btn btn-sm bg-danger-light"><i class="feather-trash"></i></button>
+                                                    <button wire:click="view({{ $teacher->id }})" class="btn btn-sm bg-success-light me-2"><i class="feather-eye"></i> View</button>
+                                                    <button wire:click="edit({{ $teacher->id }})" class="btn btn-sm bg-danger-light me-2"><i class="feather-edit"></i> Edit</button>
+                                                    <button wire:click="delete({{ $teacher->id }})" class="btn btn-sm bg-danger-light"><i class="feather-trash"></i>
+                                                        Delete</button>
                                                 </div>
                                             </td>
                                         </tr>
