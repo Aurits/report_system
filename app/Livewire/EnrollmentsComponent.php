@@ -15,7 +15,7 @@ class EnrollmentsComponent extends Component
 {
 
 
-    public $students = [];
+    public $studentsSelected = [];
     public $classId;
     public $academicYearId;
     public $streamId;
@@ -29,13 +29,15 @@ class EnrollmentsComponent extends Component
         $streams = Stream::all();
         $houses = House::all();
 
+
+
         return view('livewire.enrollments-component', compact('students', 'classes', 'academicYears', 'streams', 'houses'));
     }
 
     public function enrollStudents()
     {
         $this->validate([
-            'students' => 'required|array',
+            'studentsSelected' => 'required|array',
             'students.*' => 'exists:students,id',
             'classId' => 'required|exists:class_models,id',
             'academicYearId' => 'required|exists:academic_years,id',
@@ -43,7 +45,7 @@ class EnrollmentsComponent extends Component
             'houseId' => 'nullable|exists:houses,id',
         ]);
 
-        foreach ($this->students as $studentId) {
+        foreach ($this->studentsSelected as $studentId) {
             Enrollment::create([
                 'student_id' => $studentId,
                 'class_id' => $this->classId,
