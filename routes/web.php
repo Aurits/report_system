@@ -2,6 +2,7 @@
 
 use App\Livewire\AdminDashboardComponent;
 use App\Livewire\ClassesComponent;
+use App\Livewire\EnrollmentsComponent;
 use App\Livewire\ExamsComponent;
 use App\Livewire\InboxComponent;
 use App\Livewire\MarksComponent;
@@ -28,7 +29,7 @@ Route::get('/subjects', SubjectsComponent::class)->name('subjects');
 Route::get('/settings', SettingsComponent::class)->name('settings');
 Route::get('/topics', TopicsComponent::class)->name('topics');
 Route::get('/exams', ExamsComponent::class)->name('exams');
-Route::get('/marks', MarksComponent::class)->name('marks');
+Route::get('/enrollments', EnrollmentsComponent::class)->name('enrollments');
 Route::get('/reports', ReportsComponent::class)->name('reports');
 Route::get('/inbox', InboxComponent::class)->name('inbox');
 

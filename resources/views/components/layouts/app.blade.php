@@ -113,8 +113,9 @@
                                 <span>Assessments</span> <span class="menu-arrow"></span></a>
                             <ul>
 
-                                <li class="{{ Request::is('marks') ? 'active' : '' }}">
-                                    <a href="{{ route('marks') }}"><i class="fas fa-marker"></i> <span>Marks</span></a>
+                                <li class="{{ Request::is('enrollments') ? 'active' : '' }}">
+                                    <a href="{{ route('enrollments') }}"><i class="fas fa-marker"></i>
+                                        <span>Enrollments</span></a>
                                 </li>
                                 <li class="{{ Request::is('topics') ? 'active' : '' }}">
                                     <a href="{{ route('topics') }}"><i class="fas fa-calendar-alt"></i> <span>Topics &
