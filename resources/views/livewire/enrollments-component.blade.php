@@ -20,7 +20,6 @@
                                 <div class="form-group">
                                     <label>Select Students</label>
                                     <select wire:model="students" class="form-control" multiple>
-
                                         @foreach($students as $student)
                                         {{$student}}
                                         <option value="{{ $student->id }}">{{ $student->name }}</option>
