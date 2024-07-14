@@ -209,7 +209,65 @@
 
             <!-- Subjects Table -->
             <div class="row">
-                <div class="col-sm-12">
+                <div class="col-md-6">
+                    <div class="card card-table comman-shadow">
+                        <div class="card-body">
+                            <div class="page-header">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h3 class="page-title">Topics</h3>
+                                    </div>
+                                    <div class="col-auto text-end float-end ms-auto download-grp">
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addTopicModal">
+                                            <i class="fas fa-plus"></i> Add Topic
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="table-responsive mt-4">
+                                <table class="table border-0 star-subject table-hover table-center mb-0 datatable table-striped">
+                                    <thead class="subject-thread">
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Subject</th>
+                                            <th class="text-end">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @if($topics)
+                                        @foreach ($topics as $topic)
+                                        <tr>
+                                            <td>{{ $topic->id }}</td>
+                                            <td>{{ $topic->name }}</td>
+                                            <td>{{ $topic->subject->name }}</td>
+                                            <td class="text-end">
+                                                <div class="actions">
+
+                                                    <button class="btn btn-sm bg-danger-light me-2" wire:click="openEditTopicModal({{ $topic->id }})" data-bs-toggle="modal" data-bs-target="#editTopicModal">
+                                                        <i class="feather-edit"></i> Edit
+
+                                                    </button>
+                                                    <button class="btn btn-sm bg-danger-light" wire:click="deleteTopic({{ $topic->id }})">
+                                                        <i class="feather-trash"></i> Delete
+                                                    </button>
+                                                </div>
+                                            </td>
+
+
+                                        </tr>
+                                        @endforeach
+                                        @endif
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-6">
                     <div class="card card-table comman-shadow">
                         <div class="card-body">
                             <div class="page-header">
@@ -274,71 +332,7 @@
                 </div>
             </div>
 
-            <!-- Spacing -->
-            <div style="height: 30px;"></div>
 
-            <!-- Topics Table -->
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="card card-table comman-shadow">
-                        <div class="card-body">
-                            <div class="page-header">
-                                <div class="row align-items-center">
-                                    <div class="col">
-                                        <h3 class="page-title">Topics</h3>
-                                    </div>
-                                    <div class="col-auto text-end float-end ms-auto download-grp">
-                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addTopicModal">
-                                            <i class="fas fa-plus"></i> Add Topic
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="table-responsive mt-4">
-                                <table class="table border-0 star-subject table-hover table-center mb-0 datatable table-striped">
-                                    <thead class="subject-thread">
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Name</th>
-                                            <th>Subject</th>
-                                            <th class="text-end">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @if($topics)
-                                        @foreach ($topics as $topic)
-                                        <tr>
-                                            <td>{{ $topic->id }}</td>
-                                            <td>{{ $topic->name }}</td>
-                                            <td>{{ $topic->subject->name }}</td>
-                                            <td class="text-end">
-                                                <div class="actions">
-
-                                                    <button class="btn btn-sm bg-danger-light me-2" wire:click="openEditTopicModal({{ $topic->id }})" data-bs-toggle="modal" data-bs-target="#editTopicModal">
-                                                        <i class="feather-edit"></i> Edit
-
-                                                    </button>
-                                                    <button class="btn btn-sm bg-danger-light" wire:click="deleteTopic({{ $topic->id }})">
-                                                        <i class="feather-trash"></i> Delete
-                                                    </button>
-                                                </div>
-                                            </td>
-
-
-                                        </tr>
-                                        @endforeach
-                                        @endif
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
         </div>
     </div>
 </div>

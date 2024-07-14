@@ -22,7 +22,7 @@
 
                 <!-- Class Table -->
                 <div class="row">
-                    <div class="col-sm-12">
+                    <div class="col-md-6">
                         <div class="card card-table comman-shadow">
                             <div class="card-body">
                                 <div class="page-header">
@@ -68,11 +68,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Stream Table -->
-                <div class="row">
-                    <div class="col-sm-12">
+                    <div class="col-md-6">
                         <div class="card card-table comman-shadow">
                             <div class="card-body">
                                 <div class="page-header">
@@ -120,11 +116,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- House Table -->
-                <div class="row">
-                    <div class="col-sm-12">
+                    <div class="col-md-6">
                         <div class="card card-table comman-shadow">
                             <div class="card-body">
                                 <div class="page-header">

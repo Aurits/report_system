@@ -114,7 +114,7 @@
                             <ul>
 
                                 <li class="{{ Request::is('enrollments') ? 'active' : '' }}">
-                                    <a href="{{ route('enrollments') }}"><i class="fas fa-marker"></i>
+                                    <a href="{{ route('enrollments') }}"><i class="fas fa-user-graduate"></i>
                                         <span>Enrollments</span></a>
                                 </li>
                                 <li class="{{ Request::is('topics') ? 'active' : '' }}">
