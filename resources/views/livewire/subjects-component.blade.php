@@ -11,12 +11,12 @@
                     </div>
                     <div class="modal-body">
                         <form wire:submit.prevent="updateTopic">
-                            <div class="form-group">
+                            <div class="form-group local-forms">
                                 <label for="editTopicName">Name</label>
                                 <input type="text" class="form-control" id="editTopicName" wire:model="topicDetails.name">
                                 @error('topicDetails.name') <span class="text-danger">{{ $message }}</span> @enderror
                             </div>
-                            <div class="form-group">
+                            <div class="form-group local-forms">
                                 <label for="editTopicSubject">Subject</label>
                                 <select class="form-control" id="editTopicSubject" wire:model="topicDetails.subject_id">
                                     @foreach($subjects as $subject)
@@ -45,7 +45,7 @@
                     </div>
                     <div class="modal-body">
                         <form wire:submit.prevent="updateSubject">
-                            <div class="form-group">
+                            <div class="form-group local-forms">
 
                                 <label for="editSubjectName">Name</label>
                                 <input type="text" class="form-control" id="editSubjectName" wire:model="subjectDetails.name">
@@ -71,7 +71,7 @@
                     </div>
                     <div class="modal-body">
                         <form wire:submit.prevent="storeTopic">
-                            <div class="form-group">
+                            <div class="form-group local-forms">
                                 <label for="addTopicName">Name</label>
                                 <input type="text" class="form-control" id="addTopicName" wire:model="newTopic.name">
                                 @error('newTopic.name') <span class="text-danger">{{ $message }}</span> @enderror
@@ -106,7 +106,7 @@
                     </div>
                     <div class="modal-body">
                         <form wire:submit.prevent="storeSubject">
-                            <div class="form-group">
+                            <div class="form-group local-forms">
                                 <label for="addSubjectName">Name</label>
                                 <input type="text" class="form-control" id="addSubjectName" wire:model="newSubject.name">
                                 @error('newSubject.name') <span class="text-danger">{{ $message }}</span> @enderror
@@ -324,6 +324,7 @@
                                         </tr>
                                         @endforeach
                                         @endif
+
                                     </tbody>
                                 </table>
                             </div>

@@ -116,18 +116,18 @@
                 </div>
                 <div class="modal-body">
                     <form wire:submit.prevent="store">
-                        <div class="mb-3">
-                            <label for="student_id" class="form-label">Student ID</label>
+                        <div class="mb-3 local-forms">
+                            <label for="student_id" class="form-label">Student ID <span class="login-danger">*</span></label>
                             <input type="text" class="form-control" id="student_id" wire:model="student_id">
                             @error('student_id') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Name</label>
+                        <div class="mb-3 local-forms">
+                            <label for="name" class="form-label">Name <span class="login-danger">*</span></label>
                             <input type="text" class="form-control" id="name" wire:model="name">
                             @error('name') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
-                        <div class="mb-3">
-                            <label for="gender" class="form-label">Gender</label>
+                        <div class="mb-3 local-forms">
+                            <label for="gender" class="form-label">Gender <span class="login-danger">*</span></label>
                             <select class="form-select" id="gender" wire:model="gender">
                                 <option value="">Select Gender</option>
                                 <option value="Male">Male</option>
@@ -136,18 +136,18 @@
                             </select>
                             @error('gender') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
+                        <div class="mb-3 local-forms">
+                            <label for="email" class="form-label">Email <span class="login-danger">*</span></label>
                             <input type="email" class="form-control" id="email" wire:model="email">
                             @error('email') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
-                        <div class="mb-3">
-                            <label for="phone" class="form-label">Phone</label>
+                        <div class="mb-3 local-forms">
+                            <label for="phone" class="form-label">Phone <span class="login-danger">*</span></label>
                             <input type="text" class="form-control" id="phone" wire:model="phone">
                             @error('phone') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
-                        <div class="mb-3">
-                            <label for="class_id" class="form-label">Class</label>
+                        <div class="mb-3 local-forms">
+                            <label for="class_id" class="form-label">Class <span class="login-danger">*</span></label>
                             <select class="form-select" id="class_id" wire:model="class_id">
                                 <option value="">Select Class</option>
                                 @foreach($classes as $class)
@@ -182,17 +182,17 @@
                     </div>
                     @endif
                     <form wire:submit.prevent="update">
-                        <div class="mb-3">
+                        <div class="mb-3 local-forms">
                             <label for="student_id" class="form-label">Student ID</label>
                             <input type="text" class="form-control" id="student_id" wire:model="student_id">
                             @error('student_id') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 local-forms">
                             <label for="name" class="form-label">Name</label>
                             <input type="text" class="form-control" id="name" wire:model="name">
                             @error('name') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 local-forms">
                             <label for="gender" class="form-label">Gender</label>
                             <select class="form-select" id="gender" wire:model="gender">
                                 <option value="">Select Gender</option>
@@ -202,17 +202,17 @@
                             </select>
                             @error('gender') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 local-forms">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" class="form-control" id="email" wire:model="email">
                             @error('email') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 local-forms">
                             <label for="phone" class="form-label">Phone</label>
                             <input type="text" class="form-control" id="phone" wire:model="phone">
                             @error('phone') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 local-forms">
                             <label for="class_id" class="form-label">Class</label>
                             <select class="form-select" id="class_id" wire:model="class_id">
                                 <option value="">Select Class</option>
