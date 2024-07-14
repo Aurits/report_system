@@ -18,6 +18,7 @@ return new class extends Migration
             $table->enum('gender', ['Male', 'Female', 'Others'])->nullable();;
             $table->string('email')->nullable();;
             $table->string('phone')->nullable();
+            $table->foreignId('class_id')->nullable()->constrained('class_models')->onDelete('set null');
             $table->timestamps();
         });
     }

@@ -66,6 +66,7 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Name</th>
+                                            <th>Class</th>
                                             <th>Gender</th>
                                             <th>Email</th>
                                             <th>Phone</th>
@@ -77,6 +78,7 @@
                                         <tr>
                                             <td>{{ $student->student_id }}</td>
                                             <td>{{ $student->name }}</td>
+                                            <td>{{ $student->classModel->name ?? 'N/A' }}</td>
                                             <td>{{ $student->gender }}</td>
                                             <td>{{ $student->email }}</td>
                                             <td>{{ $student->phone }}</td>
@@ -144,6 +146,16 @@
                             <input type="text" class="form-control" id="phone" wire:model="phone">
                             @error('phone') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
+                        <div class="mb-3">
+                            <label for="class_id" class="form-label">Class</label>
+                            <select class="form-select" id="class_id" wire:model="class_id">
+                                <option value="">Select Class</option>
+                                @foreach($classes as $class)
+                                <option value="{{ $class->id }}">{{ $class->name }}</option>
+                                @endforeach
+                            </select>
+                            @error('class_id') <span class="text-danger">{{ $message }}</span> @enderror
+                        </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-primary">Save</button>
@@ -153,6 +165,7 @@
             </div>
         </div>
     </div>
+
 
     <!-- Edit Student Modal -->
     <div wire:ignore.self class="modal fade" id="editStudentModal" tabindex="-1" aria-labelledby="editStudentModalLabel" aria-hidden="true">
@@ -199,6 +212,16 @@
                             <input type="text" class="form-control" id="phone" wire:model="phone">
                             @error('phone') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
+                        <div class="mb-3">
+                            <label for="class_id" class="form-label">Class</label>
+                            <select class="form-select" id="class_id" wire:model="class_id">
+                                <option value="">Select Class</option>
+                                @foreach($classes as $class)
+                                <option value="{{ $class->id }}">{{ $class->name }}</option>
+                                @endforeach
+                            </select>
+                            @error('class_id') <span class="text-danger">{{ $message }}</span> @enderror
+                        </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-primary">Update</button>
@@ -208,6 +231,7 @@
             </div>
         </div>
     </div>
+
 
     <!-- View Student Modal -->
     <div class="modal fade" id="viewStudentModal" tabindex="-1" aria-labelledby="viewStudentModalLabel" aria-hidden="true" wire:ignore.self>
@@ -242,6 +266,9 @@
                                 <div class="mb-3">
                                     <strong>Phone:</strong> {{$studentToView['phone']}}
                                 </div>
+                                <div class="mb-3">
+                                    <strong>Class:</strong> {{$studentToView['classModel']['name'] ?? 'N/A'}}
+                                </div>
                                 @else
                                 <div class="mb-3">
                                     <p>No student data available.</p>
@@ -254,6 +281,7 @@
             </div>
         </div>
     </div>
+
 
     <!-- Bulk Upload Modal -->
     <div wire:ignore.self class="modal fade" id="bulkUploadModal" tabindex="-1" aria-labelledby="bulkUploadModalLabel" aria-hidden="true">

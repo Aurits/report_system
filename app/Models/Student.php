@@ -9,7 +9,7 @@ class Student extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['student_id', 'name', 'gender', 'email', 'phone'];
+    protected $fillable = ['student_id', 'name', 'gender', 'email', 'phone', 'class_id'];
 
     public function enrollments()
     {
@@ -34,5 +34,10 @@ class Student extends Model
     public function house()
     {
         return $this->belongsTo(House::class)->withDefault(); // Make house relationship optional with withDefault()
+    }
+
+    public function classModel()
+    {
+        return $this->belongsTo(ClassModel::class, 'class_id')->withDefault(); // Make class relationship optional with withDefault()
     }
 }
