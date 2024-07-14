@@ -106,10 +106,10 @@ class SettingsComponent extends Component
             'academicYearName' => 'required',
         ]);
 
-        dd($this->academicYearName);
+        // dd($this->academicYearName);
 
         AcademicYear::create([
-            'name' => $this->academicYearName,
+            'year' => $this->academicYearName,
         ]);
 
         Session::flash('message', 'Academic Year created successfully.');
@@ -122,7 +122,7 @@ class SettingsComponent extends Component
     {
         $academicYear = AcademicYear::findOrFail($id);
         $this->academicYearId = $id;
-        $this->academicYearName = $academicYear->name;
+        $this->academicYearName = $academicYear->year;
         $this->openAcademicYearModal();
     }
 
@@ -134,7 +134,7 @@ class SettingsComponent extends Component
 
         $academicYear = AcademicYear::findOrFail($this->academicYearId);
         $academicYear->update([
-            'name' => $this->academicYearName,
+            'year' => $this->academicYearName,
         ]);
 
         Session::flash('message', 'Academic Year updated successfully.');

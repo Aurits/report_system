@@ -95,7 +95,7 @@
                                             @foreach($academicYears as $academicYear)
                                             <tr>
                                                 <td>{{ $academicYear->id }}</td>
-                                                <td>{{ $academicYear->name }}</td>
+                                                <td>{{ $academicYear->year }}</td>
                                                 <td class="text-end">
                                                     <div class="actions">
                                                         <button wire:click="viewAcademicYear({{ $academicYear->id }})" class="btn btn-sm bg-success-light me-2" data-bs-toggle="modal" data-bs-target="#viewAcademicYearModal"><i class="feather-eye"></i> View</button>
@@ -204,7 +204,7 @@
                     <!-- Display academic year details here -->
                     @if($selectedAcademicYear)
                     <p>ID: {{ $selectedAcademicYear->id }}</p>
-                    <p>Name: {{ $selectedAcademicYear->name }}</p>
+                    <p>Year: {{ $selectedAcademicYear->year }}</p>
                     <!-- Add more fields as per your academic year details -->
                     @endif
                 </div>
