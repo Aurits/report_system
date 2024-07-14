@@ -88,8 +88,8 @@
                         <li class="menu-title">
                             <span>Main Menu</span>
                         </li>
-                        <li class="{{ Request::is('tdashboard') ? 'active' : '' }}">
-                            <a href="{{ route('tdashboard') }}"><i class="feather-grid"></i>
+                        <li class="{{ Request::is('dashboard') ? 'active' : '' }}">
+                            <a href="{{ route('dashboard') }}"><i class="feather-grid"></i>
                                 <span>Dashboard</span></a>
                         </li>
                         <li class="{{ Request::is('teachers') ? 'active' : '' }}">
@@ -108,7 +108,7 @@
                             <a href="{{ route('subjects') }}"><i class="fas fa-book-open"></i> <span>Subjects &
                                     Topics</span></a>
                         </li>
-                        <li class="submenu" >
+                        <li class="submenu">
                             <a href="javascript:void(0);"><i class="fas fa-chalkboard-teacher"></i>
                                 <span>Assessments</span> <span class="menu-arrow"></span></a>
                             <ul>

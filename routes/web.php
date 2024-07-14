@@ -19,8 +19,8 @@ Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
 
-Route::get('/dashboard', AdminDashboardComponent::class)->name('dashboard')->middleware(['auth', 'verified']);
-Route::get('/tdashboard', TeacherDashboardComponent::class)->name('tdashboard')->middleware(['auth', 'verified']);
+Route::get('/tdashboard', AdminDashboardComponent::class)->name('tdashboard')->middleware(['auth', 'verified']);
+Route::get('/dashboard', TeacherDashboardComponent::class)->name('dashboard')->middleware(['auth', 'verified']);
 Route::get('/students', StudentsComponent::class)->name('students');
 Route::get('/teachers', TeachersComponent::class)->name('teachers');
 Route::get('/classes', ClassesComponent::class)->name('classes');
