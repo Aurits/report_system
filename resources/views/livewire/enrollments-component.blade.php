@@ -77,6 +77,17 @@
                                 </div>
 
                                 <div class="form-group local-forms">
+                                    <label>Select Term <span class="login-danger">*</span></label>
+                                    <select wire:model="termId" class="form-control">
+                                        <option value="">-- Select Term --</option>
+                                        @foreach($terms as $term)
+                                        <option value="{{ $term->id }}">{{ $term->name }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('termId') <span class="text-danger">{{ $message }}</span> @enderror
+                                </div>
+
+                                <div class="form-group local-forms">
                                     <label>Select Stream (optional) <span class="login-danger">*</span></label>
                                     <select wire:model="streamId" class="form-control">
                                         <option value="">-- Select Stream --</option>
@@ -85,6 +96,17 @@
                                         @endforeach
                                     </select>
                                     @error('streamId') <span class="text-danger">{{ $message }}</span> @enderror
+                                </div>
+
+                                <div class="form-group local-forms">
+                                    <label>Select Subject <span class="login-danger">*</span></label>
+                                    <select wire:model="subjectId" class="form-control">
+                                        <option value="">-- Select Subject --</option>
+                                        @foreach($subjects as $subject)
+                                        <option value="{{ $subject->id }}">{{ $subject->name }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('subjectId') <span class="text-danger">{{ $message }}</span> @enderror
                                 </div>
 
                                 <div class="form-group local-forms">
@@ -104,6 +126,8 @@
                     </div>
                 </div>
             </div>
+
+
 
 
         </div>
