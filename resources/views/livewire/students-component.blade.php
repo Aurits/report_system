@@ -267,7 +267,7 @@
                                     <strong>Phone:</strong> {{$studentToView['phone']}}
                                 </div>
                                 <div class="mb-3">
-                                    <strong>Class:</strong> {{$studentToView['classModel']['name'] ?? 'N/A'}}
+                                    <strong>Class:</strong> {{$studentToView['class']['name'] ?? 'N/A'}}
                                 </div>
                                 @else
                                 <div class="mb-3">
@@ -318,6 +318,8 @@
 
 
 </div>
+
+
 
 
 

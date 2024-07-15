@@ -14,7 +14,7 @@ class StudentsTemplateExport implements FromCollection
     public function collection()
     {
         return new Collection([
-            ['student_id', 'name', 'gender', 'email', 'phone'],
+            ['student_id', 'name', 'gender', 'email', 'phone', 'class_id'],
         ]);
     }
 }
