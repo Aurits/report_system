@@ -42,6 +42,7 @@
                                                     <th>Name</th>
                                                     <th>Class</th>
                                                     <th>Select</th>
+                                                    <th>Actions</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -52,6 +53,11 @@
                                                     <td>{{ $student->classModel->name }}</td>
                                                     <td>
                                                         <input type="checkbox" wire:model="studentsSelected" value="{{ $student->id }}">
+                                                    </td>
+                                                    <td>
+                                                        <a href="{{ route('history', ['studentId' => $student->id]) }}" class="btn btn-sm bg-success-light me-2">
+                                                            <i class="feather-eye"></i> View
+                                                        </a>
                                                     </td>
                                                 </tr>
                                                 @endforeach
@@ -165,6 +171,8 @@
                                     <option value="{{ $house->id }}">{{ $house->name }}</option>
                                     @endforeach
                                 </select>
+
+
                                 @error('houseId') <span class="text-danger">{{ $message }}</span> @enderror
                             </div>
 
@@ -175,5 +183,6 @@
             </div>
         </div>
     </div>
-</div>
+
+
 </div>

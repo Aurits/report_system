@@ -5,16 +5,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <title>Admin Dashboard</title>
-    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <link rel="shortcut icon" href="{{ asset('assets/img/favicon.png')}}">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/plugins/feather/feather.css">
-    <link rel="stylesheet" href="assets/plugins/icons/flags/flags.css">
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/plugins/datatables/datatables.min.css" />
-    <link rel="stylesheet" href="assets/plugins/simple-calendar/simple-calendar.css" />
+    <link rel="stylesheet" href="{{ asset('assets/plugins/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/feather/feather.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/icons/flags/flags.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome/css/fontawesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/datatables/datatables.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/simple-calendar/simple-calendar.css') }}">
+
     @livewireStyles()
 </head>
 
@@ -26,10 +27,10 @@
 
             <div class="header-left">
                 <a href="{{ route('/') }}" class="logo">
-                    <img src="assets/img/logo.png" alt="Logo">
+                    <img src="{{ asset('assets/img/logo.png')}}" alt="Logo">
                 </a>
                 <a href="{{ route('/') }}" class="logo logo-small">
-                    <img src="assets/img/logo-small.png" alt="Logo" width="30" height="30">
+                    <img src="{{ asset('assets/img/logo-small.png')}}" alt="Logo" width="30" height="30">
                 </a>
             </div>
             <div class="menu-toggle">
@@ -52,7 +53,7 @@
 
                 <li class="nav-item zoom-screen me-2">
                     <a href="#" class="nav-link header-nav-list win-maximize">
-                        <img src="assets/img/icons/header-icon-04.svg" alt="">
+                        <img src="{{ asset('assets/img/icons/header-icon-04.svg')}}" alt="">
                     </a>
                 </li>
 
@@ -163,48 +164,25 @@
             modal.show();
         });
     </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="assets/js/jquery-3.6.0.min.js"></script>
-    <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/plugins/datatables/datatables.min.js"></script>
-    <script src="assets/js/feather.min.js"></script>
 
-    <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-    <script src="assets/plugins/apexchart/apexcharts.min.js"></script>
-    <script src="assets/plugins/apexchart/chart-data.js"></script>
-    <script src="assets/plugins/c3-chart/d3.v5.min.js"></script>
-    <script src="assets/plugins/c3-chart/c3.min.js"></script>
-    <script src="assets/plugins/c3-chart/chart-data.js"></script>
-    <script src="assets/plugins/countup/jquery.missofis-countdown.js"></script>
-    <script src="assets/plugins/simple-calendar/jquery.simple-calendar.js"></script>
-    <script src="assets/js/calander.js"></script>
-
-    <script src="assets/js/circle-progress.min.js"></script>
-
+    <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables/datatables.min.js') }}"></script>
+    <script src="{{ asset('assets/js/feather.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/apexchart/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/apexchart/chart-data.js') }}"></script>
+    <script src="{{ asset('assets/plugins/c3-chart/d3.v5.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/c3-chart/c3.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/c3-chart/chart-data.js') }}"></script>
+    <script src="{{ asset('assets/plugins/countup/jquery.missofis-countdown.js') }}"></script>
+    <script src="{{ asset('assets/plugins/simple-calendar/jquery.simple-calendar.js') }}"></script>
+    <script src="{{ asset('assets/js/calander.js') }}"></script>
+    <script src="{{ asset('assets/js/circle-progress.min.js') }}"></script>
+    <script src="{{ asset('assets/js/script.js') }}"></script>
 
 
-    <script src="assets/js/script.js"></script>
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </html>

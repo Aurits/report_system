@@ -15,7 +15,6 @@ use Livewire\Component;
 
 class EnrollmentsComponent extends Component
 {
-
     public $studentsSelected = [];
     public $subjectsSelected = [];
     public $classId;
@@ -25,9 +24,15 @@ class EnrollmentsComponent extends Component
     public $houseId;
     public $studentsByClass = [];
 
+    public $enrollmentHistory;
+    public $processedHistory = []; // Initialize the property
+
+
+
     public function mount()
     {
         $this->loadStudentsByClass();
+        $this->showEnrollmentHistory(); // Load history during mount
     }
 
     public function loadStudentsByClass()
@@ -58,6 +63,62 @@ class EnrollmentsComponent extends Component
         }
     }
 
+    public function showEnrollmentHistory()
+    {
+        $enrollmentHistory = Enrollment::with(['academicYear', 'term', 'classModel', 'stream', 'house', 'subject'])->get();
+
+        $processedHistory = [];
+        $currentYear = '';
+        $currentTerm = '';
+        $currentStream = '';
+        $currentHouse = '';
+        $yearCount = 0;
+        $termCount = 0;
+        $streamCount = 0;
+        $houseCount = 0;
+
+        foreach ($enrollmentHistory as $history) {
+            if ($history->academicYear->year !== $currentYear) {
+                $currentYear = $history->academicYear->year;
+                $yearCount = $enrollmentHistory->where('academic_year_id', $history->academic_year_id)->count();
+            }
+
+            if ($history->term->name !== $currentTerm) {
+                $currentTerm = $history->term->name;
+                $termCount = $enrollmentHistory->where('academic_year_id', $history->academic_year_id)
+                    ->where('term_id', $history->term_id)
+                    ->count();
+            }
+
+            if ($history->stream->name !== $currentStream) {
+                $currentStream = $history->stream->name;
+                $streamCount = $enrollmentHistory->where('academic_year_id', $history->academic_year_id)
+                    ->where('term_id', $history->term_id)
+                    ->where('stream_id', $history->stream_id)
+                    ->count();
+            }
+
+            if ($history->house->name !== $currentHouse) {
+                $currentHouse = $history->house->name;
+                $houseCount = $enrollmentHistory->where('academic_year_id', $history->academic_year_id)
+                    ->where('term_id', $history->term_id)
+                    ->where('stream_id', $history->stream_id)
+                    ->where('house_id', $history->house_id)
+                    ->count();
+            }
+
+            $processedHistory[] = [
+                'history' => $history,
+                'yearRowspan' => $yearCount,
+                'termRowspan' => $termCount,
+                'streamRowspan' => $streamCount,
+                'houseRowspan' => $houseCount,
+            ];
+        }
+
+        $this->processedHistory = $processedHistory;
+    }
+
     public function enrollStudents()
     {
         $this->validate([
@@ -69,15 +130,33 @@ class EnrollmentsComponent extends Component
 
         foreach ($this->studentsSelected as $studentId) {
             foreach ($this->subjectsSelected as $subjectId) {
-                Enrollment::create([
+                // Check if the enrollment already exists
+                $enrollment = Enrollment::where([
                     'student_id' => $studentId,
                     'class_id' => $this->classId,
                     'academic_year_id' => $this->academicYearId,
                     'term_id' => $this->termId,
                     'subject_id' => $subjectId,
-                    'stream_id' => $this->streamId,
-                    'house_id' => $this->houseId,
-                ]);
+                ])->first();
+
+                if ($enrollment) {
+                    // Update the existing enrollment
+                    $enrollment->update([
+                        'stream_id' => $this->streamId,
+                        'house_id' => $this->houseId,
+                    ]);
+                } else {
+                    // Create a new enrollment
+                    Enrollment::create([
+                        'student_id' => $studentId,
+                        'class_id' => $this->classId,
+                        'academic_year_id' => $this->academicYearId,
+                        'term_id' => $this->termId,
+                        'subject_id' => $subjectId,
+                        'stream_id' => $this->streamId,
+                        'house_id' => $this->houseId,
+                    ]);
+                }
             }
         }
 
@@ -97,6 +176,7 @@ class EnrollmentsComponent extends Component
             'terms' => Term::all(),
             'streams' => Stream::all(),
             'houses' => House::all(),
+            'processedHistory' => $this->processedHistory, // Pass processedHistory to the view
         ]);
     }
 }

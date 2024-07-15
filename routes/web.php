@@ -2,6 +2,7 @@
 
 use App\Livewire\AdminDashboardComponent;
 use App\Livewire\ClassesComponent;
+use App\Livewire\EnrollmentHistoryComponent;
 use App\Livewire\EnrollmentsComponent;
 use App\Livewire\ExamsComponent;
 use App\Livewire\InboxComponent;
@@ -32,6 +33,9 @@ Route::get('/exams', ExamsComponent::class)->name('exams');
 Route::get('/enrollments', EnrollmentsComponent::class)->name('enrollments');
 Route::get('/reports', ReportsComponent::class)->name('reports');
 Route::get('/inbox', InboxComponent::class)->name('inbox');
+Route::get('/history/{studentId}', EnrollmentHistoryComponent::class)
+    ->name('history');
+
 
 
 require __DIR__ . '/auth.php';
