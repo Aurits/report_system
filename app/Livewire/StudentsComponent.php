@@ -156,7 +156,7 @@ class StudentsComponent extends Component
     public function render()
     {
         return view('livewire.students-component', [
-            'students' => Student::with('classModel')->paginate(100), // Load the class relationship
+            'students' => Student::with('classModel')->paginate(2000), // Load the class relationship
         ]);
     }
 }
