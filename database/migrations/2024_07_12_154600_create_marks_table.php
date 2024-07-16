@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('marks', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('enrollment_id')->constrained()->onDelete('cascade'); // Reference to enrollments
+            $table->foreignId('enrollment_id')->constrained()->onDelete('cascade');
             $table->foreignId('exam_id')->nullable()->constrained()->onDelete('cascade');
-            $table->foreignId('activity_id')->nullable()->constrained()->onDelete('cascade');
+            $table->foreignId('activity_id')->nullable()->constrained()->onDelete('cascade'); //looks at the topic
             $table->integer('marks_obtained');
             $table->foreignId('term_id')->constrained()->onDelete('cascade');
-            $table->enum('assessment_type', ['Exam', 'Activity']);
+            $table->enum('assessment_type', ['Exam', 'Project', 'AOI', 'Activity']);
             $table->timestamps();
         });
     }

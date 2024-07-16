@@ -3,20 +3,24 @@
 namespace App\Livewire;
 
 use App\Models\AcademicYear;
-use Livewire\Component;
+use App\Models\Exam;
 use App\Models\Term;
 use Illuminate\Support\Facades\Session;
+use Livewire\Component;
 
 class SettingsComponent extends Component
 {
     public $termId, $termName;
     public $academicYearId, $academicYearName;
+    public $examId, $examName;
     public $isTermModalOpen = false;
     public $isAcademicYearModalOpen = false;
+    public $isExamModalOpen = false;
 
     protected $rules = [
         'termName' => 'required',
         'academicYearName' => 'required',
+        'examName' => 'required',
     ];
 
     // Methods for managing terms
@@ -149,6 +153,71 @@ class SettingsComponent extends Component
         Session::flash('message', 'Academic Year deleted successfully.');
     }
 
+
+    // Methods for managing exams
+    public function createExam()
+    {
+        $this->resetExamFields();
+        $this->openExamModal();
+    }
+
+    public function openExamModal()
+    {
+        $this->isExamModalOpen = true;
+    }
+
+    public function closeExamModal()
+    {
+        $this->isExamModalOpen = false;
+    }
+
+    public function storeExam()
+    {
+        $this->validate([
+            'examName' => 'required',
+        ]);
+
+        Exam::create([
+            'name' => $this->examName,
+        ]);
+
+        Session::flash('message', 'Exam created successfully.');
+
+        $this->dispatch('closeExamModal'); // Emit event to close modal
+        $this->resetExamFields();
+    }
+
+    public function editExam($id)
+    {
+        $exam = Exam::findOrFail($id);
+        $this->examId = $id;
+        $this->examName = $exam->name;
+        $this->openExamModal();
+    }
+
+    public function updateExam()
+    {
+        $this->validate([
+            'examName' => 'required',
+        ]);
+
+        $exam = Exam::findOrFail($this->examId);
+        $exam->update([
+            'name' => $this->examName,
+        ]);
+
+        Session::flash('message', 'Exam updated successfully.');
+
+        $this->dispatch('closeExamModal'); // Emit event to close modal
+        $this->resetExamFields();
+    }
+
+    public function deleteExam($id)
+    {
+        Exam::find($id)->delete();
+        Session::flash('message', 'Exam deleted successfully.');
+    }
+
     // Reset fields methods
     private function resetTermFields()
     {
@@ -160,8 +229,14 @@ class SettingsComponent extends Component
         $this->academicYearName = '';
     }
 
+    private function resetExamFields()
+    {
+        $this->examName = '';
+    }
+
     public $selectedTerm;
     public $selectedAcademicYear;
+    public $selectedExam;
 
     public function viewTerm($termId)
     {
@@ -178,11 +253,19 @@ class SettingsComponent extends Component
         $this->dispatch('openAcademicYearModal');
     }
 
+    public function viewExam($examId)
+    {
+        $exam = Exam::find($examId);
+        $this->selectedExam = $exam;
+        $this->dispatch('openExamModal');
+    }
+
     public function render()
     {
         $terms = Term::all();
         $academicYears = AcademicYear::all();
+        $exams = Exam::all();
 
-        return view('livewire.settings-component', compact('terms', 'academicYears'));
+        return view('livewire.settings-component', compact('terms', 'academicYears', 'exams'));
     }
 }

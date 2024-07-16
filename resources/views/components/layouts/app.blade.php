@@ -119,7 +119,7 @@
                                         <span>Enrollments</span></a>
                                 </li>
                                 <li class="{{ Request::is('topics') ? 'active' : '' }}">
-                                    <a href="{{ route('topics') }}"><i class="fas fa-calendar-alt"></i> <span>Topics &
+                                    <a href="{{ route('topics') }}"><i class="fas fa-calendar-alt"></i> <span>AOIs &
                                             Activities</span></a>
                                 </li>
                                 <li class="{{ Request::is('exams') ? 'active' : '' }}">
@@ -183,6 +183,7 @@
 
 
 </body>
+
 
 
 </html>
