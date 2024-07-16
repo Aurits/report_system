@@ -17,6 +17,11 @@
                                 @error('topicDetails.name') <span class="text-danger">{{ $message }}</span> @enderror
                             </div>
                             <div class="form-group local-forms">
+                                <label for="editTopicOutcome">Outcome <span class="login-danger">*</span></label>
+                                <input type="text" class="form-control" id="editTopicOutcome" wire:model="topicDetails.outcome">
+                                @error('topicDetails.name') <span class="text-danger">{{ $message }}</span> @enderror
+                            </div>
+                            <div class="form-group local-forms">
                                 <label for="editTopicSubject">Subject <span class="login-danger">*</span></label>
                                 <select class="form-control" id="editTopicSubject" wire:model="topicDetails.subject_id">
                                     @foreach($subjects as $subject)
@@ -238,7 +243,7 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Name</th>
-                                            <th>Outcome</th>
+                                            <!-- <th>Outcome</th> -->
                                             <th>Subject</th>
                                             <th class="text-end">Action</th>
                                         </tr>
@@ -249,7 +254,7 @@
                                         <tr>
                                             <td>{{ $topic->id }}</td>
                                             <td>{{ $topic->name }}</td>
-                                            <td>{{ $topic->outcome || '' }}</td>
+                                            <!-- <td>{{ $topic->outcome || '' }}</td> -->
                                             <td>{{ $topic->subject->name }}</td>
                                             <td class="text-end">
                                                 <div class="actions">
@@ -333,6 +338,7 @@
                                         </tr>
                                         @endforeach
                                         @endif
+
 
 
 

@@ -14,12 +14,13 @@ class SubjectsComponent extends Component
     public $newSubject = ['name' => ''];
     public $subjectDetails = ['id' => '', 'name' => ''];
     public $newTopic = ['name' => '', 'outcome' => '', 'subject_id' => ''];
-    public $topicDetails = ['id' => '', 'name' => '', 'subject' => ['name' => ''], 'subject_id' => ''];
+    public $topicDetails = ['id' => '', 'name' => '', 'outcome' => '', 'subject' => ['name' => ''], 'subject_id' => ''];
 
     protected $rules = [
         'newSubject.name' => 'required|string|max:255',
         'subjectDetails.name' => 'required|string|max:255',
         'newTopic.name' => 'required|string|max:255',
+        'newTopic.outcome' => 'required|string|max:255',
         'newTopic.subject_id' => 'required|exists:subjects,id',
         'topicDetails.name' => 'required|string|max:255',
         'topicDetails.subject_id' => 'required|exists:subjects,id',
@@ -64,6 +65,7 @@ class SubjectsComponent extends Component
     {
         $this->validate([
             'newTopic.name' => 'required|string|max:255',
+            'newTopic.outcome' => 'required|string|max:255',
             'newTopic.subject_id' => 'required|exists:subjects,id',
         ]);
 
@@ -88,6 +90,7 @@ class SubjectsComponent extends Component
     {
         $this->validate([
             'topicDetails.name' => 'required|string|max:255',
+            'topicDetails.outcome' => 'required|string|max:255',
             'topicDetails.subject_id' => 'required|exists:subjects,id',
         ]);
 
