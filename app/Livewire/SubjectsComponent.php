@@ -13,7 +13,7 @@ class SubjectsComponent extends Component
     public $topics;
     public $newSubject = ['name' => ''];
     public $subjectDetails = ['id' => '', 'name' => ''];
-    public $newTopic = ['name' => '', 'subject_id' => ''];
+    public $newTopic = ['name' => '', 'outcome' => '', 'subject_id' => ''];
     public $topicDetails = ['id' => '', 'name' => '', 'subject' => ['name' => ''], 'subject_id' => ''];
 
     protected $rules = [

@@ -76,6 +76,13 @@
                                 <input type="text" class="form-control" id="addTopicName" wire:model="newTopic.name">
                                 @error('newTopic.name') <span class="text-danger">{{ $message }}</span> @enderror
                             </div>
+                            <!-- outcome -->
+                            <div class="form-group
+                                local-forms">
+                                <label for="addTopicOutcome">Outcome <span class="login-danger">*</span></label>
+                                <input type="text" class="form-control" id="addTopicOutcome" wire:model="newTopic.outcome">
+                            </div>
+                            <!-- subject -->
                             <div class="form-group local-forms">
                                 <label for="addTopicSubject">Subject <span class="login-danger">*</span></label>
                                 <select class="form-control" id="addTopicSubject" wire:model="newTopic.subject_id">
@@ -231,6 +238,7 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Name</th>
+                                            <th>Outcome</th>
                                             <th>Subject</th>
                                             <th class="text-end">Action</th>
                                         </tr>
@@ -241,6 +249,7 @@
                                         <tr>
                                             <td>{{ $topic->id }}</td>
                                             <td>{{ $topic->name }}</td>
+                                            <td>{{ $topic->outcome || '' }}</td>
                                             <td>{{ $topic->subject->name }}</td>
                                             <td class="text-end">
                                                 <div class="actions">
@@ -324,6 +333,16 @@
                                         </tr>
                                         @endforeach
                                         @endif
+
+
+
+
+
+
+
+
+
+
 
 
 
