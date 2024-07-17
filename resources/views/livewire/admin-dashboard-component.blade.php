@@ -93,7 +93,8 @@
                                     <ul class="chart-list-out">
                                         <li><span class="circle-blue"></span>Teacher</li>
                                         <li><span class="circle-green"></span>Student</li>
-                                        <li class="star-menus"><a href="javascript:;"><i class="fas fa-ellipsis-v"></i></a></li>
+                                        <li class="star-menus"><a href="javascript:;"><i
+                                                    class="fas fa-ellipsis-v"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -116,7 +117,8 @@
                                     <ul class="chart-list-out">
                                         <li><span class="circle-blue"></span>Girls</li>
                                         <li><span class="circle-green"></span>Boys</li>
-                                        <li class="star-menus"><a href="javascript:;"><i class="fas fa-ellipsis-v"></i></a></li>
+                                        <li class="star-menus"><a href="javascript:;"><i
+                                                    class="fas fa-ellipsis-v"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -141,7 +143,8 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table star-student table-hover table-center table-borderless table-striped">
+                                <table
+                                    class="table star-student table-hover table-center table-borderless table-striped">
                                     <thead class="thead-light">
                                         <tr>
                                             <th>ID</th>
@@ -158,7 +161,8 @@
                                             </td>
                                             <td class="text-nowrap">
                                                 <a href="profile.html">
-                                                    <img class="rounded-circle" src="assets/img/profiles/avatar-02.jpg" width="25" alt="Star Students">
+                                                    <img class="rounded-circle" src="assets/img/profiles/avatar-02.jpg"
+                                                        width="25" alt="Star Students">
                                                     John Smith
                                                 </a>
                                             </td>
@@ -174,7 +178,8 @@
                                             </td>
                                             <td class="text-nowrap">
                                                 <a href="profile.html">
-                                                    <img class="rounded-circle" src="assets/img/profiles/avatar-01.jpg" width="25" alt="Star Students">
+                                                    <img class="rounded-circle" src="assets/img/profiles/avatar-01.jpg"
+                                                        width="25" alt="Star Students">
                                                     Jolie Hoskins
                                                 </a>
                                             </td>
@@ -190,7 +195,8 @@
                                             </td>
                                             <td class="text-nowrap">
                                                 <a href="profile.html">
-                                                    <img class="rounded-circle" src="assets/img/profiles/avatar-03.jpg" width="25" alt="Star Students">
+                                                    <img class="rounded-circle" src="assets/img/profiles/avatar-03.jpg"
+                                                        width="25" alt="Star Students">
                                                     Pennington Joy
                                                 </a>
                                             </td>
@@ -206,7 +212,8 @@
                                             </td>
                                             <td class="text-nowrap">
                                                 <a href="profile.html">
-                                                    <img class="rounded-circle" src="assets/img/profiles/avatar-04.jpg" width="25" alt="Star Students">
+                                                    <img class="rounded-circle" src="assets/img/profiles/avatar-04.jpg"
+                                                        width="25" alt="Star Students">
                                                     Millie Marsden
                                                 </a>
                                             </td>
@@ -222,7 +229,8 @@
                                             </td>
                                             <td class="text-nowrap">
                                                 <a href="profile.html">
-                                                    <img class="rounded-circle" src="assets/img/profiles/avatar-05.jpg" width="25" alt="Star Students">
+                                                    <img class="rounded-circle" src="assets/img/profiles/avatar-05.jpg"
+                                                        width="25" alt="Star Students">
                                                     John Smith
                                                 </a>
                                             </td>
@@ -349,7 +357,8 @@
                         <div class="social-boxs">
                             <img src="assets/img/icons/social-icon-04.svg" alt="Social Icon">
                         </div>
-                    </div>
+      
+              </div>
                 </div>
             </div>
         </div>

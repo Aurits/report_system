@@ -31,7 +31,8 @@
                                             <h3 class="page-title">Classes</h3>
                                             <div class="col-auto text-end float-end ms-auto download-grp">
                                                 <div class="search-class-btn">
-                                                    <button wire:click="createClass" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createClassModal">Add
+                                                    <button wire:click="createClass" class="btn btn-primary"
+                                                        data-bs-toggle="modal" data-bs-target="#createClassModal">Add
                                                         Class</button>
                                                 </div>
                                             </div>
@@ -40,7 +41,8 @@
                                     </div>
                                 </div>
                                 <div class="table-responsive">
-                                    <table class="table border-0 star-class table-hover table-center mb-0 datatable table-striped">
+                                    <table
+                                        class="table border-0 star-class table-hover table-center mb-0 datatables table-striped">
                                         <thead class="class-thread">
                                             <tr>
                                                 <th>ID</th>
@@ -55,9 +57,17 @@
                                                 <td>{{ $class->name }}</td>
                                                 <td class="text-end">
                                                     <div class="actions">
-                                                        <button wire:click="viewClass({{ $class->id }})" class="btn btn-sm bg-success-light me-2" data-bs-toggle="modal" data-bs-target="#viewClassModal"><i class="feather-eye"></i> View</button>
-                                                        <button wire:click="editClass({{ $class->id }})" class="btn btn-sm bg-primary-light me-2" data-bs-toggle="modal" data-bs-target="#editClassModal"><i class="feather-edit"></i> Edit</button>
-                                                        <button wire:click="deleteClass({{ $class->id }})" class="btn btn-sm bg-danger-light me-2"><i class="feather-trash"></i> Delete</button>
+                                                        <button wire:click="viewClass({{ $class->id }})"
+                                                            class="btn btn-sm bg-success-light me-2"
+                                                            data-bs-toggle="modal" data-bs-target="#viewClassModal"><i
+                                                                class="feather-eye"></i> View</button>
+                                                        <button wire:click="editClass({{ $class->id }})"
+                                                            class="btn btn-sm bg-primary-light me-2"
+                                                            data-bs-toggle="modal" data-bs-target="#editClassModal"><i
+                                                                class="feather-edit"></i> Edit</button>
+                                                        <button wire:click="deleteClass({{ $class->id }})"
+                                                            class="btn btn-sm bg-danger-light me-2"><i
+                                                                class="feather-trash"></i> Delete</button>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -77,7 +87,8 @@
                                             <h3 class="page-title">Streams</h3>
                                             <div class="col-auto text-end float-end ms-auto download-grp">
                                                 <div class=" search-class-btn">
-                                                    <button wire:click="createStream" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createStreamModal">Add
+                                                    <button wire:click="createStream" class="btn btn-primary"
+                                                        data-bs-toggle="modal" data-bs-target="#createStreamModal">Add
                                                         Stream</button>
                                                 </div>
                                             </div>
@@ -86,7 +97,8 @@
                                     </div>
                                 </div>
                                 <div class="table-responsive">
-                                    <table class="table border-0 star-class table-hover table-center mb-0 datatable table-striped">
+                                    <table
+                                        class="table border-0 star-class table-hover table-center mb-0 datatables table-striped">
                                         <thead class="class-thread">
                                             <tr>
                                                 <th>ID</th>
@@ -101,11 +113,19 @@
                                                 <td>{{ $stream->name }}</td>
                                                 <td class="text-end">
                                                     <div class="actions">
-                                                        <button wire:click="viewStream({{ $stream->id }})" class="btn btn-sm bg-success-light me-2" data-bs-toggle="modal" data-bs-target="#viewStreamModal"><i class="feather-eye"></i>
+                                                        <button wire:click="viewStream({{ $stream->id }})"
+                                                            class="btn btn-sm bg-success-light me-2"
+                                                            data-bs-toggle="modal" data-bs-target="#viewStreamModal"><i
+                                                                class="feather-eye"></i>
                                                             View</button>
-                                                        <button wire:click="editStream({{ $stream->id }})" class="btn btn-sm bg-primary-light me-2" data-bs-toggle="modal" data-bs-target="#editStreamModal"><i class="feather-edit"></i>
+                                                        <button wire:click="editStream({{ $stream->id }})"
+                                                            class="btn btn-sm bg-primary-light me-2"
+                                                            data-bs-toggle="modal" data-bs-target="#editStreamModal"><i
+                                                                class="feather-edit"></i>
                                                             Edit</button>
-                                                        <button wire:click="deleteStream({{ $stream->id }})" class="btn btn-sm bg-danger-light me-2"><i class="feather-trash"></i> Delete</button>
+                                                        <button wire:click="deleteStream({{ $stream->id }})"
+                                                            class="btn btn-sm bg-danger-light me-2"><i
+                                                                class="feather-trash"></i> Delete</button>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -125,7 +145,8 @@
                                             <h3 class="page-title">Houses</h3>
                                             <div class="col-auto text-end float-end ms-auto download-grp"">
                                             <div class=" search-class-btn">
-                                                <button wire:click="createHouse" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createHouseModal">Add
+                                                <button wire:click="createHouse" class="btn btn-primary"
+                                                    data-bs-toggle="modal" data-bs-target="#createHouseModal">Add
                                                     House</button>
                                             </div>
                                         </div>
@@ -133,7 +154,8 @@
                                 </div>
                             </div>
                             <div class="table-responsive">
-                                <table class="table border-0 star-class table-hover table-center mb-0 datatable table-striped">
+                                <table
+                                    class="table border-0 star-class table-hover table-center mb-0 datatables table-striped">
                                     <thead class="class-thread">
                                         <tr>
                                             <th>ID</th>
@@ -148,11 +170,17 @@
                                             <td>{{ $house->name }}</td>
                                             <td class="text-end">
                                                 <div class="actions">
-                                                    <button wire:click="viewHouse({{ $house->id }})" class="btn btn-sm bg-success-light me-2" data-bs-toggle="modal" data-bs-target="#viewHouseModal"><i class="feather-eye"></i>
+                                                    <button wire:click="viewHouse({{ $house->id }})"
+                                                        class="btn btn-sm bg-success-light me-2" data-bs-toggle="modal"
+                                                        data-bs-target="#viewHouseModal"><i class="feather-eye"></i>
                                                         View</button>
-                                                    <button wire:click="editHouse({{ $house->id }})" class="btn btn-sm bg-primary-light me-2" data-bs-toggle="modal" data-bs-target="#editHouseModal"><i class="feather-edit"></i>
+                                                    <button wire:click="editHouse({{ $house->id }})"
+                                                        class="btn btn-sm bg-primary-light me-2" data-bs-toggle="modal"
+                                                        data-bs-target="#editHouseModal"><i class="feather-edit"></i>
                                                         Edit</button>
-                                                    <button wire:click="deleteHouse({{ $house->id }})" class="btn btn-sm bg-danger-light me-2"><i class="feather-trash"></i> Delete</button>
+                                                    <button wire:click="deleteHouse({{ $house->id }})"
+                                                        class="btn btn-sm bg-danger-light me-2"><i
+                                                            class="feather-trash"></i> Delete</button>
                                                 </div>
                                             </td>
                                         </tr>
@@ -169,7 +197,8 @@
 </div>
 
 <!-- Create Class Modal -->
-<div wire:ignore.self class="modal fade" id="createClassModal" tabindex="-1" role="dialog" aria-labelledby="createClassModalLabel" aria-hidden="true">
+<div wire:ignore.self class="modal fade" id="createClassModal" tabindex="-1" role="dialog"
+    aria-labelledby="createClassModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -194,7 +223,8 @@
 </div>
 
 <!-- Create Stream Modal -->
-<div wire:ignore.self class="modal fade" id="createStreamModal" tabindex="-1" role="dialog" aria-labelledby="createStreamModalLabel" aria-hidden="true">
+<div wire:ignore.self class="modal fade" id="createStreamModal" tabindex="-1" role="dialog"
+    aria-labelledby="createStreamModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -204,7 +234,8 @@
             <div class="modal-body">
                 <form>
                     <div class="mb-3 local-forms">
-                        <label for="streamName" class="form-label">Stream Nam <span class="login-danger">*</span></label>
+                        <label for="streamName" class="form-label">Stream Nam <span
+                                class="login-danger">*</span></label>
                         <input type="text" wire:model.defer="streamName" class="form-control" id="streamName">
                         @error('streamName') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
@@ -219,7 +250,8 @@
 </div>
 
 <!-- Create House Modal -->
-<div wire:ignore.self class="modal fade" id="createHouseModal" tabindex="-1" role="dialog" aria-labelledby="createHouseModalLabel" aria-hidden="true">
+<div wire:ignore.self class="modal fade" id="createHouseModal" tabindex="-1" role="dialog"
+    aria-labelledby="createHouseModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -244,7 +276,8 @@
 </div>
 
 <!-- View Class Modal -->
-<div wire:ignore.self class="modal fade" id="viewClassModal" tabindex="-1" role="dialog" aria-labelledby="viewClassModalLabel" aria-hidden="true">
+<div wire:ignore.self class="modal fade" id="viewClassModal" tabindex="-1" role="dialog"
+    aria-labelledby="viewClassModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -267,7 +300,8 @@
 </div>
 
 <!-- View Stream Modal -->
-<div wire:ignore.self class="modal fade" id="viewStreamModal" tabindex="-1" role="dialog" aria-labelledby="viewStreamModalLabel" aria-hidden="true">
+<div wire:ignore.self class="modal fade" id="viewStreamModal" tabindex="-1" role="dialog"
+    aria-labelledby="viewStreamModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -290,7 +324,8 @@
 </div>
 
 <!-- View House Modal -->
-<div wire:ignore.self class="modal fade" id="viewHouseModal" tabindex="-1" role="dialog" aria-labelledby="viewHouseModalLabel" aria-hidden="true">
+<div wire:ignore.self class="modal fade" id="viewHouseModal" tabindex="-1" role="dialog"
+    aria-labelledby="viewHouseModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -314,7 +349,8 @@
 
 
 <!-- Edit Class Modal -->
-<div wire:ignore.self class="modal fade" id="editClassModal" tabindex="-1" role="dialog" aria-labelledby="editClassModalLabel" aria-hidden="true">
+<div wire:ignore.self class="modal fade" id="editClassModal" tabindex="-1" role="dialog"
+    aria-labelledby="editClassModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -324,7 +360,8 @@
             <div class="modal-body">
                 <form>
                     <div class="mb-3 local-forms">
-                        <label for="editClassName" class="form-label">Class Name <span class="login-danger">*</span></label>
+                        <label for="editClassName" class="form-label">Class Name <span
+                                class="login-danger">*</span></label>
                         <input type="text" wire:model.defer="className" class="form-control" id="editClassName">
                         @error('editClassName') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
@@ -339,7 +376,8 @@
 </div>
 
 <!-- Edit Stream Modal -->
-<div wire:ignore.self class="modal fade" id="editStreamModal" tabindex="-1" role="dialog" aria-labelledby="editStreamModalLabel" aria-hidden="true">
+<div wire:ignore.self class="modal fade" id="editStreamModal" tabindex="-1" role="dialog"
+    aria-labelledby="editStreamModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -349,7 +387,8 @@
             <div class="modal-body">
                 <form>
                     <div class="mb-3 local-forms">
-                        <label for="editStreamName" class="form-label">Stream Name <span class="login-danger">*</span></label>
+                        <label for="editStreamName" class="form-label">Stream Name <span
+                                class="login-danger">*</span></label>
                         <input type="text" wire:model.defer="streamName" class="form-control" id="editStreamName">
                         @error('editStreamName') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
@@ -364,20 +403,23 @@
 </div>
 
 <!-- Edit House Modal -->
-<div wire:ignore.self class="modal fade" id="editHouseModal" tabindex="-1" role="dialog" aria-labelledby="editHouseModalLabel" aria-hidden="true">
+<div wire:ignore.self class="modal fade" id="editHouseModal" tabindex="-1" role="dialog"
+    aria-labelledby="editHouseModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="editHouseModalLabel">Edit House</h5>
 
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         
+       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
 
             <div class="modal-body">
                 <form>
                     <div class="mb-3 local-forms">
-                        <label for="editHouseName" class="form-label">House Name <span class="login-danger">*</span></label>
+                        <label for="editHouseName" class="form-label">House Name <span
+                                class="login-danger">*</span></label>
                         <input type="text" wire:model.defer="houseName" class="form-control" id="editHouseName">
                         @error('editHouseName') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
@@ -394,20 +436,20 @@
 
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        window.livewire.on('openClassModal', () => {
-            var myModal = new bootstrap.Modal(document.getElementById('viewClassModal'));
-            myModal.show();
-        });
-
-        window.livewire.on('openStreamModal', () => {
-            var myModal = new bootstrap.Modal(document.getElementById('viewStreamModal'));
-            myModal.show();
-        });
-
-        window.livewire.on('openHouseModal', () => {
-            var myModal = new bootstrap.Modal(document.getElementById('viewHouseModal'));
-            myModal.show();
-        });
+document.addEventListener('DOMContentLoaded', function() {
+    window.livewire.on('openClassModal', () => {
+        var myModal = new bootstrap.Modal(document.getElementById('viewClassModal'));
+        myModal.show();
     });
+
+    window.livewire.on('openStreamModal', () => {
+        var myModal = new bootstrap.Modal(document.getElementById('viewStreamModal'));
+        myModal.show();
+    });
+
+    window.livewire.on('openHouseModal', () => {
+        var myModal = new bootstrap.Modal(document.getElementById('viewHouseModal'));
+        myModal.show();
+    });
+});
 </script>

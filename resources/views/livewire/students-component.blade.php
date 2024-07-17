@@ -53,15 +53,19 @@
                                     </div>
                                     <div class="col-auto text-end float-end ms-auto download-grp">
 
-                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bulkUploadModal"><i class="fas fa-upload"></i> Bulk
+                                        <button class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#bulkUploadModal"><i class="fas fa-upload"></i> Bulk
                                             Upload</button>
-                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addStudentModal" wire:click="resetInputFields"><i class="fas fa-plus"></i> Add Student</button>
+                                        <button class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#addStudentModal" wire:click="resetInputFields"><i
+                                                class="fas fa-plus"></i> Add Student</button>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="table-responsive">
-                                <table class="table border-0 star-student table-hover table-center mb-0 datatable table-striped">
+                                <table
+                                    class="table border-0 star-student table-hover table-center mb-0 datatables table-striped">
                                     <thead class="student-thread">
                                         <tr>
                                             <th>ID</th>
@@ -84,9 +88,17 @@
                                             <td>{{ $student->phone }}</td>
                                             <td class="text-end">
                                                 <div class="actions">
-                                                    <button class="btn btn-sm bg-success-light me-2" data-bs-toggle="modal" data-bs-target="#viewStudentModal" wire:click="view({{ $student->id }})"><i class="feather-eye"></i> View</button>
-                                                    <button class="btn btn-sm bg-success-light me-2" data-bs-toggle="modal" data-bs-target="#editStudentModal" wire:click="edit({{ $student->id }})"><i class="feather-edit"></i> Edit</button>
-                                                    <button class="btn btn-sm bg-danger-light" wire:click="delete({{ $student->id }})"><i class="feather-trash"></i> Delete</button>
+                                                    <button class="btn btn-sm bg-success-light me-2"
+                                                        data-bs-toggle="modal" data-bs-target="#viewStudentModal"
+                                                        wire:click="view({{ $student->id }})"><i
+                                                            class="feather-eye"></i> View</button>
+                                                    <button class="btn btn-sm bg-success-light me-2"
+                                                        data-bs-toggle="modal" data-bs-target="#editStudentModal"
+                                                        wire:click="edit({{ $student->id }})"><i
+                                                            class="feather-edit"></i> Edit</button>
+                                                    <button class="btn btn-sm bg-danger-light"
+                                                        wire:click="delete({{ $student->id }})"><i
+                                                            class="feather-trash"></i> Delete</button>
                                                 </div>
                                             </td>
                                         </tr>
@@ -107,7 +119,8 @@
 
     <!-- Modals -->
     <!-- Add Student Modal -->
-    <div wire:ignore.self class="modal fade" id="addStudentModal" tabindex="-1" aria-labelledby="addStudentModalLabel" aria-hidden="true">
+    <div wire:ignore.self class="modal fade" id="addStudentModal" tabindex="-1" aria-labelledby="addStudentModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -117,7 +130,8 @@
                 <div class="modal-body">
                     <form wire:submit.prevent="store">
                         <div class="mb-3 local-forms">
-                            <label for="student_id" class="form-label">Student ID <span class="login-danger">*</span></label>
+                            <label for="student_id" class="form-label">Student ID <span
+                                    class="login-danger">*</span></label>
                             <input type="text" class="form-control" id="student_id" wire:model="student_id">
                             @error('student_id') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
@@ -168,7 +182,8 @@
 
 
     <!-- Edit Student Modal -->
-    <div wire:ignore.self class="modal fade" id="editStudentModal" tabindex="-1" aria-labelledby="editStudentModalLabel" aria-hidden="true">
+    <div wire:ignore.self class="modal fade" id="editStudentModal" tabindex="-1" aria-labelledby="editStudentModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -183,7 +198,8 @@
                     @endif
                     <form wire:submit.prevent="update">
                         <div class="mb-3 local-forms">
-                            <label for="student_id" class="form-label">Student ID <span class="login-danger">*</span></label>
+                            <label for="student_id" class="form-label">Student ID <span
+                                    class="login-danger">*</span></label>
                             <input type="text" class="form-control" id="student_id" wire:model="student_id">
                             @error('student_id') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
@@ -234,7 +250,8 @@
 
 
     <!-- View Student Modal -->
-    <div class="modal fade" id="viewStudentModal" tabindex="-1" aria-labelledby="viewStudentModalLabel" aria-hidden="true" wire:ignore.self>
+    <div class="modal fade" id="viewStudentModal" tabindex="-1" aria-labelledby="viewStudentModalLabel"
+        aria-hidden="true" wire:ignore.self>
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-primary text-white">
@@ -284,7 +301,8 @@
 
 
     <!-- Bulk Upload Modal -->
-    <div wire:ignore.self class="modal fade" id="bulkUploadModal" tabindex="-1" aria-labelledby="bulkUploadModalLabel" aria-hidden="true">
+    <div wire:ignore.self class="modal fade" id="bulkUploadModal" tabindex="-1" aria-labelledby="bulkUploadModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -299,7 +317,8 @@
                     @endif
                     <div class="row mb-3">
                         <div class="col-md-4">
-                            <button wire:click="downloadTemplate" class="btn btn-outline-secondary me-2"><i class="fas fa-download"></i>Template</button>
+                            <button wire:click="downloadTemplate" class="btn btn-outline-secondary me-2"><i
+                                    class="fas fa-download"></i>Template</button>
                         </div>
                         <div class="col-md-8">
 
@@ -325,21 +344,22 @@
 
 
 
+
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        window.livewire.on('openEditModal', () => {
-            var myModal = new bootstrap.Modal(document.getElementById('editStudentModal'));
-            myModal.show();
-        });
-
-        window.livewire.on('openViewModal', () => {
-            var myModal = new bootstrap.Modal(document.getElementById('viewStudentModal'));
-            myModal.show();
-        });
-
-        window.livewire.on('openBulkUploadModal', () => {
-            var myModal = new bootstrap.Modal(document.getElementById('bulkUploadModal'));
-            myModal.show();
-        });
+document.addEventListener('DOMContentLoaded', function() {
+    window.livewire.on('openEditModal', () => {
+        var myModal = new bootstrap.Modal(document.getElementById('editStudentModal'));
+        myModal.show();
     });
+
+    window.livewire.on('openViewModal', () => {
+        var myModal = new bootstrap.Modal(document.getElementById('viewStudentModal'));
+        myModal.show();
+    });
+
+    window.livewire.on('openBulkUploadModal', () => {
+        var myModal = new bootstrap.Modal(document.getElementById('bulkUploadModal'));
+        myModal.show();
+    });
+});
 </script>

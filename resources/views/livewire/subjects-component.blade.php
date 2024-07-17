@@ -2,7 +2,8 @@
     <div class="page-wrapper">
 
         <!-- Edit Topic Modal -->
-        <div class="modal fade" id="editTopicModal" tabindex="-1" role="dialog" aria-labelledby="editTopicModalLabel" aria-hidden="true">
+        <div class="modal fade" id="editTopicModal" tabindex="-1" role="dialog" aria-labelledby="editTopicModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -13,12 +14,14 @@
                         <form wire:submit.prevent="updateTopic">
                             <div class="form-group local-forms">
                                 <label for="editTopicName">Name <span class="login-danger">*</span></label>
-                                <input type="text" class="form-control" id="editTopicName" wire:model="topicDetails.name">
+                                <input type="text" class="form-control" id="editTopicName"
+                                    wire:model="topicDetails.name">
                                 @error('topicDetails.name') <span class="text-danger">{{ $message }}</span> @enderror
                             </div>
                             <div class="form-group local-forms">
                                 <label for="editTopicOutcome">Outcome <span class="login-danger">*</span></label>
-                                <input type="text" class="form-control" id="editTopicOutcome" wire:model="topicDetails.outcome">
+                                <input type="text" class="form-control" id="editTopicOutcome"
+                                    wire:model="topicDetails.outcome">
                                 @error('topicDetails.name') <span class="text-danger">{{ $message }}</span> @enderror
                             </div>
                             <div class="form-group local-forms">
@@ -41,7 +44,8 @@
             </div>
         </div>
         <!-- Edit Subject Modal -->
-        <div class="modal fade" id="editSubjectModal" tabindex="-1" role="dialog" aria-labelledby="editSubjectModalLabel" aria-hidden="true">
+        <div class="modal fade" id="editSubjectModal" tabindex="-1" role="dialog"
+            aria-labelledby="editSubjectModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -53,7 +57,8 @@
                             <div class="form-group local-forms">
 
                                 <label for="editSubjectName">Name <span class="login-danger">*</span></label>
-                                <input type="text" class="form-control" id="editSubjectName" wire:model="subjectDetails.name">
+                                <input type="text" class="form-control" id="editSubjectName"
+                                    wire:model="subjectDetails.name">
                                 @error('subjectDetails.name') <span class="text-danger">{{ $message }}</span> @enderror
                             </div>
                             <div class="modal-footer">
@@ -67,7 +72,8 @@
         </div>
 
         <!-- Add Topic Modal -->
-        <div class="modal fade" id="addTopicModal" tabindex="-1" role="dialog" aria-labelledby="addTopicModalLabel" aria-hidden="true" x-data>
+        <div class="modal fade" id="addTopicModal" tabindex="-1" role="dialog" aria-labelledby="addTopicModalLabel"
+            aria-hidden="true" x-data>
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -85,7 +91,8 @@
                             <div class="form-group
                                 local-forms">
                                 <label for="addTopicOutcome">Outcome <span class="login-danger">*</span></label>
-                                <input type="text" class="form-control" id="addTopicOutcome" wire:model="newTopic.outcome">
+                                <input type="text" class="form-control" id="addTopicOutcome"
+                                    wire:model="newTopic.outcome">
                             </div>
                             <!-- subject -->
                             <div class="form-group local-forms">
@@ -109,7 +116,8 @@
         </div>
 
         <!-- Add Subject Modal -->
-        <div class="modal fade" id="addSubjectModal" tabindex="-1" role="dialog" aria-labelledby="addSubjectModalLabel" aria-hidden="true" x-data>
+        <div class="modal fade" id="addSubjectModal" tabindex="-1" role="dialog" aria-labelledby="addSubjectModalLabel"
+            aria-hidden="true" x-data>
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -120,12 +128,14 @@
                         <form wire:submit.prevent="storeSubject">
                             <div class="form-group local-forms">
                                 <label for="addSubjectName">Name <span class="login-danger">*</span></label>
-                                <input type="text" class="form-control" id="addSubjectName" wire:model="newSubject.name">
+                                <input type="text" class="form-control" id="addSubjectName"
+                                    wire:model="newSubject.name">
                                 @error('newSubject.name') <span class="text-danger">{{ $message }}</span> @enderror
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary" @click="$dispatch('close-modal', { modal: 'addSubjectModal' })">Save</button>
+                                <button type="submit" class="btn btn-primary"
+                                    @click="$dispatch('close-modal', { modal: 'addSubjectModal' })">Save</button>
                             </div>
                         </form>
                     </div>
@@ -134,7 +144,8 @@
         </div>
 
         <!-- View Subject Modal -->
-        <div class="modal fade" id="viewSubjectModal" tabindex="-1" role="dialog" aria-labelledby="viewSubjectModalLabel" aria-hidden="true">
+        <div class="modal fade" id="viewSubjectModal" tabindex="-1" role="dialog"
+            aria-labelledby="viewSubjectModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -157,7 +168,8 @@
 
 
         <!-- View Topic Modal -->
-        <div class="modal fade" id="viewTopicModal" tabindex="-1" role="dialog" aria-labelledby="viewTopicModalLabel" aria-hidden="true">
+        <div class="modal fade" id="viewTopicModal" tabindex="-1" role="dialog" aria-labelledby="viewTopicModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -230,7 +242,8 @@
                                         <h3 class="page-title">Topics</h3>
                                     </div>
                                     <div class="col-auto text-end float-end ms-auto download-grp">
-                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addTopicModal">
+                                        <button class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#addTopicModal">
                                             <i class="fas fa-plus"></i> Add Topic
                                         </button>
                                     </div>
@@ -238,7 +251,8 @@
                             </div>
 
                             <div class="table-responsive mt-4">
-                                <table class="table border-0 star-subject table-hover table-center mb-0 datatable table-striped">
+                                <table
+                                    class="table border-0 star-subject table-hover table-center mb-0 datatables table-striped">
                                     <thead class="subject-thread">
                                         <tr>
                                             <th>ID</th>
@@ -259,11 +273,14 @@
                                             <td class="text-end">
                                                 <div class="actions">
 
-                                                    <button class="btn btn-sm bg-danger-light me-2" wire:click="openEditTopicModal({{ $topic->id }})" data-bs-toggle="modal" data-bs-target="#editTopicModal">
+                                                    <button class="btn btn-sm bg-danger-light me-2"
+                                                        wire:click="openEditTopicModal({{ $topic->id }})"
+                                                        data-bs-toggle="modal" data-bs-target="#editTopicModal">
                                                         <i class="feather-edit"></i> Edit
 
                                                     </button>
-                                                    <button class="btn btn-sm bg-danger-light" wire:click="deleteTopic({{ $topic->id }})">
+                                                    <button class="btn btn-sm bg-danger-light"
+                                                        wire:click="deleteTopic({{ $topic->id }})">
                                                         <i class="feather-trash"></i> Delete
                                                     </button>
                                                 </div>
@@ -290,7 +307,8 @@
                                         <h3 class="page-title">Subjects</h3>
                                     </div>
                                     <div class="col-auto text-end float-end ms-auto download-grp">
-                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addSubjectModal">
+                                        <button class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#addSubjectModal">
                                             <i class="fas fa-plus"></i> Add Subject
                                         </button>
                                     </div>
@@ -298,7 +316,8 @@
                             </div>
 
                             <div class="table-responsive mt-4">
-                                <table class="table border-0 star-subject table-hover table-center mb-4 datatable table-striped">
+                                <table
+                                    class="table border-0 star-subject table-hover table-center mb-4 datatables table-striped">
                                     <thead class="subject-thread">
                                         <tr>
                                             <th>
@@ -325,10 +344,13 @@
                                             <td class="text-end">
                                                 <div class="actions">
 
-                                                    <button class="btn btn-sm bg-danger-light me-2" wire:click="openEditSubjectModal({{ $subject->id }})" data-bs-toggle="modal" data-bs-target="#editSubjectModal">
+                                                    <button class="btn btn-sm bg-danger-light me-2"
+                                                        wire:click="openEditSubjectModal({{ $subject->id }})"
+                                                        data-bs-toggle="modal" data-bs-target="#editSubjectModal">
                                                         <i class="feather-edit"></i> Edit
                                                     </button>
-                                                    <button class="btn btn-sm bg-danger-light" wire:click="deleteSubject({{ $subject->id }})">
+                                                    <button class="btn btn-sm bg-danger-light"
+                                                        wire:click="deleteSubject({{ $subject->id }})">
                                                         <i class="feather-trash"></i> Delete
                                                     </button>
                                                 </div>
@@ -338,6 +360,7 @@
                                         </tr>
                                         @endforeach
                                         @endif
+
 
 
 
@@ -366,10 +389,10 @@
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        window.livewire.on('openModal', event => {
-            var myModal = new bootstrap.Modal(document.getElementById(event.detail.id));
-            myModal.show();
-        });
+document.addEventListener('DOMContentLoaded', function() {
+    window.livewire.on('openModal', event => {
+        var myModal = new bootstrap.Modal(document.getElementById(event.detail.id));
+        myModal.show();
     });
+});
 </script>

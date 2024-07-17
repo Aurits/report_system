@@ -13,7 +13,7 @@
                 <div class="col-lg-12">
                     @if($processedHistory)
                     <div class="table-responsive">
-                        <table class="table border-0 star-class table-hover table-center mb-0 datatable table-striped">
+                        <table class="table border-0 star-class table-hover table-center mb-0 datatables table-striped">
                             <thead>
                                 <tr>
                                     <th>Academic Year</th>

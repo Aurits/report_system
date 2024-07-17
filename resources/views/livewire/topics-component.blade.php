@@ -99,7 +99,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table border-0 star-class table-hover table-center mb-0 datatable table-striped">
+                        <table class="table border-0 star-class table-hover table-center mb-0 datatables table-striped">
                             <thead>
                                 <tr>
                                     <th>Enrollment ID</th>
@@ -107,7 +107,8 @@
                                     <th>Name</th>
                                 </tr>
                             </thead>
-                            <tbody>
+      
+                      <tbody>
                                 @foreach ($marks as $mark)
 
                                 <tr>

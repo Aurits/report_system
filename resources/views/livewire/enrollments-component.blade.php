@@ -16,18 +16,24 @@
                 <div class="col-lg-12">
                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                         @for ($i = 1; $i <= 6; $i++) <li class="nav-item" role="presentation">
-                            <a class="nav-link @if($i == 1) active @endif" id="pills-form{{ $i }}-tab" data-bs-toggle="pill" href="#pills-form{{ $i }}" role="tab" aria-controls="pills-form{{ $i }}" aria-selected="@if($i == 1) true @else false @endif">Form {{ $i }}</a>
+                            <a class="nav-link @if($i == 1) active @endif" id="pills-form{{ $i }}-tab"
+                                data-bs-toggle="pill" href="#pills-form{{ $i }}" role="tab"
+                                aria-controls="pills-form{{ $i }}"
+                                aria-selected="@if($i == 1) true @else false @endif">Form {{ $i }}</a>
                             </li>
                             @endfor
                     </ul>
 
                     <div class="tab-content" id="pills-tabContent">
-                        @for ($i = 1; $i <= 6; $i++) <div class="tab-pane fade @if($i == 1) show active @endif" id="pills-form{{ $i }}" role="tabpanel" aria-labelledby="pills-form{{ $i }}-tab">
+                        @for ($i = 1; $i <= 6; $i++) <div class="tab-pane fade @if($i == 1) show active @endif"
+                            id="pills-form{{ $i }}" role="tabpanel" aria-labelledby="pills-form{{ $i }}-tab">
                             <div class="card">
                                 <div class="card-header">
                                     <h5 class="card-title">Students List - Form {{ $i }}</h5>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="selectAllStudentsForm{{ $i }}" wire:click="toggleAllStudentsByClass({{ $i }})">
+                                        <input class="form-check-input" type="checkbox"
+                                            id="selectAllStudentsForm{{ $i }}"
+                                            wire:click="toggleAllStudentsByClass({{ $i }})">
                                         <label class="form-check-label" for="selectAllStudentsForm{{ $i }}">
                                             Select All Students
                                         </label>
@@ -35,7 +41,8 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
-                                        <table class="table border-0 star-class table-hover table-center mb-0 datatable table-striped">
+                                        <table
+                                            class="table border-0 star-class table-hover table-center mb-0 datatables table-striped">
                                             <thead>
                                                 <tr>
                                                     <th>Student ID</th>
@@ -52,10 +59,12 @@
                                                     <td>{{ $student->name }}</td>
                                                     <td>{{ $student->classModel->name }}</td>
                                                     <td>
-                                                        <input type="checkbox" wire:model="studentsSelected" value="{{ $student->id }}">
+                                                        <input type="checkbox" wire:model="studentsSelected"
+                                                            value="{{ $student->id }}">
                                                     </td>
                                                     <td>
-                                                        <a href="{{ route('history', ['studentId' => $student->id]) }}" class="btn btn-sm bg-success-light me-2">
+                                                        <a href="{{ route('history', ['studentId' => $student->id]) }}"
+                                                            class="btn btn-sm bg-success-light me-2">
                                                             <i class="feather-eye"></i> View
                                                         </a>
                                                     </td>
@@ -79,7 +88,8 @@
                     <div class="card-header">
                         <h5 class="card-title">Subjects List</h5>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="selectAllSubjects" wire:click="toggleAllSubjects">
+                            <input class="form-check-input" type="checkbox" id="selectAllSubjects"
+                                wire:click="toggleAllSubjects">
                             <label class="form-check-label" for="selectAllSubjects">
                                 Select All Subjects
                             </label>
@@ -87,7 +97,8 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table border-0 star-class table-hover table-center mb-0 datatable table-striped">
+                            <table
+                                class="table border-0 star-class table-hover table-center mb-0 datatables table-striped">
                                 <thead>
                                     <tr>
                                         <th>Subject ID</th>
@@ -101,7 +112,8 @@
                                         <td>{{ $subject->id }}</td>
                                         <td>{{ $subject->name }}</td>
                                         <td>
-                                            <input type="checkbox" wire:model="subjectsSelected" value="{{ $subject->id }}">
+                                            <input type="checkbox" wire:model="subjectsSelected"
+                                                value="{{ $subject->id }}">
                                         </td>
                                         @endforeach
                                 </tbody>
@@ -173,7 +185,8 @@
                                 </select>
 
 
-                                @error('houseId') <span class="text-danger">{{ $message }}</span> @enderror
+      
+                          @error('houseId') <span class="text-danger">{{ $message }}</span> @enderror
                             </div>
 
                             <button type="submit" class="btn btn-primary">Enroll Students</button>

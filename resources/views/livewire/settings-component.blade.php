@@ -29,7 +29,8 @@
                                             <h3 class="page-title">Terms</h3>
                                             <div class="col-auto text-end float-end ms-auto download-grp">
                                                 <div class="search-class-btn">
-                                                    <button wire:click="createTerm" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createTermModal">Add
+                                                    <button wire:click="createTerm" class="btn btn-primary"
+                                                        data-bs-toggle="modal" data-bs-target="#createTermModal">Add
                                                         Term</button>
                                                 </div>
                                             </div>
@@ -37,7 +38,8 @@
                                     </div>
                                 </div>
                                 <div class="table-responsive">
-                                    <table class="table border-0 star-class table-hover table-center mb-0 datatable table-striped">
+                                    <table
+                                        class="table border-0 star-class table-hover table-center mb-0 datatables table-striped">
                                         <thead class="class-thread">
                                             <tr>
                                                 <th>ID</th>
@@ -52,9 +54,17 @@
                                                 <td>{{ $term->name }}</td>
                                                 <td class="text-end">
                                                     <div class="actions">
-                                                        <button wire:click="viewTerm({{ $term->id }})" class="btn btn-sm bg-success-light me-2" data-bs-toggle="modal" data-bs-target="#viewTermModal"><i class="feather-eye"></i> View</button>
-                                                        <button wire:click="editTerm({{ $term->id }})" class="btn btn-sm bg-primary-light me-2" data-bs-toggle="modal" data-bs-target="#editTermModal"><i class="feather-edit"></i> Edit</button>
-                                                        <button wire:click="deleteTerm({{ $term->id }})" class="btn btn-sm bg-danger-light me-2"><i class="feather-trash"></i> Delete</button>
+                                                        <button wire:click="viewTerm({{ $term->id }})"
+                                                            class="btn btn-sm bg-success-light me-2"
+                                                            data-bs-toggle="modal" data-bs-target="#viewTermModal"><i
+                                                                class="feather-eye"></i> View</button>
+                                                        <button wire:click="editTerm({{ $term->id }})"
+                                                            class="btn btn-sm bg-primary-light me-2"
+                                                            data-bs-toggle="modal" data-bs-target="#editTermModal"><i
+                                                                class="feather-edit"></i> Edit</button>
+                                                        <button wire:click="deleteTerm({{ $term->id }})"
+                                                            class="btn btn-sm bg-danger-light me-2"><i
+                                                                class="feather-trash"></i> Delete</button>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -76,7 +86,9 @@
                                             <h3 class="page-title">Academic Years</h3>
                                             <div class="col-auto text-end float-end ms-auto download-grp">
                                                 <div class="search-class-btn">
-                                                    <button wire:click="createAcademicYear" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createAcademicYearModal">Add Academic
+                                                    <button wire:click="createAcademicYear" class="btn btn-primary"
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#createAcademicYearModal">Add Academic
                                                         Year</button>
                                                 </div>
                                             </div>
@@ -84,7 +96,8 @@
                                     </div>
                                 </div>
                                 <div class="table-responsive">
-                                    <table class="table border-0 star-class table-hover table-center mb-0 datatable table-striped">
+                                    <table
+                                        class="table border-0 star-class table-hover table-center mb-0 datatables table-striped">
                                         <thead class="class-thread">
                                             <tr>
                                                 <th>ID</th>
@@ -99,9 +112,19 @@
                                                 <td>{{ $academicYear->year }}</td>
                                                 <td class="text-end">
                                                     <div class="actions">
-                                                        <button wire:click="viewAcademicYear({{ $academicYear->id }})" class="btn btn-sm bg-success-light me-2" data-bs-toggle="modal" data-bs-target="#viewAcademicYearModal"><i class="feather-eye"></i> View</button>
-                                                        <button wire:click="editAcademicYear({{ $academicYear->id }})" class="btn btn-sm bg-primary-light me-2" data-bs-toggle="modal" data-bs-target="#editAcademicYearModal"><i class="feather-edit"></i> Edit</button>
-                                                        <button wire:click="deleteAcademicYear({{ $academicYear->id }})" class="btn btn-sm bg-danger-light me-2"><i class="feather-trash"></i> Delete</button>
+                                                        <button wire:click="viewAcademicYear({{ $academicYear->id }})"
+                                                            class="btn btn-sm bg-success-light me-2"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target="#viewAcademicYearModal"><i
+                                                                class="feather-eye"></i> View</button>
+                                                        <button wire:click="editAcademicYear({{ $academicYear->id }})"
+                                                            class="btn btn-sm bg-primary-light me-2"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target="#editAcademicYearModal"><i
+                                                                class="feather-edit"></i> Edit</button>
+                                                        <button wire:click="deleteAcademicYear({{ $academicYear->id }})"
+                                                            class="btn btn-sm bg-danger-light me-2"><i
+                                                                class="feather-trash"></i> Delete</button>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -123,7 +146,8 @@
                                             <h3 class="page-title">Exams</h3>
                                             <div class="col-auto text-end float-end ms-auto download-grp">
                                                 <div class="search-class-btn">
-                                                    <button wire:click="createExam" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createExamModal">Add
+                                                    <button wire:click="createExam" class="btn btn-primary"
+                                                        data-bs-toggle="modal" data-bs-target="#createExamModal">Add
                                                         Exam</button>
                                                 </div>
                                             </div>
@@ -131,7 +155,8 @@
                                     </div>
                                 </div>
                                 <div class="table-responsive">
-                                    <table class="table border-0 star-class table-hover table-center mb-0 datatable table-striped">
+                                    <table
+                                        class="table border-0 star-class table-hover table-center mb-0 datatables table-striped">
                                         <thead class="class-thread">
                                             <tr>
                                                 <th>ID</th>
@@ -146,9 +171,17 @@
                                                 <td>{{ $exam->name }}</td>
                                                 <td class="text-end">
                                                     <div class="actions">
-                                                        <button wire:click="viewExam({{ $exam->id }})" class="btn btn-sm bg-success-light me-2" data-bs-toggle="modal" data-bs-target="#viewExamModal"><i class="feather-eye"></i> View</button>
-                                                        <button wire:click="editExam({{ $exam->id }})" class="btn btn-sm bg-primary-light me-2" data-bs-toggle="modal" data-bs-target="#editExamModal"><i class="feather-edit"></i> Edit</button>
-                                                        <button wire:click="deleteExam({{ $exam->id }})" class="btn btn-sm bg-danger-light me-2"><i class="feather-trash"></i> Delete</button>
+                                                        <button wire:click="viewExam({{ $exam->id }})"
+                                                            class="btn btn-sm bg-success-light me-2"
+                                                            data-bs-toggle="modal" data-bs-target="#viewExamModal"><i
+                                                                class="feather-eye"></i> View</button>
+                                                        <button wire:click="editExam({{ $exam->id }})"
+                                                            class="btn btn-sm bg-primary-light me-2"
+                                                            data-bs-toggle="modal" data-bs-target="#editExamModal"><i
+                                                                class="feather-edit"></i> Edit</button>
+                                                        <button wire:click="deleteExam({{ $exam->id }})"
+                                                            class="btn btn-sm bg-danger-light me-2"><i
+                                                                class="feather-trash"></i> Delete</button>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -166,7 +199,8 @@
     </div>
 
     <!-- Create Term Modal -->
-    <div wire:ignore.self class="modal fade" id="createTermModal" tabindex="-1" role="dialog" aria-labelledby="createTermModalLabel" aria-hidden="true">
+    <div wire:ignore.self class="modal fade" id="createTermModal" tabindex="-1" role="dialog"
+        aria-labelledby="createTermModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -176,7 +210,8 @@
                 <div class="modal-body">
                     <form>
                         <div class="mb-3 local-forms">
-                            <label for="termName" class="form-label">Term Name <span class="login-danger">*</span></label>
+                            <label for="termName" class="form-label">Term Name <span
+                                    class="login-danger">*</span></label>
                             <input type="text" wire:model.defer="termName" class="form-control" id="termName">
                             @error('termName') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
@@ -191,7 +226,8 @@
     </div>
 
     <!-- View Term Modal -->
-    <div wire:ignore.self class="modal fade" id="viewTermModal" tabindex="-1" role="dialog" aria-labelledby="viewTermModalLabel" aria-hidden="true">
+    <div wire:ignore.self class="modal fade" id="viewTermModal" tabindex="-1" role="dialog"
+        aria-labelledby="viewTermModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -201,7 +237,8 @@
                 <div class="modal-body">
                     <form>
                         <div class="mb-3 local-forms">
-                            <label for="termName" class="form-label">Term Name <span class="login-danger">*</span></label>
+                            <label for="termName" class="form-label">Term Name <span
+                                    class="login-danger">*</span></label>
                             <input type="text" wire:model.defer="termName" class="form-control" id="termName" disabled>
                         </div>
                     </form>
@@ -214,7 +251,8 @@
     </div>
 
     <!-- Edit Term Modal -->
-    <div wire:ignore.self class="modal fade" id="editTermModal" tabindex="-1" role="dialog" aria-labelledby="editTermModalLabel" aria-hidden="true">
+    <div wire:ignore.self class="modal fade" id="editTermModal" tabindex="-1" role="dialog"
+        aria-labelledby="editTermModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -224,7 +262,8 @@
                 <div class="modal-body">
                     <form>
                         <div class="mb-3 local-forms">
-                            <label for="termName" class="form-label">Term Name <span class="login-danger">*</span></label>
+                            <label for="termName" class="form-label">Term Name <span
+                                    class="login-danger">*</span></label>
                             <input type="text" wire:model.defer="termName" class="form-control" id="termName">
                             @error('termName') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
@@ -239,7 +278,8 @@
     </div>
 
     <!-- Create Academic Year Modal -->
-    <div wire:ignore.self class="modal fade" id="createAcademicYearModal" tabindex="-1" role="dialog" aria-labelledby="createAcademicYearModalLabel" aria-hidden="true">
+    <div wire:ignore.self class="modal fade" id="createAcademicYearModal" tabindex="-1" role="dialog"
+        aria-labelledby="createAcademicYearModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -249,8 +289,10 @@
                 <div class="modal-body">
                     <form>
                         <div class="mb-3 local-forms">
-                            <label for="academicYearName" class="form-label">Academic Year <span class="login-danger">*</span></label>
-                            <input type="text" wire:model.defer="academicYearName" class="form-control" id="academicYearName">
+                            <label for="academicYearName" class="form-label">Academic Year <span
+                                    class="login-danger">*</span></label>
+                            <input type="text" wire:model.defer="academicYearName" class="form-control"
+                                id="academicYearName">
                             @error('academicYearName') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
                     </form>
@@ -264,7 +306,8 @@
     </div>
 
     <!-- View Academic Year Modal -->
-    <div wire:ignore.self class="modal fade" id="viewAcademicYearModal" tabindex="-1" role="dialog" aria-labelledby="viewAcademicYearModalLabel" aria-hidden="true">
+    <div wire:ignore.self class="modal fade" id="viewAcademicYearModal" tabindex="-1" role="dialog"
+        aria-labelledby="viewAcademicYearModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -287,7 +330,8 @@
     </div>
 
     <!-- Edit Academic Year Modal -->
-    <div wire:ignore.self class="modal fade" id="editAcademicYearModal" tabindex="-1" role="dialog" aria-labelledby="editAcademicYearModalLabel" aria-hidden="true">
+    <div wire:ignore.self class="modal fade" id="editAcademicYearModal" tabindex="-1" role="dialog"
+        aria-labelledby="editAcademicYearModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -299,8 +343,10 @@
                 <div class="modal-body">
                     <form>
                         <div class="mb-3 local-forms">
-                            <label for="editAcademicYearName" class="form-label">Academic Year <span class="login-danger">*</span></label>
-                            <input type="text" wire:model.defer="academicYearName" class="form-control" id="editAcademicYearName">
+                            <label for="editAcademicYearName" class="form-label">Academic Year <span
+                                    class="login-danger">*</span></label>
+                            <input type="text" wire:model.defer="academicYearName" class="form-control"
+                                id="editAcademicYearName">
                             @error('academicYearName') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
                     </form>
@@ -314,7 +360,8 @@
     </div>
 
     <!-- Create Exam Modal -->
-    <div wire:ignore.self class="modal fade" id="createExamModal" tabindex="-1" role="dialog" aria-labelledby="createExamModalLabel" aria-hidden="true">
+    <div wire:ignore.self class="modal fade" id="createExamModal" tabindex="-1" role="dialog"
+        aria-labelledby="createExamModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -324,7 +371,8 @@
                 <div class="modal-body">
                     <form>
                         <div class="mb-3 local-forms">
-                            <label for="examName" class="form-label">Exam Name <span class="login-danger">*</span></label>
+                            <label for="examName" class="form-label">Exam Name <span
+                                    class="login-danger">*</span></label>
                             <input type="text" wire:model.defer="examName" class="form-control" id="examName">
                             @error('examName') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
@@ -339,7 +387,8 @@
     </div>
 
     <!-- View Exam Modal -->
-    <div wire:ignore.self class="modal fade" id="viewExamModal" tabindex="-1" role="dialog" aria-labelledby="viewExamModalLabel" aria-hidden="true">
+    <div wire:ignore.self class="modal fade" id="viewExamModal" tabindex="-1" role="dialog"
+        aria-labelledby="viewExamModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -349,7 +398,8 @@
                 <div class="modal-body">
                     <form>
                         <div class="mb-3 local-forms">
-                            <label for="examName" class="form-label">Exam Name <span class="login-danger">*</span></label>
+                            <label for="examName" class="form-label">Exam Name <span
+                                    class="login-danger">*</span></label>
                             <input type="text" wire:model.defer="examName" class="form-control" id="examName" disabled>
                         </div>
                     </form>
@@ -362,7 +412,8 @@
     </div>
 
     <!-- Edit Exam Modal -->
-    <div wire:ignore.self class="modal fade" id="editExamModal" tabindex="-1" role="dialog" aria-labelledby="editExamModalLabel" aria-hidden="true">
+    <div wire:ignore.self class="modal fade" id="editExamModal" tabindex="-1" role="dialog"
+        aria-labelledby="editExamModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -372,7 +423,8 @@
                 <div class="modal-body">
                     <form>
                         <div class="mb-3 local-forms">
-                            <label for="examName" class="form-label">Exam Name <span class="login-danger">*</span></label>
+                            <label for="examName" class="form-label">Exam Name <span
+                                    class="login-danger">*</span></label>
                             <input type="text" wire:model.defer="examName" class="form-control" id="examName">
                             @error('examName') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
@@ -387,7 +439,8 @@
     </div>
 
     <!-- Create Activity Modal -->
-    <div wire:ignore.self class="modal fade" id="createActivityModal" tabindex="-1" role="dialog" aria-labelledby="createActivityModalLabel" aria-hidden="true">
+    <div wire:ignore.self class="modal fade" id="createActivityModal" tabindex="-1" role="dialog"
+        aria-labelledby="createActivityModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -397,7 +450,8 @@
                 <div class="modal-body">
                     <form>
                         <div class="mb-3 local-forms">
-                            <label for="activityName" class="form-label">Activity Name <span class="login-danger">*</span></label>
+                            <label for="activityName" class="form-label">Activity Name <span
+                                    class="login-danger">*</span></label>
                             <input type="text" wire:model.defer="activityName" class="form-control" id="activityName">
                             @error('activityName') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
@@ -412,7 +466,8 @@
     </div>
 
     <!-- View Activity Modal -->
-    <div wire:ignore.self class="modal fade" id="viewActivityModal" tabindex="-1" role="dialog" aria-labelledby="viewActivityModalLabel" aria-hidden="true">
+    <div wire:ignore.self class="modal fade" id="viewActivityModal" tabindex="-1" role="dialog"
+        aria-labelledby="viewActivityModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -423,10 +478,13 @@
                     <form>
                         <div class="mb-3 local-forms">
 
-                            <label for="activityName" class="form-label">Activity Name <span class="login-danger">*</span></label>
+                            <label for="activityName" class="form-label">Activity Name <span
+                                    class="login-danger">*</span></label>
 
 
-                            <input type="text" wire:model.defer="activityName" class="form-control" id="activityName" disabled>
+
+                            <input type="text" wire:model.defer="activityName" class="form-control" id="activityName"
+                                disabled>
                         </div>
                     </form>
                 </div>
@@ -438,7 +496,8 @@
     </div>
 
     <!-- Edit Activity Modal -->
-    <div wire:ignore.self class="modal fade" id="editActivityModal" tabindex="-1" role="dialog" aria-labelledby="editActivityModalLabel" aria-hidden="true">
+    <div wire:ignore.self class="modal fade" id="editActivityModal" tabindex="-1" role="dialog"
+        aria-labelledby="editActivityModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -448,7 +507,8 @@
                 <div class="modal-body">
                     <form>
                         <div class="mb-3 local-forms">
-                            <label for="activityName" class="form-label">Activity Name <span class="login-danger">*</span></label>
+                            <label for="activityName" class="form-label">Activity Name <span
+                                    class="login-danger">*</span></label>
                             <input type="text" wire:model.defer="activityName" class="form-control" id="activityName">
                             @error('activityName') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
@@ -465,20 +525,20 @@
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        window.livewire.on('openTermModal', () => {
-            var termModal = new bootstrap.Modal(document.getElementById('viewTermModal'));
-            termModal.show();
-        });
-
-        window.livewire.on('openAcademicYearModal', () => {
-            var academicYearModal = new bootstrap.Modal(document.getElementById('viewAcademicYearModal'));
-            academicYearModal.show();
-        });
-
-        window.livewire.on('openExamModal', () => {
-            var examModal = new bootstrap.Modal(document.getElementById('viewExamModal'));
-            examModal.show();
-        });
+document.addEventListener('DOMContentLoaded', function() {
+    window.livewire.on('openTermModal', () => {
+        var termModal = new bootstrap.Modal(document.getElementById('viewTermModal'));
+        termModal.show();
     });
+
+    window.livewire.on('openAcademicYearModal', () => {
+        var academicYearModal = new bootstrap.Modal(document.getElementById('viewAcademicYearModal'));
+        academicYearModal.show();
+    });
+
+    window.livewire.on('openExamModal', () => {
+        var examModal = new bootstrap.Modal(document.getElementById('viewExamModal'));
+        examModal.show();
+    });
+});
 </script>
