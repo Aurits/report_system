@@ -49,13 +49,16 @@
                                     <div class="col-auto text-end float-end ms-auto download-grp">
                                         <a href="#" class="btn btn-outline-primary me-2"><i class="fas fa-download"></i>
                                             Download</a>
-                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addTeacherModal" wire:click="resetInputFields"><i class="fas fa-plus"></i></button>
+                                        <button class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#addTeacherModal" wire:click="resetInputFields"><i
+                                                class="fas fa-plus"></i></button>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="table-responsive">
-                                <table class="table border-0 star-student table-hover table-center mb-0 datatable table-striped">
+                                <table
+                                    class="table border-0 star-student table-hover table-center mb-0 datatables table-striped">
                                     <thead class="teacher-thread">
                                         <tr>
                                             <th>ID</th>
@@ -76,9 +79,14 @@
                                             <td>{{ $teacher->phone }}</td>
                                             <td class="text-end">
                                                 <div class="actions">
-                                                    <button wire:click="view({{ $teacher->id }})" class="btn btn-sm bg-success-light me-2"><i class="feather-eye"></i> View</button>
-                                                    <button wire:click="edit({{ $teacher->id }})" class="btn btn-sm bg-danger-light me-2"><i class="feather-edit"></i> Edit</button>
-                                                    <button wire:click="delete({{ $teacher->id }})" class="btn btn-sm bg-danger-light"><i class="feather-trash"></i>
+                                                    <button wire:click="view({{ $teacher->id }})"
+                                                        class="btn btn-sm bg-success-light me-2"><i
+                                                            class="feather-eye"></i> View</button>
+                                                    <button wire:click="edit({{ $teacher->id }})"
+                                                        class="btn btn-sm bg-danger-light me-2"><i
+                                                            class="feather-edit"></i> Edit</button>
+                                                    <button wire:click="delete({{ $teacher->id }})"
+                                                        class="btn btn-sm bg-danger-light"><i class="feather-trash"></i>
                                                         Delete</button>
                                                 </div>
                                             </td>
@@ -109,7 +117,8 @@
     </div>
 
     <!-- Add/Edit Teacher Modal -->
-    <div class="modal fade" id="addTeacherModal" tabindex="-1" aria-labelledby="addTeacherModalLabel" aria-hidden="true" wire:ignore.self>
+    <div class="modal fade" id="addTeacherModal" tabindex="-1" aria-labelledby="addTeacherModalLabel" aria-hidden="true"
+        wire:ignore.self>
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -127,14 +136,16 @@
                             <div class="col-12 col-sm-4">
                                 <div class="form-group local-forms">
                                     <label>Teacher ID <span class="login-danger">*</span></label>
-                                    <input type="text" class="form-control" placeholder="Teacher ID" wire:model="teacher_id" />
+                                    <input type="text" class="form-control" placeholder="Teacher ID"
+                                        wire:model="teacher_id" />
                                     @error('teacher_id') <span class="text-danger">{{ $message }}</span> @enderror
                                 </div>
                             </div>
                             <div class="col-12 col-sm-4">
                                 <div class="form-group local-forms">
                                     <label>Name <span class="login-danger">*</span></label>
-                                    <input type="text" class="form-control" placeholder="Enter Name" wire:model="name" />
+                                    <input type="text" class="form-control" placeholder="Enter Name"
+                                        wire:model="name" />
                                     @error('name') <span class="text-danger">{{ $message }}</span> @enderror
                                 </div>
                             </div>
@@ -153,21 +164,24 @@
                             <div class="col-12 col-sm-4">
                                 <div class="form-group local-forms">
                                     <label>Email <span class="login-danger">*</span></label>
-                                    <input type="email" class="form-control" placeholder="Enter Email" wire:model="email" />
+                                    <input type="email" class="form-control" placeholder="Enter Email"
+                                        wire:model="email" />
                                     @error('email') <span class="text-danger">{{ $message }}</span> @enderror
                                 </div>
                             </div>
                             <div class="col-12 col-sm-4">
                                 <div class="form-group local-forms">
                                     <label>Phone <span class="login-danger">*</span></label>
-                                    <input type="text" class="form-control" placeholder="Enter Phone" wire:model="phone" />
+                                    <input type="text" class="form-control" placeholder="Enter Phone"
+                                        wire:model="phone" />
                                     @error('phone') <span class="text-danger">{{ $message }}</span> @enderror
                                 </div>
 
                             </div>
                             <div class="col-12">
                                 <div class="student-submit">
-                                    <button type="submit" class="btn btn-primary">{{ $editMode ? 'Update' : 'Submit' }}</button>
+                                    <button type="submit"
+                                        class="btn btn-primary">{{ $editMode ? 'Update' : 'Submit' }}</button>
                                 </div>
                             </div>
                         </div>
@@ -205,7 +219,8 @@
     </div>
 
     <!-- View Teacher Modal -->
-    <div class="modal fade" id="viewTeacherModal" tabindex="-1" aria-labelledby="viewTeacherModalLabel" aria-hidden="true" wire:ignore.self>
+    <div class="modal fade" id="viewTeacherModal" tabindex="-1" aria-labelledby="viewTeacherModalLabel"
+        aria-hidden="true" wire:ignore.self>
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-primary text-white">
@@ -228,6 +243,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <strong>Email:</strong> {{$teacherToView['email']}}
+
 
 
 
