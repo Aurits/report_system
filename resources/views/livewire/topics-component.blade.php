@@ -13,175 +13,113 @@
             <div class="alert alert-success">{{ Session::get('message') }}</div>
             @endif
 
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="nav nav-pills mb-3" id="academicYearTab" role="tablist">
-                        @foreach ($academicYears as $year)
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link @if ($loop->first) active @endif" id="year-{{ $year->id }}-tab"
-                                data-bs-toggle="pill" href="#year-{{ $year->id }}" role="tab"
-                                aria-controls="year-{{ $year->id }}"
-                                aria-selected="{{ $loop->first ? 'true' : 'false' }}">{{ $year->year }}</a>
-                        </li>
-                        @endforeach
-                    </ul>
+            <form wire:submit.prevent="loadEnrollments">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="nav nav-pills mb-3" id="academicYearTab" role="tablist">
+                            @foreach ($academicYears as $year)
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link @if ($selectedYear == $year->id) active @endif"
+                                    id="year-{{ $year->id }}-tab" data-bs-toggle="pill"
+                                    wire:click="$set('selectedYear', {{ $year->id }})" role="tab"
+                                    aria-controls="year-{{ $year->id }}"
+                                    aria-selected="{{ $selectedYear == $year->id ? 'true' : 'false' }}">{{ $year->year }}</a>
+                            </li>
+                            @endforeach
+                        </ul>
 
-                    <div class="tab-content" id="academicYearTabContent">
-                        @foreach ($academicYears as $year)
-                        <div class="tab-pane fade @if ($loop->first) show active @endif" id="year-{{ $year->id }}"
-                            role="tabpanel" aria-labelledby="year-{{ $year->id }}-tab">
-                            <ul class="nav nav-pills mb-3" id="termTab-{{ $year->id }}" role="tablist">
-                                @foreach ($terms as $term)
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link @if ($loop->first) active @endif"
-                                        id="term-{{ $term->id }}-tab-{{ $year->id }}" data-bs-toggle="pill"
-                                        href="#term-{{ $term->id }}-{{ $year->id }}" role="tab"
-                                        aria-controls="term-{{ $term->id }}-{{ $year->id }}"
-                                        aria-selected="{{ $loop->first ? 'true' : 'false' }}">{{ $term->name }}</a>
-                                </li>
+                        <ul class="nav nav-pills mb-3" id="termTab" role="tablist">
+                            @foreach ($terms as $term)
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link @if ($selectedTerm == $term->id) active @endif"
+                                    id="term-{{ $term->id }}-tab" data-bs-toggle="pill"
+                                    wire:click="$set('selectedTerm', {{ $term->id }})" role="tab"
+                                    aria-controls="term-{{ $term->id }}"
+                                    aria-selected="{{ $selectedTerm == $term->id ? 'true' : 'false' }}">{{ $term->name }}</a>
+                            </li>
+                            @endforeach
+                        </ul>
+
+                        <ul class="nav nav-pills mb-3" id="classTab" role="tablist">
+                            @foreach ($classes as $class)
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link @if ($selectedClass == $class->id) active @endif"
+                                    id="class-{{ $class->id }}-tab" data-bs-toggle="pill"
+                                    wire:click="$set('selectedClass', {{ $class->id }})" role="tab"
+                                    aria-controls="class-{{ $class->id }}"
+                                    aria-selected="{{ $selectedClass == $class->id ? 'true' : 'false' }}">{{ $class->name }}</a>
+                            </li>
+                            @endforeach
+                        </ul>
+
+                        <ul class="nav nav-pills mb-3" id="streamTab" role="tablist">
+                            @foreach ($streams as $stream)
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link @if ($selectedStream == $stream->id) active @endif"
+                                    id="stream-{{ $stream->id }}-tab" data-bs-toggle="pill"
+                                    wire:click="$set('selectedStream', {{ $stream->id }})" role="tab"
+                                    aria-controls="stream-{{ $stream->id }}"
+                                    aria-selected="{{ $selectedStream == $stream->id ? 'true' : 'false' }}">{{ $stream->name }}</a>
+                            </li>
+                            @endforeach
+                        </ul>
+
+                        <ul class="nav nav-pills mb-3" id="subjectTab" role="tablist">
+                            @foreach ($subjects as $subject)
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link @if ($selectedSubject == $subject->id) active @endif"
+                                    id="subject-{{ $subject->id }}-tab" data-bs-toggle="pill"
+                                    wire:click="$set('selectedSubject', {{ $subject->id }})" role="tab"
+                                    aria-controls="subject-{{ $subject->id }}"
+                                    aria-selected="{{ $selectedSubject == $subject->id ? 'true' : 'false' }}">{{ $subject->name }}</a>
+                            </li>
+                            @endforeach
+                        </ul>
+
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
+
+            @if ($marks->isNotEmpty())
+            <div class="card mt-3">
+                <div class="card-header">
+                    <h5 class="card-title">
+                        Enrollments List - Class: {{ $classes->find($selectedClass)->name ?? 'N/A' }} - Year:
+                        {{ $academicYears->find($selectedYear)->year ?? 'N/A' }} - Term:
+                        {{ $terms->find($selectedTerm)->name ?? 'N/A' }} - Stream:
+                        {{ $streams->find($selectedStream)->name ?? 'N/A' }} - Subject:
+                        {{ $subjects->find($selectedSubject)->name ?? 'N/A' }}
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table border-0 star-class table-hover table-center mb-0 datatable table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Enrollment ID</th>
+                                    <th>Student ID</th>
+                                    <th>Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($marks as $mark)
+
+                                <tr>
+                                    <td>{{ $mark->id }}</td>
+                                    <td>{{ $mark->student->id }}</td>
+                                    <td>{{ $mark->student->name }}</td>
+                                </tr>
+
                                 @endforeach
-                            </ul>
-
-                            <div class="tab-content" id="termTabContent-{{ $year->id }}">
-                                @foreach ($terms as $term)
-                                <div class="tab-pane fade @if ($loop->first) show active @endif"
-                                    id="term-{{ $term->id }}-{{ $year->id }}" role="tabpanel"
-                                    aria-labelledby="term-{{ $term->id }}-tab-{{ $year->id }}">
-                                    <ul class="nav nav-pills mb-3" id="classTab-{{ $term->id }}-{{ $year->id }}"
-                                        role="tablist">
-                                        @foreach ($classes as $class)
-                                        <li class="nav-item" role="presentation">
-                                            <a class="nav-link @if ($loop->first) active @endif"
-                                                id="class-{{ $class->id }}-tab-{{ $term->id }}-{{ $year->id }}"
-                                                data-bs-toggle="pill"
-                                                href="#class-{{ $class->id }}-{{ $term->id }}-{{ $year->id }}"
-                                                role="tab"
-                                                aria-controls="class-{{ $class->id }}-{{ $term->id }}-{{ $year->id }}"
-                                                aria-selected="{{ $loop->first ? 'true' : 'false' }}">{{ $class->name }}</a>
-                                        </li>
-                                        @endforeach
-                                    </ul>
-
-                                    <div class="tab-content" id="classTabContent-{{ $term->id }}-{{ $year->id }}">
-                                        @foreach ($classes as $class)
-                                        <div class="tab-pane fade @if ($loop->first) show active @endif"
-                                            id="class-{{ $class->id }}-{{ $term->id }}-{{ $year->id }}" role="tabpanel"
-                                            aria-labelledby="class-{{ $class->id }}-tab-{{ $term->id }}-{{ $year->id }}">
-                                            <ul class="nav nav-pills mb-3"
-                                                id="streamTab-{{ $class->id }}-{{ $term->id }}-{{ $year->id }}"
-                                                role="tablist">
-                                                @foreach ($streams as $stream)
-                                                <li class="nav-item" role="presentation">
-                                                    <a class="nav-link @if ($loop->first) active @endif"
-                                                        id="stream-{{ $stream->id }}-tab-{{ $class->id }}-{{ $term->id }}-{{ $year->id }}"
-                                                        data-bs-toggle="pill"
-                                                        href="#stream-{{ $stream->id }}-{{ $class->id }}-{{ $term->id }}-{{ $year->id }}"
-                                                        role="tab"
-                                                        aria-controls="stream-{{ $stream->id }}-{{ $class->id }}-{{ $term->id }}-{{ $year->id }}"
-                                                        aria-selected="{{ $loop->first ? 'true' : 'false' }}">{{ $stream->name }}</a>
-                                                </li>
-                                                @endforeach
-                                            </ul>
-
-                                            <div class="tab-content"
-                                                id="streamTabContent-{{ $class->id }}-{{ $term->id }}-{{ $year->id }}">
-                                                @foreach ($streams as $stream)
-                                                <div class="tab-pane fade @if ($loop->first) show active @endif"
-                                                    id="stream-{{ $stream->id }}-{{ $class->id }}-{{ $term->id }}-{{ $year->id }}"
-                                                    role="tabpanel"
-                                                    aria-labelledby="stream-{{ $stream->id }}-tab-{{ $class->id }}-{{ $term->id }}-{{ $year->id }}">
-                                                    <ul class="nav nav-pills mb-3"
-                                                        id="subjectTab-{{ $stream->id }}-{{ $class->id }}-{{ $term->id }}-{{ $year->id }}"
-                                                        role="tablist">
-                                                        @foreach ($subjects as $subject)
-                                                        <li class="nav-item" role="presentation">
-                                                            <a class="nav-link @if ($loop->first) active @endif"
-                                                                id="subject-{{ $subject->id }}-tab-{{ $stream->id }}-{{ $class->id }}-{{ $term->id }}-{{ $year->id }}"
-                                                                data-bs-toggle="pill"
-                                                                href="#subject-{{ $subject->id }}-{{ $stream->id }}-{{ $class->id }}-{{ $term->id }}-{{ $year->id }}"
-                                                                role="tab"
-                                                                aria-controls="subject-{{ $subject->id }}-{{ $stream->id }}-{{ $class->id }}-{{ $term->id }}-{{ $year->id }}"
-                                                                aria-selected="{{ $loop->first ? 'true' : 'false' }}">{{ $subject->name }}</a>
-                                                        </li>
-                                                        @endforeach
-                                                    </ul>
-
-                                                    <div class="tab-content"
-                                                        id="subjectTabContent-{{ $stream->id }}-{{ $class->id }}-{{ $term->id }}-{{ $year->id }}">
-                                                        @foreach ($subjects as $subject)
-                                                        <div class="tab-pane fade @if ($loop->first) show active @endif"
-                                                            id="subject-{{ $subject->id }}-{{ $stream->id }}-{{ $class->id }}-{{ $term->id }}-{{ $year->id }}"
-                                                            role="tabpanel"
-                                                            aria-labelledby="subject-{{ $subject->id }}-tab-{{ $stream->id }}-{{ $class->id }}-{{ $term->id }}-{{ $year->id }}">
-
-                                                            <select wire:model="selectedTopic" class="form-control">
-                                                                <option value="">Select Topic</option>
-                                                                @foreach ($topics as $topic)
-                                                                <option value="{{ $topic->id }}">
-                                                                    {{ $topic->name }}
-                                                                </option>
-                                                                @endforeach
-                                                            </select>
-
-                                                            <div class="card mt-3">
-                                                                <div class="card-header">
-                                                                    <h5 class="card-title">Enrollments List - Class:
-                                                                        {{ $class->name }} - Year:
-                                                                        {{ $year->year }} - Term:
-                                                                        {{ $term->name }} - Stream:
-                                                                        {{ $stream->name }} - Subject:
-                                                                        {{ $subject->name }}
-                                                                    </h5>
-                                                                </div>
-                                                                <div class="card-body">
-                                                                    <div class="table-responsive">
-                                                                        <table
-                                                                            class="table border-0 star-class table-hover table-center mb-0 datatable table-striped">
-                                                                            <thead>
-                                                                                <tr>
-                                                                                    <th>Enrollment ID</th>
-                                                                                    <th>Student ID</th>
-                                                                                    <th>Name</th>
-                                                                                </tr>
-                                                                            </thead>
-                                                                            <tbody>
-                                                                                @foreach ($marks as $mark)
-                                                                                @if ($mark->enrollment &&
-                                                                                $mark->enrollment->student)
-                                                                                <tr>
-                                                                                    <td>{{ $mark->enrollment->id }}
-                                                                                    </td>
-                                                                                    <td>{{ $mark->enrollment->student->id }}
-                                                                                    </td>
-                                                                                    <td>{{ $mark->enrollment->student->name }}
-                                                                                    </td>
-                                                                                </tr>
-                                                                                @endif
-                                                                                @endforeach
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
-                                                        @endforeach
-                                                    </div>
-
-                                                </div>
-                                                @endforeach
-                                            </div>
-                                        </div>
-                                        @endforeach
-                                    </div>
-                                </div>
-                                @endforeach
-                            </div>
-                        </div>
-                        @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
+            @else
+            <div class="alert alert-info">No enrollments found for the selected criteria.</div>
+            @endif
         </div>
     </div>
 </div>
