@@ -54,8 +54,8 @@
                                 </div>
                             </div>
 
-                            <div class="">
-                                <table class=" display " id="example" style="width:100%">
+                            <div class="table-responsive">
+                                <table class="table border-0 star-teacher table-hover table-center mb-0 table-striped">
                                     <thead class="teacher-thread">
                                         <tr>
                                             <th>ID</th>
