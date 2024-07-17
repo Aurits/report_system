@@ -26,8 +26,6 @@ class Enrollment extends Model
         return $this->belongsTo(Term::class);
     }
 
-
-
     public function house()
     {
         return $this->belongsTo(House::class);

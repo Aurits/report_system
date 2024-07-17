@@ -9,7 +9,8 @@ use App\Models\Stream;
 use App\Models\Subject;
 use App\Models\Mark;
 use App\Models\Enrollment;
-use App\Models\Term; // Add Term model
+use App\Models\Term;
+use App\Models\Topic;
 
 class TopicsComponent extends Component
 {
@@ -18,6 +19,7 @@ class TopicsComponent extends Component
     public $streams;
     public $subjects;
     public $terms;
+    public $topics;
     public $marks;
 
     public $selectedYear;
@@ -25,6 +27,7 @@ class TopicsComponent extends Component
     public $selectedStream;
     public $selectedSubject;
     public $selectedTerm;
+    public $selectedTopic;
 
     public function mount()
     {
@@ -32,49 +35,61 @@ class TopicsComponent extends Component
         $this->classes = ClassModel::all();
         $this->streams = Stream::all();
         $this->subjects = Subject::all();
-        $this->terms = Term::all(); // Load terms
-        $this->loadMarks();
+        $this->terms = Term::all();
+        $this->topics = collect();
+        $this->marks = collect();
     }
 
-    public function loadMarks()
+    public function updated($propertyName)
     {
-        $query = Mark::query()
-            ->with(['enrollment.student', 'enrollment.subject', 'enrollment.academicYear', 'enrollment.classModel', 'enrollment.stream', 'topic']);
+        if (in_array($propertyName, ['selectedYear', 'selectedClass', 'selectedStream', 'selectedSubject', 'selectedTerm'])) {
+            $this->loadTopics();
+            $this->loadEnrollments();
+        }
+    }
+
+    public function loadTopics()
+    {
+        if ($this->selectedSubject) {
+            $this->topics = Topic::where('subject_id', $this->selectedSubject)->get();
+        } else {
+            $this->topics = collect();
+        }
+    }
+
+    public function loadEnrollments()
+    {
+        $query = Enrollment::query()
+            ->with(['student']);
 
         if ($this->selectedYear) {
-            $query->whereHas('enrollment', function ($q) {
-                $q->where('academic_year_id', $this->selectedYear);
-            });
+            $query->where('academic_year_id', $this->selectedYear);
         }
 
         if ($this->selectedClass) {
-            $query->whereHas('enrollment', function ($q) {
-                $q->where('class_id', $this->selectedClass);
-            });
+            $query->where('class_id', $this->selectedClass);
         }
 
         if ($this->selectedStream) {
-            $query->whereHas('enrollment', function ($q) {
-                $q->where('stream_id', $this->selectedStream);
-            });
+            $query->where('stream_id', $this->selectedStream);
         }
 
         if ($this->selectedSubject) {
-            $query->whereHas('enrollment', function ($q) {
-                $q->where('subject_id', $this->selectedSubject);
-            });
+            $query->where('subject_id', $this->selectedSubject);
         }
 
         if ($this->selectedTerm) {
-            $query->whereHas('enrollment', function ($q) {
-                $q->where('term_id', $this->selectedTerm);
+            $query->where('term_id', $this->selectedTerm);
+        }
+
+        if ($this->selectedTopic) {
+            $query->whereHas('marks', function ($q) {
+                $q->where('topic_id', $this->selectedTopic);
             });
         }
 
         $this->marks = $query->get();
     }
-
-
 
     public function render()
     {
