@@ -210,27 +210,6 @@
                 </div>
             </div>
 
-            <!-- Subject Group Form -->
-            <div class="subject-group-form">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search by ID ..." />
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search by Name ..." />
-                        </div>
-                    </div>
-                    <div class="col-lg-2">
-                        <div class="search-subject-btn">
-                            <button type="btn" class="btn btn-primary">Search</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <!-- Subjects Table -->
             <div class="row">
                 <div class="col-md-6">
@@ -360,6 +339,7 @@
                                         </tr>
                                         @endforeach
                                         @endif
+
 
 
 
