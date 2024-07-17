@@ -55,7 +55,7 @@
                             </div>
 
                             <div class="table-responsive">
-                                <table class="table border-0 star-teacher table-hover dataTable table-center mb-0 table-striped">
+                                <table class="table border-0 star-teacher table-hover dataTables table-center mb-0 table-striped">
                                     <thead class="teacher-thread">
                                         <tr>
                                             <th>ID</th>
