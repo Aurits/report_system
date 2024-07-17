@@ -16,7 +16,7 @@
             <form wire:submit.prevent="loadEnrollments">
                 <div class="row">
                     <div class="col-lg-12">
-                        <ul class="nav nav-pills mb-5" id="academicYearTab" role="tablist">
+                        <ul class="nav nav-pills mb-3" id="academicYearTab" role="tablist">
                             @foreach ($academicYears as $year)
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link @if ($selectedYear == $year->id) active @endif"
@@ -27,8 +27,9 @@
                             </li>
                             @endforeach
                         </ul>
+                        <hr>
 
-                        <ul class="nav nav-pills mb-5" id="termTab" role="tablist">
+                        <ul class="nav nav-pills mb-3" id="termTab" role="tablist">
                             @foreach ($terms as $term)
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link @if ($selectedTerm == $term->id) active @endif"
@@ -39,8 +40,9 @@
                             </li>
                             @endforeach
                         </ul>
+                        <hr>
 
-                        <ul class="nav nav-pills mb-5" id="classTab" role="tablist">
+                        <ul class="nav nav-pills mb-3" id="classTab" role="tablist">
                             @foreach ($classes as $class)
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link @if ($selectedClass == $class->id) active @endif"
@@ -51,8 +53,9 @@
                             </li>
                             @endforeach
                         </ul>
+                        <hr>
 
-                        <ul class="nav nav-pills mb-5" id="streamTab" role="tablist">
+                        <ul class="nav nav-pills mb-3" id="streamTab" role="tablist">
                             @foreach ($streams as $stream)
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link @if ($selectedStream == $stream->id) active @endif"
@@ -63,8 +66,9 @@
                             </li>
                             @endforeach
                         </ul>
+                        <hr>
 
-                        <ul class="nav nav-pills mb-5" id="subjectTab" role="tablist">
+                        <ul class="nav nav-pills mb-3" id="subjectTab" role="tablist">
                             @foreach ($subjects as $subject)
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link @if ($selectedSubject == $subject->id) active @endif"
@@ -75,6 +79,7 @@
                             </li>
                             @endforeach
                         </ul>
+                        <hr>
 
                         <button type="submit" class="btn btn-primary mb-5">Submit</button>
                     </div>
