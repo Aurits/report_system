@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/plugins/datatables/datatables.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/plugins/simple-calendar/simple-calendar.css') }}">
+    <link href="https://cdn.datatables.net/v/bs5/dt-2.0.8/datatables.min.css" rel="stylesheet">
+
 
     @livewireStyles()
 </head>
@@ -151,6 +153,7 @@
     @livewireScripts()
 
     <script>
+        $('#example').DataTable();
         Livewire.on('openEditModal', () => {
             const modal = new bootstrap.Modal(document.getElementById('addTeacherModal'));
             modal.show();
@@ -165,6 +168,7 @@
         });
     </script>
 
+    <script src="https://cdn.datatables.net/v/bs5/dt-2.0.8/datatables.min.js"></script>
     <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/datatables/datatables.min.js') }}"></script>
