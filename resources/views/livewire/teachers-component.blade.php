@@ -55,7 +55,7 @@
                             </div>
 
                             <div class="">
-                                <table class=" display " id="example">
+                                <table class=" display " id="example" style="width:100%">
                                     <thead class="teacher-thread">
                                         <tr>
                                             <th>ID</th>
