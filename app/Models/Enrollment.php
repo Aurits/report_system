@@ -19,19 +19,33 @@ class Enrollment extends Model
         'house_id',
     ];
 
+
+
+    public function term()
+    {
+        return $this->belongsTo(Term::class);
+    }
+
+
+
+    public function house()
+    {
+        return $this->belongsTo(House::class);
+    }
+
     public function student()
     {
         return $this->belongsTo(Student::class);
     }
 
+    public function subject()
+    {
+        return $this->belongsTo(Subject::class);
+    }
+
     public function academicYear()
     {
         return $this->belongsTo(AcademicYear::class);
-    }
-
-    public function term()
-    {
-        return $this->belongsTo(Term::class);
     }
 
     public function classModel()
@@ -42,15 +56,6 @@ class Enrollment extends Model
     public function stream()
     {
         return $this->belongsTo(Stream::class);
-    }
-    public function subject()
-    {
-        return $this->belongsTo(Subject::class);
-    }
-
-    public function house()
-    {
-        return $this->belongsTo(House::class);
     }
 
     public function marks()

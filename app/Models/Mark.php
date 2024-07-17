@@ -33,8 +33,10 @@ class Mark extends Model
         return $this->belongsTo(Activity::class);
     }
 
-    public function term()
+
+
+    public function topic()
     {
-        return $this->belongsTo(Term::class);
+        return $this->belongsTo(Topic::class);
     }
 }
