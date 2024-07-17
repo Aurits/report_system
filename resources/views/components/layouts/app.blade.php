@@ -15,19 +15,12 @@
     <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome/css/fontawesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-    <!-- <link rel="stylesheet" href="{{ asset('assets/plugins/datatables/datatables.min.css') }}"> -->
+    <link rel="stylesheet" href="{{ asset('assets/plugins/datatables/datatables.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/plugins/simple-calendar/simple-calendar.css') }}">
-    <!-- DataTables CSS -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.8/css/dataTables.bootstrap5.min.css">
-    <!-- jQuery -->
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
-    <!-- DataTables JS -->
-    <script type="text/javascript" charset="utf8"
-        src="https://cdn.datatables.net/2.0.8/js/dataTables.bootstrap5.min.js">
-    </script>
+    < </script>
 
 
-    @livewireStyles()
+        @livewireStyles()
 </head>
 
 <body>
@@ -178,7 +171,7 @@
 
     <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <!-- <script src="{{ asset('assets/plugins/datatables/datatables.min.js') }}"></script> -->
+    <script src="{{ asset('assets/plugins/datatables/datatables.min.js') }}"></script>
     <script src="{{ asset('assets/js/feather.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/apexchart/apexcharts.min.js') }}"></script>
@@ -194,6 +187,8 @@
 
 
 </body>
+
+
 
 
 
