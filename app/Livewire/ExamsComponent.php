@@ -69,7 +69,13 @@ class ExamsComponent extends Component
 
         $this->marks = $this->enrollments->mapWithKeys(function ($enrollment) {
             $mark = $enrollment->marks->first();
-            return [$enrollment->id => $mark ? $mark->marks_obtained : ''];
+            return [
+                $enrollment->id => [
+                    'marks_obtained_1' => $mark ? $mark->marks_obtained_1 : '',
+                    'marks_obtained_2' => $mark ? $mark->marks_obtained_2 : '',
+                    'marks_obtained_3' => $mark ? $mark->marks_obtained_3 : '',
+                ]
+            ];
         })->toArray();
     }
 
@@ -77,20 +83,24 @@ class ExamsComponent extends Component
     {
         $enrollment = Enrollment::find($enrollmentId);
         if ($enrollment) {
+            $markData = $this->marks[$enrollmentId] ?? ['marks_obtained_1' => 0, 'marks_obtained_2' => 0, 'marks_obtained_3' => 0];
+
             $mark = Mark::updateOrCreate(
                 [
                     'enrollment_id' => $enrollment->id,
-                    'term_id' => $this->selectedTerm,
-                    'assessment_type' => $this->selectedAssessmentType
+                    'assessment_type' => $this->selectedAssessmentType // Use selected assessment type
                 ],
                 [
-                    'marks_obtained' => $this->marks[$enrollmentId] ?? 0
+                    'marks_obtained_1' => $markData['marks_obtained_1'],
+                    'marks_obtained_2' => $markData['marks_obtained_2'],
+                    'marks_obtained_3' => $markData['marks_obtained_3'],
                 ]
             );
 
             Session::flash('marks', 'Marks updated successfully.');
         }
     }
+
 
 
     public function saveAllMarks()

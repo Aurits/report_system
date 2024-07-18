@@ -89,7 +89,9 @@
                                     <th>Enrollment ID</th>
                                     <th>Student ID</th>
                                     <th>Name</th>
-                                    <th>Marks</th>
+                                    <th>Marks 1(BOT)</th>
+                                    <th>Marks 2(MOT)</th>
+                                    <th>Marks 3(EOT)</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -104,12 +106,18 @@
                                     <td>{{ $enrollment->student->name }}</td>
 
                                     <td style="width: 10%;">
-                                        <input type="number" class="form-control" wire:model.defer="marks.{{ $enrollment->id }}" wire:key="marks-{{ $enrollment->id }}">
+                                        <input type="number" class="form-control" wire:model.defer="marks.{{ $enrollment->id }}.marks_obtained_1" wire:key="marks-{{ $enrollment->id }}-1">
+                                    </td>
+                                    <td style="width: 10%;">
+                                        <input type="number" class="form-control" wire:model.defer="marks.{{ $enrollment->id }}.marks_obtained_2" wire:key="marks-{{ $enrollment->id }}-2">
+                                    </td>
+                                    <td style="width: 10%;">
+                                        <input type="number" class="form-control" wire:model.defer="marks.{{ $enrollment->id }}.marks_obtained_3" wire:key="marks-{{ $enrollment->id }}-3">
                                     </td>
                                     <td>
                                         <button class="btn btn-primary" wire:click="saveMarks({{ $enrollment->id }})">Save</button>
-
                                     </td>
+
 
 
                                 </tr>
