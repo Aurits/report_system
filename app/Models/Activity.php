@@ -13,11 +13,11 @@ class Activity extends Model
         'enrollment_id',
         'marks_aoi',
         'topic_id',
+        'marks_activity_1',
         'marks_activity_2',
         'marks_activity_3',
-        'marks_activity_3',
-        'marks_activity_3',
-        'marks_activity_3',
+        'marks_activity_4',
+        'marks_activity_5',
     ];
 
     public function enrollment()
