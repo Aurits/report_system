@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <title>Admin Dashboard</title>
     <link rel="shortcut icon" href="{{ asset('assets/img/favicon.png')}}">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/plugins/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/plugins/feather/feather.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/plugins/icons/flags/flags.css') }}">
@@ -128,7 +126,7 @@
                                 </li>
                                 <li class="{{ Request::is('exams') ? 'active' : '' }}">
                                     <a href="{{ route('exams') }}"><i class="fas fa-file-alt"></i>
-                                        <span>Exams</span></a>
+                                        <span>Exams $ Project</span></a>
                                 </li>
                             </ul>
                         </li>
@@ -155,18 +153,18 @@
     @livewireScripts()
 
     <script>
-    Livewire.on('openEditModal', () => {
-        const modal = new bootstrap.Modal(document.getElementById('addTeacherModal'));
-        modal.show();
-    });
+        Livewire.on('openEditModal', () => {
+            const modal = new bootstrap.Modal(document.getElementById('addTeacherModal'));
+            modal.show();
+        });
     </script>
 
 
     <script>
-    Livewire.on('openViewModal', () => {
-        const modal = new bootstrap.Modal(document.getElementById('viewTeacherModal'));
-        modal.show();
-    });
+        Livewire.on('openViewModal', () => {
+            const modal = new bootstrap.Modal(document.getElementById('viewTeacherModal'));
+            modal.show();
+        });
     </script>
 
     <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
