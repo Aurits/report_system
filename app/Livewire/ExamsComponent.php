@@ -2,55 +2,106 @@
 
 namespace App\Livewire;
 
-use App\Models\ClassModel;
-use App\Models\Exam;
-use App\Models\Stream;
-use App\Models\Student;
-use App\Models\Subject;
-use Illuminate\Http\Request;
 use Livewire\Component;
+use App\Models\AcademicYear;
+use App\Models\ClassModel;
+use App\Models\Stream;
+use App\Models\Subject;
+use App\Models\Mark;
+use App\Models\Enrollment;
+use App\Models\Term;
+use Illuminate\Support\Facades\Session;
 
 class ExamsComponent extends Component
 {
-    public $students;
-    public $class_id;
-    public $stream_id;
-    public $subject_id;
+    public $academicYears;
+    public $classes;
+    public $streams;
+    public $subjects;
+    public $terms;
+
+    public $marks = [];
+    public $selectedAssessmentType = 'Exam'; // default value
+
+    public $enrollments;
+    public $selectedYear;
+    public $selectedClass;
+    public $selectedStream;
+    public $selectedSubject;
+    public $selectedTerm;
+    protected $listeners = ['saveMarks'];
     public function mount()
     {
-        $this->students =[];
+        $this->academicYears = AcademicYear::all();
+        $this->classes = ClassModel::all();
+        $this->streams = Stream::all();
+        $this->subjects = Subject::all();
+        $this->terms = Term::all();
+        $this->enrollments = collect();
     }
 
-    public function search()
+    public function loadEnrollments()
     {
-        $query = Student::query();
+        $query = Enrollment::query()
+            ->with(['student']);
 
-        if ($this->class_id) {
-            $query->where('class_id', $this->class_id);
+        if ($this->selectedYear) {
+            $query->where('academic_year_id', $this->selectedYear);
         }
 
-        if ($this->stream_id) {
-            $query->where('stream_id', $this->stream_id);
+        if ($this->selectedClass) {
+            $query->where('class_id', $this->selectedClass);
         }
 
-        if ($this->subject_id) {
-            $query->where('subject_id', $this->subject_id);
+        if ($this->selectedStream) {
+            $query->where('stream_id', $this->selectedStream);
         }
 
-        // Retrieve students matching the search criteria
-        $this->students = $query->get()->toArray();
+        if ($this->selectedSubject) {
+            $query->where('subject_id', $this->selectedSubject);
+        }
+
+        if ($this->selectedTerm) {
+            $query->where('term_id', $this->selectedTerm);
+        }
+
+        $this->enrollments = $query->get();
+
+        $this->marks = $this->enrollments->mapWithKeys(function ($enrollment) {
+            $mark = $enrollment->marks->first();
+            return [$enrollment->id => $mark ? $mark->marks_obtained : ''];
+        })->toArray();
+    }
+
+    public function saveMarks($enrollmentId)
+    {
+        $enrollment = Enrollment::find($enrollmentId);
+        if ($enrollment) {
+            $mark = Mark::updateOrCreate(
+                [
+                    'enrollment_id' => $enrollment->id,
+                    'term_id' => $this->selectedTerm,
+                    'assessment_type' => $this->selectedAssessmentType
+                ],
+                [
+                    'marks_obtained' => $this->marks[$enrollmentId] ?? 0
+                ]
+            );
+
+            Session::flash('marks', 'Marks updated successfully.');
+        }
+    }
+
+
+    public function saveAllMarks()
+    {
+        foreach ($this->marks as $enrollmentId => $obtainedMarks) {
+            $this->saveMarks($enrollmentId);
+        }
     }
 
     public function render()
     {
-        return view('livewire.exams-component', [
-            'classes' => ClassModel::all(),
-            'streams' => Stream::all(),
-            'subjects' => Subject::all(),
-            'students' => $this->students
-        ]);
+        return view('livewire.exams-component');
     }
-
 }
-
-
