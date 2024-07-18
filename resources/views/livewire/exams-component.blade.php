@@ -1,8 +1,6 @@
 <div>
     <div class="page-wrapper">
         <div class="content container-fluid">
-
-
             @if (Session::has('message'))
             <div class="alert alert-success">{{ Session::get('message') }}</div>
             @endif
@@ -77,8 +75,6 @@
                     <select style="width: 20%;" class="form-select w-auto" wire:model="selectedAssessmentType">
                         <option value="Exam">Exam</option>
                         <option value="Project">Project</option>
-                        <option value="AOI">AOI</option>
-                        <option value="Activity">Activity</option>
                     </select>
                 </div>
                 <div class="card-body">
