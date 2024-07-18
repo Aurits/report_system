@@ -12,12 +12,12 @@ class Activity extends Model
     protected $fillable = [
         'enrollment_id',
         'marks_aoi',
+        'topic_id',
         'marks_activity_2',
         'marks_activity_3',
         'marks_activity_3',
         'marks_activity_3',
         'marks_activity_3',
-        'assessment_type',
     ];
 
     public function enrollment()
