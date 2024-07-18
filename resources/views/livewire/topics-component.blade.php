@@ -1,13 +1,6 @@
 <div>
     <div class="page-wrapper">
         <div class="content container-fluid">
-            <div class="page-header">
-                <div class="row">
-                    <div class="col">
-                        <h3 class="page-title">Manage Enrollments</h3>
-                    </div>
-                </div>
-            </div>
 
             @if (Session::has('message'))
             <div class="alert alert-success">{{ Session::get('message') }}</div>
