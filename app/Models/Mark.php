@@ -11,32 +11,14 @@ class Mark extends Model
 
     protected $fillable = [
         'enrollment_id',
-        'exam_id',
-        'activity_id',
-        'marks_obtained',
-        'term_id',
+        'marks_obtained_1',
+        'marks_obtained_2',
+        'marks_obtained_3',
         'assessment_type',
     ];
 
     public function enrollment()
     {
         return $this->belongsTo(Enrollment::class);
-    }
-
-    public function exam()
-    {
-        return $this->belongsTo(Exam::class);
-    }
-
-    public function activity()
-    {
-        return $this->belongsTo(Activity::class);
-    }
-
-
-
-    public function topic()
-    {
-        return $this->belongsTo(Topic::class);
     }
 }

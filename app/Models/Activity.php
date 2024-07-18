@@ -9,10 +9,19 @@ class Activity extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name'];
+    protected $fillable = [
+        'enrollment_id',
+        'marks_aoi',
+        'marks_activity_2',
+        'marks_activity_3',
+        'marks_activity_3',
+        'marks_activity_3',
+        'marks_activity_3',
+        'assessment_type',
+    ];
 
-    public function marks()
+    public function enrollment()
     {
-        return $this->hasMany(Mark::class);
+        return $this->belongsTo(Enrollment::class);
     }
 }

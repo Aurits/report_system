@@ -13,7 +13,13 @@ return new class extends Migration
     {
         Schema::create('activities', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->foreignId('enrollment_id')->constrained()->onDelete('cascade');
+            $table->integer('marks_aoi');
+            $table->integer('marks_activity_1');
+            $table->integer('marks_activity_2');
+            $table->integer('marks_activity_3');
+            $table->integer('marks_activity_4');
+            $table->integer('marks_activity_5');
             $table->timestamps();
         });
     }

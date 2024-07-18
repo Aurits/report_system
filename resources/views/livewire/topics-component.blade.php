@@ -71,15 +71,6 @@
                         {{ $subjects->find($selectedSubject)->name ?? 'N/A' }}
                     </h5>
                 </div>
-                <div class="card-header d-flex justify-content-between align-items-center">
-                    <h5 class="card-title mb-0">Assessment Type</h5>
-                    <select style="width: 20%;" class="form-select w-auto" wire:model="selectedAssessmentType">
-                        <option value="Exam">Exam</option>
-                        <option value="Project">Project</option>
-                        <option value="AOI">AOI</option>
-                        <option value="Activity">Activity</option>
-                    </select>
-                </div>
                 <div class="card-body">
                     @if (Session::has('marks'))
                     <div class="alert alert-success">{{ Session::get('marks') }}</div>
