@@ -126,7 +126,7 @@
                                 </li>
                                 <li class="{{ Request::is('exams') ? 'active' : '' }}">
                                     <a href="{{ route('exams') }}"><i class="fas fa-file-alt"></i>
-                                        <span>Exams $ Project</span></a>
+                                        <span>Exams & Project</span></a>
                                 </li>
                             </ul>
                         </li>
