@@ -45,13 +45,13 @@
                                     </td>
                                     @php $currentTerm = $data['history']->term->name; @endphp
                                     @endif
-                                    @if($currentStream != $data['history']->stream->name)
+                                    @if($data['history']->stream && $currentStream != $data['history']->stream->name)
                                     <td rowspan="{{ $data['streamRowspan'] }}">
                                         {{ $data['history']->stream->name }}
                                     </td>
                                     @php $currentStream = $data['history']->stream->name; @endphp
                                     @endif
-                                    @if($currentHouse != $data['history']->house->name)
+                                    @if($data['history']->house && $currentHouse != $data['history']->house->name)
                                     <td rowspan="{{ $data['houseRowspan'] }}">
                                         {{ $data['history']->house->name }}
                                     </td>

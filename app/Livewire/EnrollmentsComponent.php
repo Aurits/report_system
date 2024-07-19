@@ -90,7 +90,7 @@ class EnrollmentsComponent extends Component
                     ->count();
             }
 
-            if ($history->stream->name !== $currentStream) {
+            if ($history->stream && $history->stream->name !== $currentStream) {
                 $currentStream = $history->stream->name;
                 $streamCount = $enrollmentHistory->where('academic_year_id', $history->academic_year_id)
                     ->where('term_id', $history->term_id)
@@ -98,7 +98,7 @@ class EnrollmentsComponent extends Component
                     ->count();
             }
 
-            if ($history->house->name !== $currentHouse) {
+            if ($history->house && $history->house->name !== $currentHouse) {
                 $currentHouse = $history->house->name;
                 $houseCount = $enrollmentHistory->where('academic_year_id', $history->academic_year_id)
                     ->where('term_id', $history->term_id)
