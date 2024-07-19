@@ -60,4 +60,8 @@ class Enrollment extends Model
     {
         return $this->hasMany(Mark::class);
     }
+    public function activities()
+    {
+        return $this->hasMany(Activity::class);
+    }
 }

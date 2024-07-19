@@ -15,6 +15,10 @@ class Term extends Model
     {
         return $this->hasMany(Mark::class);
     }
+    public function activities()
+    {
+        return $this->hasMany(Activity::class);
+    }
 
     public function reports()
     {

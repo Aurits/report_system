@@ -1,7 +1,6 @@
 <div>
     <div class="page-wrapper">
         <div class="content container-fluid">
-
             @if (Session::has('message'))
             <div class="alert alert-success">{{ Session::get('message') }}</div>
             @endif
@@ -71,6 +70,13 @@
                         {{ $subjects->find($selectedSubject)->name ?? 'N/A' }}
                     </h5>
                 </div>
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="card-title mb-0">Topic</h5>
+                    <select style="width: 20%;" class="form-select w-auto" wire:model="selectedAssessmentType">
+                        <option value="1"></option>
+                        <option value="2"></option>
+                    </select>
+                </div>
                 <div class="card-body">
                     @if (Session::has('marks'))
                     <div class="alert alert-success">{{ Session::get('marks') }}</div>
@@ -83,7 +89,12 @@
                                     <th>Enrollment ID</th>
                                     <th>Student ID</th>
                                     <th>Name</th>
-                                    <th>Marks</th>
+                                    <th>Marks AOI</th>
+                                    <th>Marks 1</th>
+                                    <th>Marks 2</th>
+                                    <th>Marks 3</th>
+                                    <th>Marks 4</th>
+                                    <th>Marks 5</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -96,14 +107,29 @@
 
 
                                     <td>{{ $enrollment->student->name }}</td>
+                                    <td style="width: 10%;">
+                                        <input type="number" class="form-control" wire:model.defer="marks.{{ $enrollment->id }}.marks_aoi" wire:key="marks-{{ $enrollment->id }}-aoi">
+                                    </td>
 
                                     <td style="width: 10%;">
-                                        <input type="number" class="form-control" wire:model.defer="marks.{{ $enrollment->id }}" wire:key="marks-{{ $enrollment->id }}">
+                                        <input type="number" class="form-control" wire:model.defer="marks.{{ $enrollment->id }}.marks_activity_1" wire:key="marks-{{ $enrollment->id }}-1">
+                                    </td>
+                                    <td style="width: 10%;">
+                                        <input type="number" class="form-control" wire:model.defer="marks.{{ $enrollment->id }}.marks_activity_2" wire:key="marks-{{ $enrollment->id }}-2">
+                                    </td>
+                                    <td style="width: 10%;">
+                                        <input type="number" class="form-control" wire:model.defer="marks.{{ $enrollment->id }}.marks_activity_3" wire:key="marks-{{ $enrollment->id }}-3">
+                                    </td>
+                                    <td style="width: 10%;">
+                                        <input type="number" class="form-control" wire:model.defer="marks.{{ $enrollment->id }}.marks_activity_4" wire:key="marks-{{ $enrollment->id }}-4">
+                                    </td>
+                                    <td style="width: 10%;">
+                                        <input type="number" class="form-control" wire:model.defer="marks.{{ $enrollment->id }}.marks_activity_5" wire:key="marks-{{ $enrollment->id }}-5">
                                     </td>
                                     <td>
                                         <button class="btn btn-primary" wire:click="saveMarks({{ $enrollment->id }})">Save</button>
-
                                     </td>
+
 
 
                                 </tr>

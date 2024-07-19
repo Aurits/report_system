@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Models\AcademicYear;
+use App\Models\Activity;
 use App\Models\ClassModel;
 use App\Models\Stream;
 use App\Models\Subject;
@@ -21,7 +22,8 @@ class TopicsComponent extends Component
     public $terms;
 
     public $marks = [];
-    public $selectedAssessmentType = 'Exam'; // default value
+
+    public $topic_id = 1;
 
     public $enrollments;
     public $selectedYear;
@@ -69,7 +71,16 @@ class TopicsComponent extends Component
 
         $this->marks = $this->enrollments->mapWithKeys(function ($enrollment) {
             $mark = $enrollment->marks->first();
-            return [$enrollment->id => $mark ? $mark->marks_obtained : ''];
+            return [
+                $enrollment->id => [
+                    'marks_aoi' => $mark ? $mark->marks_aoi : '',
+                    'marks_activity_1' => $mark ? $mark->marks_activity_1 : '',
+                    'marks_activity_2' => $mark ? $mark->marks_activity_2 : '',
+                    'marks_activity_3' => $mark ? $mark->marks_activity_3 : '',
+                    'marks_activity_4' => $mark ? $mark->marks_activity_4 : '',
+                    'marks_activity_5' => $mark ? $mark->marks_activity_5 : '',
+                ]
+            ];
         })->toArray();
     }
 
@@ -77,14 +88,20 @@ class TopicsComponent extends Component
     {
         $enrollment = Enrollment::find($enrollmentId);
         if ($enrollment) {
-            $mark = Mark::updateOrCreate(
+            $markData = $this->marks[$enrollmentId] ?? ['marks_aoi' => 0, 'marks_activity_1' => 0, 'marks_activity_2' => 0, 'marks_activity_3' => 0, 'marks_activity_4' => 0, 'marks_activity_5' => 0];
+
+            $mark = Activity::updateOrCreate(
                 [
                     'enrollment_id' => $enrollment->id,
-                    'term_id' => $this->selectedTerm,
-                    'assessment_type' => $this->selectedAssessmentType
+                    'topic_id' => $this->topic_id,
                 ],
                 [
-                    'marks_obtained' => $this->marks[$enrollmentId] ?? 0
+                    'marks_aoi' => $markData['marks_aoi'],
+                    'marks_activity_1' => $markData['marks_activity_1'],
+                    'marks_activity_2' => $markData['marks_activity_2'],
+                    'marks_activity_3' => $markData['marks_activity_3'],
+                    'marks_activity_4' => $markData['marks_activity_4'],
+                    'marks_activity_5' => $markData['marks_activity_5'],
                 ]
             );
 
@@ -93,13 +110,13 @@ class TopicsComponent extends Component
     }
 
 
+
     public function saveAllMarks()
     {
-        foreach ($this->marks as $enrollmentId => $obtainedMarks) {
+        foreach ($this->marks as $enrollmentId => $activityMarks) {
             $this->saveMarks($enrollmentId);
         }
     }
-
 
     public function render()
     {

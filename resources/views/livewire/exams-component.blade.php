@@ -118,7 +118,12 @@
                                         <button class="btn btn-primary" wire:click="saveMarks({{ $enrollment->id }})">Save</button>
                                     </td>
 
+
+
                                 </tr>
+
+
+
                                 @endforeach
                             </tbody>
                         </table>
