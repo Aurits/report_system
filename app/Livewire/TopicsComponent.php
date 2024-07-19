@@ -70,15 +70,15 @@ class TopicsComponent extends Component
         $this->enrollments = $query->get();
 
         $this->marks = $this->enrollments->mapWithKeys(function ($enrollment) {
-            $mark = $enrollment->marks->first();
+            $activity = $enrollment->activities->first();
             return [
                 $enrollment->id => [
-                    'marks_aoi' => $mark ? $mark->marks_aoi : '',
-                    'marks_activity_1' => $mark ? $mark->marks_activity_1 : '',
-                    'marks_activity_2' => $mark ? $mark->marks_activity_2 : '',
-                    'marks_activity_3' => $mark ? $mark->marks_activity_3 : '',
-                    'marks_activity_4' => $mark ? $mark->marks_activity_4 : '',
-                    'marks_activity_5' => $mark ? $mark->marks_activity_5 : '',
+                    'marks_aoi' => $activity ? $activity->marks_aoi : '',
+                    'marks_activity_1' => $activity ? $activity->marks_activity_1 : '',
+                    'marks_activity_2' => $activity ? $activity->marks_activity_2 : '',
+                    'marks_activity_3' => $activity ? $activity->marks_activity_3 : '',
+                    'marks_activity_4' => $activity ? $activity->marks_activity_4 : '',
+                    'marks_activity_5' => $activity ? $activity->marks_activity_5 : '',
                 ]
             ];
         })->toArray();
@@ -90,7 +90,7 @@ class TopicsComponent extends Component
         if ($enrollment) {
             $markData = $this->marks[$enrollmentId] ?? ['marks_aoi' => 0, 'marks_activity_1' => 0, 'marks_activity_2' => 0, 'marks_activity_3' => 0, 'marks_activity_4' => 0, 'marks_activity_5' => 0];
 
-            $mark = Activity::updateOrCreate(
+            $activity = Activity::updateOrCreate(
                 [
                     'enrollment_id' => $enrollment->id,
                     'topic_id' => $this->topic_id,
@@ -108,8 +108,6 @@ class TopicsComponent extends Component
             Session::flash('marks', 'Marks updated successfully.');
         }
     }
-
-
 
     public function saveAllMarks()
     {

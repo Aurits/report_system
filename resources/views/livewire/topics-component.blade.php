@@ -99,7 +99,13 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @if ($enrollments)
+                                {{$enrollments}}
+
+                                @endif
                                 @foreach ($enrollments as $enrollment)
+
+
 
                                 <tr>
                                     <td>{{ $enrollment->id }}</td>
