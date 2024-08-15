@@ -243,19 +243,27 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
             <script>
-
-
                 document.getElementById('downloadPdfBtn').addEventListener('click', function() {
                     var {
                         jsPDF
                     } = window.jspdf;
                     var doc = new jsPDF();
-                    doc.autoTable({
-                        html: '#report'
+                    // doc.autoTable({
+                    //     html: '#report'
+                    // });
+                    // doc.save('academic_report.pdf');
+                    var element = document.getElementById('report'); // Replace 'yourDivID' with the ID of your div
+
+                    doc.html(element, {
+                        callback: function(doc) {
+                            doc.save('specific-div.pdf'); // You can specify the name of the PDF file
+                        },
+                        x: -100,
+                        y: -100
                     });
-                    doc.save('academic_report.pdf');
                 });
             </script>
 
