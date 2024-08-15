@@ -20,21 +20,21 @@
                                 @foreach ($reports as $report)
                                     <tr>
                                         <td>{{ $report->id }}</td>
-                                        <td>{{ $report->report }}</td>
-                                        <td>{{ $report->created_at }}</td>
-                                        <td>
-                                            <button class="btn btn-primary">Edit</button>
-                                            <button class="btn btn-danger">Delete</button>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<td>{{ $report->report }}</td>
+<td>{{ $report->created_at }}</td>
+<td>
+    <button class="btn btn-primary">Edit</button>
+    <button class="btn btn-danger">Delete</button>
+</td>
+</tr>
+@endforeach
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div> --}}
 {{-- @livewire(pdf-generator) --}}
 <div>
@@ -57,7 +57,7 @@
             </div>
         </div>
 
-        <div id = "report" class="row mt-4">
+        <div id="report" class="row mt-4">
             <html lang="en">
 
             <head>
@@ -241,12 +241,11 @@
             <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js">
+            </script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
 
             <script>
-
-
                 document.getElementById('downloadPdfBtn').addEventListener('click', function() {
                     var {
                         jsPDF
@@ -264,7 +263,8 @@
                 var url = '/home/mkb/Dev/report_system/storage/Certificate of Finances.pdf';
 
                 var pdfjsLib = window['pdfjs-dist/build/pdf'];
-                pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
+                pdfjsLib.GlobalWorkerOptions.workerSrc =
+                    'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
 
                 var loadingTask = pdfjsLib.getDocument(url);
                 loadingTask.promise.then(function(pdf) {
