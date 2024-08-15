@@ -34,12 +34,10 @@
                     <div class="invoice-item" style="margin: 20px 0;">
                         <div class="row" style="display: flex; justify-content: space-between;">
                             <div class="student-details" style="flex: 2; padding: 10px; border: 1px solid #000;">
-                                <p>LIN:_____________</p>
-                                <p>NAME: ______________________</p>
-                                <p>SchPay Code:_________</p>
-                                <p>FeesBal:_______________</p>
-                                <p>HOUSE: __________</p>
-                                <p>CLASS/STREAM:__________</p>
+                                <p>LIN:________ NAME: ______________________ </p>
+                                <p>FeesBal:_________ HOUSE: __________</p>
+                                <p>SchPay Code:________ CLASS/STREAM:__________</p>
+
                             </div>
                             <div class="attendance"
                                 style="flex: 1.5; padding: 10px; border: 1px solid #ffffff; margin-left: 10px;">
