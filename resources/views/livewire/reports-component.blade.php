@@ -42,7 +42,7 @@
                                 <p>CLASS/STREAM:__________</p>
                             </div>
                             <div class="attendance"
-                                style="flex: 1.5; padding: 10px; border: 1px solid #000; margin-left: 10px;">
+                                style="flex: 1.5; padding: 10px; border: 1px solid #ffffff; margin-left: 10px;">
                                 <table style="width: 100%; border-collapse: collapse;">
                                     <thead>
                                         <tr>
