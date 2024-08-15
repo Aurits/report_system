@@ -19,16 +19,16 @@
         </div>
 
         <div id="report" class="row mt-4">
-            <div class="report-card" style="width: 100%; padding: 10px;">
+            <div class="report-card" style="width: 100%; padding: 40px;">
                 <header>
                     <div class="school-info" style="text-align: center; margin-bottom: 10px;">
-                        <h1 style="font-size: 24pt; color: black; margin: 0;">SHAREBILITY UGANDA HIGH SCHOOL</h1>
+                        <h1 style="font-size: 24pt; color: black; letter-spacing: 2px; "><span>SHAREBILITY  </span>UGANDA HIGH SCHOOL</h1>
                         <p style="font-size: 12pt; margin: 5px 0;">P. O. Box 212 Kampala | www.sharebility.net |
                             info@sharebility.net | Tel: +256 776960740</p>
                     </div>
                     <hr style="color: #8a2b2b; height: 3px; margin: 5px 0;" />
                     <hr style="color: #0004ff; height: 3px; margin: 5px 0;" />
-                    <h2 style="text-align: center; margin: 1px 0; font-size: 16pt;"><strong>LEARNER'S END OF TERM
+                    <h2 style="text-align: center; margin: 1px 0; font-size: 16pt; letter-spacing: 2px;"><strong>LEARNER'S END OF TERM
                             REPORT CARD FOR TERM ONE, 2023</strong></h2>
 
                     <div class="invoice-item" style="margin: 20px 0;">
@@ -136,7 +136,7 @@
                         </table>
                     </div>
                 </main>
-                <footer style="text-align: center; margin-top: 2px;">
+                <footer style="text-align: center; margin-top: 2px; letter-spacing: 2px;">
                     <p>School Motto: "Have to Give"</p>
                 </footer>
             </div>
