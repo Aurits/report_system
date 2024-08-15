@@ -22,25 +22,29 @@
             <div class="report-card" style="width: 100%; padding: 40px;">
                 <header>
                     <div class="school-info" style="text-align: center; margin-bottom: 10px;">
-                        <h1 style="font-size: 24pt; color: black; letter-spacing: 2px; "><span>SHAREBILITY  </span>UGANDA HIGH SCHOOL</h1>
+                        <h1 style="font-size: 24pt; color: black; letter-spacing: 2px; "><span>SHAREBILITY </span>UGANDA
+                            HIGH SCHOOL</h1>
                         <p style="font-size: 12pt; margin: 5px 0;">P. O. Box 212 Kampala | www.sharebility.net |
                             info@sharebility.net | Tel: +256 776960740</p>
                     </div>
                     <hr style="color: #8a2b2b; height: 3px; margin: 5px 0;" />
                     <hr style="color: #0004ff; height: 3px; margin: 5px 0;" />
-                    <h2 style="text-align: center; margin: 1px 0; font-size: 16pt; letter-spacing: 2px;"><strong>LEARNER'S END OF TERM
-                            REPORT CARD FOR TERM ONE, 2023</strong></h2>
+                    <h2 style="text-align: center; margin: 1px 0; font-size: 16pt; letter-spacing: 2px;">
+                        <strong>LEARNER'S END OF TERM
+                            REPORT CARD FOR TERM ONE, 2023</strong>
+                    </h2>
 
                     <div class="invoice-item" style="margin: 20px 0;">
                         <div class="row" style="display: flex; justify-content: space-between;">
-                            <div class="student-details" style="flex: 2; padding: 10px; border: 1px solid #000;">
-                                <p>LIN:________ NAME: ______________________ </p>
-                                <p>FeesBal:_________ HOUSE: __________</p>
-                                <p>SchPay Code:________ CLASS/STREAM:__________</p>
-
+                            <div class="student-details" style="flex: 0 0 50%; padding: 10px; border: 1px solid #000;">
+                                <br />
+                                <p style="letter-spacing: 1px;">LIN:________NAME:_________________________________</p>
+                                <br />
+                                <p style="letter-spacing: 1px;">FeesBal:_________HOUSE:__________</p><br />
+                                <p style="letter-spacing: 1px;">SchPay Code:________CLASS/STREAM:__________</p>
                             </div>
                             <div class="attendance"
-                                style="flex: 1.5; padding: 10px; border: 1px solid #ffffff; margin-left: 10px;">
+                                style="flex: 0 0 20%; padding: 10px; border: 1px solid #fff; margin-left: 0px;">
                                 <table style="width: 100%; border-collapse: collapse;">
                                     <thead>
                                         <tr>
@@ -67,11 +71,14 @@
                                 </table>
                             </div>
                             <div class="square-frame"
-                                style="flex: 1; height: 130px; border: 1px solid #000; margin-left: 10px;">
-                                <!-- Picture placeholder -->
+                                style="flex: 0 0 20%; height: 200px; border: 1px solid #000; margin-left: 0px;">
+                                <img src="assets/img/profiles.jpg" style="width: 100%; height: 100%; object-fit: cover;"
+                                    alt="Student Profile Picture" />
                             </div>
                         </div>
                     </div>
+
+
                 </header>
                 <main>
                     <div class="invoice-item invoice-item-two" style="margin-top: 20px;">
