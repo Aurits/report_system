@@ -1,42 +1,3 @@
-{{-- <div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Reports</h3>
-                    </div>
-                    <div class="card-body">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Report</th>
-                                    <th>Created At</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($reports as $report)
-                                    <tr>
-                                        <td>{{ $report->id }}</td>
-<td>{{ $report->report }}</td>
-<td>{{ $report->created_at }}</td>
-<td>
-    <button class="btn btn-primary">Edit</button>
-    <button class="btn btn-danger">Delete</button>
-</td>
-</tr>
-@endforeach
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div> --}}
-{{-- @livewire(pdf-generator) --}}
 <div>
     <div class="page-wrapper">
         <div class="content container-fluid">
@@ -58,190 +19,159 @@
         </div>
 
         <div id="report" class="row mt-4">
-
-
-            <div class="report-card">
+            <div class="report-card" style="width: 100%; padding: 10px;">
                 <header>
-                    <div class="school-info" style="margin-bottom: 0%;">
-                        <strong>
-                            <h1 style="font-size: 30pt; color: black; margin: 0%;">SHAREBILITY UGANDA HIGH SCHOOL
-                            </h1>
-                        </strong>
-                        <b>
-                            <p margin: 0%; style="margin-bottom: 0%;">P. O. Box 212 Kampala | www.sharebility.net |
-                                info@sharebility.net | Tel: +256 776960740</p>
-                        </b>
+                    <div class="school-info" style="text-align: center; margin-bottom: 10px;">
+                        <h1 style="font-size: 24pt; color: black; margin: 0;">SHAREBILITY UGANDA HIGH SCHOOL</h1>
+                        <p style="font-size: 12pt; margin: 5px 0;">P. O. Box 212 Kampala | www.sharebility.net |
+                            info@sharebility.net | Tel: +256 776960740</p>
                     </div>
-                    <hr style="color: #8a2b2b; height: 5px; margin-bottom: -2%; margin-top: 0%;" />
-                    <hr style="color: #0004ff; height: 5px" />
-                    <h2 style="margin-bottom: 0%"><strong>LEARNER'S END OF TERM REPORT CARD FOR TERM ONE,
-                            2023</strong></h2>
+                    <hr style="color: #8a2b2b; height: 3px; margin: 5px 0;" />
+                    <hr style="color: #0004ff; height: 3px; margin: 5px 0;" />
+                    <h2 style="text-align: center; margin: 1px 0; font-size: 16pt;"><strong>LEARNER'S END OF TERM
+                            REPORT CARD FOR TERM ONE, 2023</strong></h2>
 
-                    <div class="invoice-item ">
-                        <div class="row">
-
-                            <div class="col-md-5">
-                                <div class="student-details">
-                                    <div style="padding-left: 5%;">
-                                        <p>LIN:_____________NAME: ______________________</p>
-                                        <p>SchPay Code:_________ FeesBal:_______________</p>
-                                        <p>HOUSE: __________ CLASS/ STREAM:__________</p>
-                                    </div>
-
-                                </div>
+                    <div class="invoice-item" style="margin: 20px 0;">
+                        <div class="row" style="display: flex; justify-content: space-between;">
+                            <div class="student-details" style="flex: 2; padding: 10px; border: 1px solid #000;">
+                                <p>LIN:_____________</p>
+                                <p>NAME: ______________________</p>
+                                <p>SchPay Code:_________</p>
+                                <p>FeesBal:_______________</p>
+                                <p>HOUSE: __________</p>
+                                <p>CLASS/STREAM:__________</p>
                             </div>
-                            <div class="col-md-5">
-                                <div class="attendance">
-                                    <table>
-                                        <thead>
-                                            <tr aria-rowspan="2">
-                                                <th colspan="2">Attendance</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td style="border-bottom: 0 solid #ffffff; border-right: 0  ">Days
-                                                    Present</td>
-                                                <td style="border: 0 solid #ffffff; border-right: 5px solid #8a2b2b">
-                                                    73</td>
-                                            </tr>
-                                            <tr>
-                                                <td style="border-top: 0 solid #ffffff;   border-right: 0 ">Days
-                                                    Absent</td>
-                                                <td style="border: 0 solid #ffffff; border-right: 5px solid #8a2b2b">
-                                                    15</td>
-                                            </tr>
-
-                                        </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <td>Total</td>
-                                                <td>88</td>
-                                            </tr>
-                                        </tfoot>
-                                    </table>
-                                </div>
+                            <div class="attendance"
+                                style="flex: 1.5; padding: 10px; border: 1px solid #000; margin-left: 10px;">
+                                <table style="width: 100%; border-collapse: collapse;">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2" style="text-align: left; border-bottom: 1px solid #000;">
+                                                Attendance</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="border-bottom: 1px solid #000;">Days Present</td>
+                                            <td style="border-bottom: 1px solid #000; text-align: right;">73</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="border-bottom: 1px solid #000;">Days Absent</td>
+                                            <td style="border-bottom: 1px solid #000; text-align: right;">15</td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td>Total</td>
+                                            <td style="text-align: right;">88</td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
                             </div>
-                            <div class="square-frame">
-
-                            </div>
-                            <div class="col-md-5">
-
+                            <div class="square-frame"
+                                style="flex: 1; height: 130px; border: 1px solid #000; margin-left: 10px;">
+                                <!-- Picture placeholder -->
                             </div>
                         </div>
-
                     </div>
-
                 </header>
                 <main>
-                    <div class="invoice-item invoice-item-two">
-
-                        <table>
+                    <div class="invoice-item invoice-item-two" style="margin-top: 20px;">
+                        <table style="width: 100%; border-collapse: collapse;">
                             <thead>
                                 <tr>
-                                    <th>Subject</th>
-                                    <th>Topic and Competency</th>
-                                    <th>Score</th>
-                                    <th>Descriptor</th>
-                                    <th>Generic Skills</th>
-                                    <th>Remarks</th>
-                                    <th>Teacher / Sign</th>
+                                    <th style="border: 1px solid #000;">Subject</th>
+                                    <th style="border: 1px solid #000;">Topic and Competency</th>
+                                    <th style="border: 1px solid #000;">Score</th>
+                                    <th style="border: 1px solid #000;">Descriptor</th>
+                                    <th style="border: 1px solid #000;">Generic Skills</th>
+                                    <th style="border: 1px solid #000;">Remarks</th>
+                                    <th style="border: 1px solid #000;">Teacher / Sign</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td rowspan="4">Mathematics</td>
-                                    <td>1. Number Bases</td>
-                                    <td>2.6</td>
-                                    <td>Outstanding</td>
-                                    <td rowspan="4">Rogers is able to think critically and solve real-life
-                                        problems.</td>
-                                    <td rowspan="4">Rogers achieved most of the learning outcomes for competency.
-                                    </td>
-                                    <td rowspan="4">Iguma Mercy</td>
+                                    <td style="border: 1px solid #000;" rowspan="4">Mathematics</td>
+                                    <td style="border: 1px solid #000;">1. Number Bases</td>
+                                    <td style="border: 1px solid #000;">2.6</td>
+                                    <td style="border: 1px solid #000;">Outstanding</td>
+                                    <td style="border: 1px solid #000;" rowspan="4">Rogers is able to think critically
+                                        and solve real-life problems.</td>
+                                    <td style="border: 1px solid #000;" rowspan="4">Rogers achieved most of the learning
+                                        outcomes for competency.</td>
+                                    <td style="border: 1px solid #000;" rowspan="4">Iguma Mercy</td>
                                 </tr>
                                 <tr>
-                                    <td>2. Working with Integers</td>
-                                    <td>2.7</td>
-                                    <td>Outstanding</td>
-
-
+                                    <td style="border: 1px solid #000;">2. Working with Integers</td>
+                                    <td style="border: 1px solid #000;">2.7</td>
+                                    <td style="border: 1px solid #000;">Outstanding</td>
                                 </tr>
                                 <tr>
-                                    <td>3. Fractions, Percentages and Decimals</td>
-                                    <td>1.6</td>
-                                    <td>Moderate</td>
-
+                                    <td style="border: 1px solid #000;">3. Fractions, Percentages and Decimals</td>
+                                    <td style="border: 1px solid #000;">1.6</td>
+                                    <td style="border: 1px solid #000;">Moderate</td>
                                 </tr>
                                 <tr>
-                                    <td>4. Rectangular Cartesian Coordinates in 2 Dimensions</td>
-                                    <td>1</td>
-                                    <td>Basic</td>
-
+                                    <td style="border: 1px solid #000;">4. Rectangular Cartesian Coordinates in 2
+                                        Dimensions</td>
+                                    <td style="border: 1px solid #000;">1</td>
+                                    <td style="border: 1px solid #000;">Basic</td>
                                 </tr>
                                 <tr>
-                                    <td>English</td>
-                                    <td>1. Topic Name</td>
-                                    <td>1</td>
-                                    <td>Basic</td>
-                                    <td rowspan="2"></td>
-                                    <td rowspan="2"></td>
-                                    <td rowspan="2"></td>
+                                    <td style="border: 1px solid #000;">English</td>
+                                    <td style="border: 1px solid #000;">1. Topic Name</td>
+                                    <td style="border: 1px solid #000;">1</td>
+                                    <td style="border: 1px solid #000;">Basic</td>
+                                    <td style="border: 1px solid #000;" rowspan="2"></td>
+                                    <td style="border: 1px solid #000;" rowspan="2"></td>
+                                    <td style="border: 1px solid #000;" rowspan="2"></td>
                                 </tr>
                                 <tr>
-                                    <td></td>
-                                    <td>2. Topic Name</td>
-                                    <td>2.8</td>
-                                    <td>Outstanding</td>
-
+                                    <td style="border: 1px solid #000;"></td>
+                                    <td style="border: 1px solid #000;">2. Topic Name</td>
+                                    <td style="border: 1px solid #000;">2.8</td>
+                                    <td style="border: 1px solid #000;">Outstanding</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-
                 </main>
-                <footer>
+                <footer style="text-align: center; margin-top: 2px;">
                     <p>School Motto: "Have to Give"</p>
                 </footer>
             </div>
-            </body>
         </div>
-        <div>
-            <div class="mt-4">
-                <button id="downloadPdfBtn" class="btn btn-danger">Download PDF</button>
-            </div>
-            <!-- Include TableExport and jsPDF scripts -->
-            <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js">
-            </script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
-            <script>
-                document.getElementById('downloadPdfBtn').addEventListener('click', function() {
-                    var {
-                        jsPDF
-                    } = window.jspdf;
-                    var doc = new jsPDF('p', 'mm', 'a4');
+        <div class="mt-4" style="text-align: center;">
+            <button id="downloadPdfBtn" class="btn btn-danger">Download PDF</button>
+        </div>
 
-                    doc.html(document.getElementById('report'), {
-                        callback: function(doc) {
-                            doc.save('specific-div.pdf');
-                        },
-                        x: 0, // Adjust the position if needed
-                        y: 0,
-                        html2canvas: {
-                            scale: 0.2, // Reducing the scale can help fit more content into the PDF
-                        },
-                        width: 210, // max width within the A4 page
-                        outerHeight: 297,
-                        windowWidth: 1000, // Use this to ensure large content is captured
-                    });
+        <!-- Include TableExport and jsPDF scripts -->
+        <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+        <script>
+            document.getElementById('downloadPdfBtn').addEventListener('click', function() {
+                var {
+                    jsPDF
+                } = window.jspdf;
+                var doc = new jsPDF('p', 'mm', 'a4');
+
+                doc.html(document.getElementById('report'), {
+                    callback: function(doc) {
+                        doc.save('report-card.pdf');
+                    },
+                    x: 10, // Adjust the x position if needed
+                    y: 10, // Adjust the y position if needed
+                    width: 190, // Adjust the width to fit the content within the page
+                    windowWidth: 900 // Adjust the window width if needed
                 });
-            </script>
-
-            <div>
-            </div>
-        </div>
+            });
+        </script>
+    </div>
+</div>
